@@ -1,0 +1,7590 @@
+[
+  {
+    "id": 0,
+    "name": "goto_next",
+    "displayname": "Go to next label",
+    "description": "Go to the next label in the script, relative to this command.",
+    "parameters": [
+      {
+        "type": "Label",
+        "name": "Label",
+        "constantname": null
+      }
+    ]
+  },
+  {
+    "id": 1,
+    "name": "goto_first",
+    "displayname": "Go to first label",
+    "description": "Go to the first label with this ID in the script.",
+    "parameters": [
+      {
+        "type": "Label",
+        "name": "Label",
+        "constantname": null
+      }
+    ]
+  },
+  {
+    "id": 2,
+    "name": "label",
+    "displayname": "Label",
+    "description": "A label that can be jumped to by many commands. The script will then continue executing from here.",
+    "parameters": [
+      {
+        "type": "Label",
+        "name": "Label",
+        "constantname": null
+      }
+    ]
+  },
+  {
+    "id": 3,
+    "name": "yield",
+    "displayname": "Yield frame",
+    "description": "Stop the execution of the script for this frame, then resume it on the next frame.\n\nThis command needs to be used once in a loop to prevent the script from getting stuck inside a loop forever. Can also be used to pause for a frame, to split processor-heavy tasks into mulitple frames to prevent slowdowns.",
+    "parameters": []
+  },
+  {
+    "id": 4,
+    "name": "endlist",
+    "displayname": "End",
+    "description": "This must be used once at the end of every script.",
+    "parameters": []
+  },
+  {
+    "id": 5,
+    "name": "set_ailist",
+    "displayname": "Set character script",
+    "description": "Set the given character's script.",
+    "parameters": [
+      {
+        "type": "Character",
+        "name": "Character",
+        "constantname": null
+      },
+      {
+        "type": "AIList",
+        "name": "Script",
+        "constantname": null
+      }
+    ]
+  },
+  {
+    "id": 6,
+    "name": "set_returnlist",
+    "displayname": "Set character return script",
+    "description": "Set the given character's return script. This script can then be jumped to by the \"008 - Go to return script\" command.\n\nA common use of this command is to set this to the current script, then go to a new script, which will then use the return command to jump back to the old script.",
+    "parameters": [
+      {
+        "type": "Character",
+        "name": "Character",
+        "constantname": null
+      },
+      {
+        "type": "AIList",
+        "name": "Return script",
+        "constantname": null
+      }
+    ]
+  },
+  {
+    "id": 7,
+    "name": "set_shotlist",
+    "displayname": "Set current character shot script",
+    "description": "Set the current character's shot script. This script will be jumped to when the character is shot, and starts from the beginning.\n\nThis is commonly set to the current script, so the character continues executing it even when shot.",
+    "parameters": [
+      {
+        "type": "AIList",
+        "name": "Shot script",
+        "constantname": null
+      }
+    ]
+  },
+  {
+    "id": 8,
+    "name": "return",
+    "displayname": "Go to return script",
+    "description": "Jump to the return script that was set by the command \"006 - Set character return script\".",
+    "parameters": []
+  },
+  {
+    "id": 9,
+    "name": "stop_chr",
+    "displayname": "Current character stops moving",
+    "description": "Make the current character stop any animations, which includes walking and running.",
+    "parameters": []
+  },
+  {
+    "id": 10,
+    "name": "kneel",
+    "displayname": "Current character kneels",
+    "description": "Make the character perform a kneeling animation.",
+    "parameters": []
+  },
+  {
+    "id": 11,
+    "name": "chr_do_animation",
+    "displayname": "Character does animation",
+    "description": "Make the character perform the selected animation.\n\nStart frame: Set to 0 or higher to start the animation from that specific frame; set to -1 for the first frame (same as 0); set to -2 for the last frame.\n\nEnd frame: Set to 0 or higher to end the animation on that specific frame; set to -1 to end on the last frame.\nBlend time: The time it takes from one animation to gradually blend into the new one; from 0 to 255.\nAnimation speed: set to 2 for normal speed; 1 for fast animation; 4 for slow animation.",
+    "parameters": [
+      {
+        "type": "Animation",
+        "name": "Animation",
+        "constantname": null
+      },
+      {
+        "type": "System.Int16",
+        "name": "Start frame",
+        "constantname": null
+      },
+      {
+        "type": "System.Int16",
+        "name": "End frame",
+        "constantname": null
+      },
+      {
+        "type": "BitFlag",
+        "name": "Animation flags",
+        "constantname": "CHRANIMFLAG"
+      },
+      {
+        "type": "System.Byte",
+        "name": "Blend time",
+        "constantname": null
+      },
+      {
+        "type": "Character",
+        "name": "Character",
+        "constantname": null
+      },
+      {
+        "type": "System.Byte",
+        "name": "Animation speed",
+        "constantname": null
+      }
+    ]
+  },
+  {
+    "id": 12,
+    "name": "if_chr_idle",
+    "displayname": "If current character performs animation",
+    "description": "If the character performs any animation that is set by the command \"00B - Character does animation\", go to label.",
+    "parameters": [
+      {
+        "type": "Label",
+        "name": null,
+        "constantname": null
+      }
+    ]
+  },
+  {
+    "id": 13,
+    "name": "be_surprised_one_hand",
+    "displayname": "Current character raises hand",
+    "description": "Makes the character perform an animation where they raise one hand in the air.",
+    "parameters": []
+  },
+  {
+    "id": 14,
+    "name": "be_surprised_look_around",
+    "displayname": "Current character looks around",
+    "description": "Makes the character perform an animation where they look around in surprise.",
+    "parameters": []
+  },
+  {
+    "id": 15,
+    "name": "try_sidestep",
+    "displayname": "Current character tries to sidestep",
+    "description": "Makes the character try to perform a sidestep. If it succeeds, go to label. The action may fail if the guard is blocked.",
+    "parameters": [
+      {
+        "type": "Label",
+        "name": "Label",
+        "constantname": null
+      }
+    ]
+  },
+  {
+    "id": 16,
+    "name": "try_jumpout",
+    "displayname": "Current character tries to jump sideways",
+    "description": "Makes the character try to jump sideways. If it succeeds, go to label. The action may fail if the guard is blocked.",
+    "parameters": [
+      {
+        "type": "Label",
+        "name": "Label",
+        "constantname": null
+      }
+    ]
+  },
+  {
+    "id": 17,
+    "name": "try_run_sideways",
+    "displayname": "Current character tries to run to the side",
+    "description": "Makes the character try to run to the side. If it succeeds, go to label. The action may fail if the guard is blocked.",
+    "parameters": [
+      {
+        "type": "Label",
+        "name": "Label",
+        "constantname": null
+      }
+    ]
+  },
+  {
+    "id": 18,
+    "name": "try_attack_walk",
+    "displayname": "Current character tries to walk and attack",
+    "description": "Makes the character try to do a walking attack. If it succeeds, go to label. The action may fail if the guard is blocked or cannot see the target.",
+    "parameters": [
+      {
+        "type": "Label",
+        "name": "Label",
+        "constantname": null
+      }
+    ]
+  },
+  {
+    "id": 19,
+    "name": "try_attack_run",
+    "displayname": "Current character tries to run and attack",
+    "description": "Makes the character try to do a running attack. If it succeeds, go to label. The action may fail if the guard is blocked or cannot see the target.",
+    "parameters": [
+      {
+        "type": "Label",
+        "name": "Label",
+        "constantname": null
+      }
+    ]
+  },
+  {
+    "id": 20,
+    "name": "try_attack_roll",
+    "displayname": "Current character tries to run and attack",
+    "description": "Makes the character try to do a rolling attack. If it succeeds, go to label. The action may fail if the guard is blocked or cannot see the target.",
+    "parameters": [
+      {
+        "type": "Label",
+        "name": "Label",
+        "constantname": null
+      }
+    ]
+  },
+  {
+    "id": 21,
+    "name": "try_attack_stand",
+    "displayname": "Current character tries to stand and attack",
+    "description": "Makes the character try to do a standing attack. If it succeeds, go to label. The action may fail if the guard is blocked or cannot see the target.",
+    "parameters": [
+      {
+        "type": "BitFlag",
+        "name": "Attack flags",
+        "constantname": "ATTACKFLAG"
+      },
+      {
+        "type": "AimEntity",
+        "name": "Target",
+        "constantname": null
+      },
+      {
+        "type": "Label",
+        "name": "Label",
+        "constantname": null
+      }
+    ]
+  },
+  {
+    "id": 22,
+    "name": "try_attack_kneel",
+    "displayname": "Current character tries to kneel and attack",
+    "description": "Makes the character try to do a kneeling attack. If it succeeds, go to label. The action may fail if the guard is blocked or cannot see the target.",
+    "parameters": [
+      {
+        "type": "BitFlag",
+        "name": "Attack flags",
+        "constantname": "ATTACKFLAG"
+      },
+      {
+        "type": "AimEntity",
+        "name": "Target",
+        "constantname": null
+      },
+      {
+        "type": "Label",
+        "name": "Label",
+        "constantname": null
+      }
+    ]
+  },
+  {
+    "id": 23,
+    "name": "try_modify_attack",
+    "displayname": "Try to modify attack flags for current character",
+    "description": "Modifies the attack flags for the character.\n\nThis command can only be used after the commands 015, 016, 018 and 1BA. Those commands are commonly used with the \"Aim only\" attack flag, and if the label was followed, this command is used with the attack flags unset, making the character shoot.",
+    "parameters": [
+      {
+        "type": "BitFlag",
+        "name": "Attack flags",
+        "constantname": "ATTACKFLAG"
+      },
+      {
+        "type": "AimEntity",
+        "name": "Target",
+        "constantname": null
+      },
+      {
+        "type": "Label",
+        "name": "Label",
+        "constantname": null
+      }
+    ]
+  },
+  {
+    "id": 24,
+    "name": "try_face_entity",
+    "displayname": "Current character tries to face target",
+    "description": "Makes the character try to face their target. If it succeeds, go to label. The character only stops facing if a significantly different command is given to them, or the command \"009 - Current character stops moving\" is given to them.",
+    "parameters": [
+      {
+        "type": "BitFlag",
+        "name": "Target flags",
+        "constantname": "ATTACKFLAG"
+      },
+      {
+        "type": "AimEntity",
+        "name": "Target",
+        "constantname": null
+      },
+      {
+        "type": "Label",
+        "name": "Label",
+        "constantname": null
+      }
+    ]
+  },
+  {
+    "id": 25,
+    "name": "damage_chr",
+    "displayname": "Damage current character",
+    "description": "Damages the character with the given weapon stats.",
+    "parameters": [
+      {
+        "type": "Character",
+        "name": "Character",
+        "constantname": null
+      },
+	  {
+        "type": "null",
+        "name": null,
+        "constantname": "8"
+      },
+      {
+        "type": "Constant",
+        "name": "Weapon",
+        "constantname": "WEAPON"
+      },
+	  {
+        "type": "null",
+        "name": null,
+        "constantname": null
+      },
+	  {
+        "type": "null",
+        "name": null,
+        "constantname": null
+      },
+	  {
+        "type": "null",
+        "name": null,
+        "constantname": null
+      }
+    ]
+  },
+  {
+    "id": 26,
+    "name": "chr_damage_chr",
+    "displayname": "Character damages character",
+    "description": "Makes the character damage the other character with its weapon. There is no animation or bullets being fired, and the character don't even need a line of sight to each other.",
+    "parameters": [
+      {
+        "type": "Character",
+        "name": "Attacking character",
+        "constantname": null
+      },
+      {
+        "type": "Character",
+        "name": "Target character",
+        "constantname": null
+      },
+      {
+        "type": "Constant",
+        "name": "Hit body part",
+        "constantname": "HITPART"
+      }
+    ]
+  },
+  {
+    "id": 27,
+    "name": "consider_throwing_grenade",
+    "displayname": "Current character considers throwing grenade",
+    "description": "Makes the character consider throwing a grenade, based on the grenade probability property. If the guard throws the grenade, go to label. The two values are currently unknown.",
+    "parameters": [
+      {
+        "type": "System.Int16",
+        "name": "Value",
+        "constantname": null
+      },
+      {
+        "type": "System.Int16",
+        "name": "Value",
+        "constantname": null
+      },
+      {
+        "type": "Label",
+        "name": "Label",
+        "constantname": null
+      }
+    ]
+  },
+  {
+    "id": 28,
+    "name": "drop_item",
+    "displayname": "Current character drops item",
+    "description": "Makes the character spawn and immediately drop the given item.",
+    "parameters": [
+      {
+        "type": "Model",
+        "name": "Model",
+        "constantname": null
+      },
+      {
+        "type": "Constant",
+        "name": "Weapon",
+        "constantname": "WEAPON"
+      },
+      {
+        "type": "Label",
+        "name": "Label",
+        "constantname": null
+      }
+    ]
+  },
+  {
+    "id": 29,
+    "name": "jog_to_pad",
+    "displayname": "Current character jogs to pad",
+    "description": "Makes the character jog to the given pad.",
+    "parameters": [
+      {
+        "type": "Pad",
+        "name": "Pad",
+        "constantname": null
+      }
+    ]
+  },
+  {
+    "id": 30,
+    "name": "go_to_target_pad",
+    "displayname": "Current character goes to target pad",
+    "description": "Makes the character go to their assigned pad preset.",
+    "parameters": [
+      {
+        "type": "Constant",
+        "name": "Movement flags",
+        "constantname": "GOPOSFLAG"
+      }
+    ]
+  },
+  {
+    "id": 31,
+    "name": "walk_to_pad",
+    "displayname": "Current character walks to pad",
+    "description": "Makes the character walk to the given pad.",
+    "parameters": [
+      {
+        "type": "Pad",
+        "name": "Pad",
+        "constantname": null
+      }
+    ]
+  },
+  {
+    "id": 32,
+    "name": "run_to_pad",
+    "displayname": "Current character runs to pad",
+    "description": "Makes the character jog to the given pad.",
+    "parameters": [
+      {
+        "type": "Pad",
+        "name": "Pad",
+        "constantname": null
+      }
+    ]
+  },
+  {
+    "id": 33,
+    "name": "assign_path",
+    "displayname": "Assign path to current character",
+    "description": "Assign the given path to the character to patrol on. The character only starts patrolling if command 22 is assigned.",
+    "parameters": [
+      {
+        "type": "Path",
+        "name": "Path",
+        "constantname": null
+      }
+    ]
+  },
+  {
+    "id": 34,
+    "name": "start_patrol",
+    "displayname": "Current character starts patrolling",
+    "description": "Makes the character start patrolling on the path that they were assigned to by command 21.",
+    "parameters": []
+  },
+  {
+    "id": 35,
+    "name": "if_patrolling",
+    "displayname": "If current character is patrolling",
+    "description": "Checks if the character is patrolling on a path.",
+    "parameters": [
+      {
+        "type": "Label",
+        "name": "Label",
+        "constantname": null
+      }
+    ]
+  },
+  {
+    "id": 36,
+    "name": "surrender",
+    "displayname": "Current character surrenders",
+    "description": "Makes the character throw up their hands and surrender.",
+    "parameters": []
+  },
+  {
+    "id": 37,
+    "name": "drop_gun_and_fade_out",
+    "displayname": "Current character drops gun and fades out",
+    "description": "Makes the character fade out and disappear, and drop their gun.",
+    "parameters": []
+  },
+  {
+    "id": 38,
+    "name": "remove_chr",
+    "displayname": "Remove character",
+    "description": "Removes the given character completely from the stage.",
+    "parameters": [
+      {
+        "type": "Character",
+        "name": "Character",
+        "constantname": null
+      }
+    ]
+  },
+  {
+    "id": 39,
+    "name": "try_start_alarm",
+    "displayname": "Current character tries to sound alarm",
+    "description": "Makes the character run to the pad and try to sound the alarm.\n\nThis command checks if the object at the pad is healthy. If the object is not an alarm switch, the character runs to the nearest alarm switch instead.",
+    "parameters": [
+      {
+        "type": "Pad",
+        "name": "Pad",
+        "constantname": null
+      },
+      {
+        "type": "Label",
+        "name": "Label",
+        "constantname": null
+      }
+    ]
+  },
+  {
+    "id": 40,
+    "name": "activate_alarm",
+    "displayname": "Activate the alarm",
+    "description": "Makes an alarm sound play for 30 seconds (vanilla G5 Building has 55 seconds).",
+    "parameters": []
+  },
+  {
+    "id": 41,
+    "name": "deactivate_alarm",
+    "displayname": "Deactivate the alarm",
+    "description": "Makes the alarm sound stop playing.",
+    "parameters": []
+  },
+  {
+    "id": 42,
+    "name": "try_run_from_target",
+    "displayname": "Current character tries to run from target",
+    "description": "Makes the character run 1000 units in the opposite direction of their current target, without pathfinding. If the character encounters a wall, they stop.",
+    "parameters": [
+      {
+        "type": "Label",
+        "name": "Label",
+        "constantname": null
+      }
+    ]
+  },
+  {
+    "id": 43,
+    "name": "try_jog_to_target",
+    "displayname": "Current character tries to jog to target",
+    "description": "Makes the character jog to their current target.",
+    "parameters": [
+      {
+        "type": "Label",
+        "name": "Label",
+        "constantname": null
+      }
+    ]
+  },
+  {
+    "id": 44,
+    "name": "try_walk_to_target",
+    "displayname": "Current character tries to walk to target",
+    "description": "Makes the character jog to walk current target.",
+    "parameters": [
+      {
+        "type": "Label",
+        "name": "Label",
+        "constantname": null
+      }
+    ]
+  },
+  {
+    "id": 45,
+    "name": "try_run_to_target",
+    "displayname": "Current character tries to run to target",
+    "description": "Makes the character run to their current target.",
+    "parameters": [
+      {
+        "type": "Label",
+        "name": "Label",
+        "constantname": null
+      }
+    ]
+  },
+  {
+    "id": 46,
+    "name": "try_go_to_cover_prop",
+    "displayname": "Current character tries to go to cover prop",
+    "description": "Does nothing in the base game, due to a bug. Was meant to make the character go to a suitable prop for cover.",
+    "parameters": [
+      {
+        "type": "Label",
+        "name": "Label",
+        "constantname": null
+      }
+    ]
+  },
+  {
+    "id": 47,
+    "name": "try_jog_to_chr",
+    "displayname": "Current character tries to jog to character",
+    "description": "Makes the character try to jog to the given other character.",
+    "parameters": [
+      {
+        "type": "Character",
+        "name": "Character",
+        "constantname": null
+      },
+      {
+        "type": "Label",
+        "name": "Label",
+        "constantname": null
+      }
+    ]
+  },
+  {
+    "id": 48,
+    "name": "try_walk_to_chr",
+    "displayname": "Current character tries to walk to character",
+    "description": "Makes the character try to walk to the given other character.",
+    "parameters": [
+      {
+        "type": "Character",
+        "name": "Character",
+        "constantname": null
+      },
+      {
+        "type": "Label",
+        "name": "Label",
+        "constantname": null
+      }
+    ]
+  },
+  {
+    "id": 49,
+    "name": "try_run_to_chr",
+    "displayname": "Current character tries to run to character",
+    "description": "Makes the character try to run to the given other character.",
+    "parameters": [
+      {
+        "type": "Character",
+        "name": "Character",
+        "constantname": null
+      },
+      {
+        "type": "Label",
+        "name": "Label",
+        "constantname": null
+      }
+    ]
+  },
+  {
+    "id": 50,
+    "name": "if_chr_stopped",
+    "displayname": "If current character has stopped",
+    "description": "Checks if the character has stopped moving or animating.",
+    "parameters": [
+      {
+        "type": "Label",
+        "name": "Label",
+        "constantname": null
+      }
+    ]
+  },
+  {
+    "id": 51,
+    "name": "if_chr_dead",
+    "displayname": "If character is dead",
+    "description": "Checks if the given character is doing their death animation, has finished their death animation, or is invalid.",
+    "parameters": [
+      {
+        "type": "Character",
+        "name": "Character",
+        "constantname": null
+      },
+      {
+        "type": "Label",
+        "name": "Label",
+        "constantname": null
+      }
+    ]
+  },
+  {
+    "id": 52,
+    "name": "if_chr_death_animation_finished",
+    "displayname": "If character's death animation has finished",
+    "description": "Checks if the given character has finished doing their death animation.",
+    "parameters": [
+      {
+        "type": "Character",
+        "name": "Character",
+        "constantname": null
+      },
+      {
+        "type": "Label",
+        "name": "Label",
+        "constantname": null
+      }
+    ]
+  },
+  {
+    "id": 53,
+    "name": "if_can_see_target",
+    "displayname": "If current character can see their target",
+    "description": "Checks if the character can see their assigned target. This considers the characters field of vision, fog, the target's cloak, and the like.",
+    "parameters": [
+      {
+        "type": "Label",
+        "name": "Label",
+        "constantname": null
+      }
+    ]
+  },
+  {
+    "id": 54,
+    "name": "call_rng",
+    "displayname": "Generate random number",
+    "description": "Calls the random number generator to generate a number from 0 to 255.",
+    "parameters": []
+  },
+  {
+    "id": 55,
+    "name": "if_rand_lt",
+    "displayname": "If random number is less than",
+    "description": "Checks if the number generated by command 36 is less than the given value.",
+    "parameters": [
+      {
+        "type": "System.Byte",
+        "name": "Value",
+        "constantname": null
+      },
+      {
+        "type": "Label",
+        "name": "Label",
+        "constantname": null
+      }
+    ]
+  },
+  {
+    "id": 56,
+    "name": "if_rand_gt",
+    "displayname": "If random number is greater than",
+    "description": "Checks if the number generated by command 36 is greater than the given value.",
+    "parameters": [
+      {
+        "type": "System.Byte",
+        "name": "Value",
+        "constantname": null
+      },
+      {
+        "type": "Label",
+        "name": "Label",
+        "constantname": null
+      }
+    ]
+  },
+  {
+    "id": 57,
+    "name": "if_can_hear_alarm",
+    "displayname": "If the alarm is audible",
+    "description": "Checks if the alarm is sounding. This is the same as command 3A, but was probably meant to have extra checks.",
+    "parameters": [
+      {
+        "type": "Label",
+        "name": null,
+        "constantname": null
+      }
+    ]
+  },
+  {
+    "id": 58,
+    "name": "if_alarm_active",
+    "displayname": "If the alarm is active.",
+    "description": "Checks if the alarm is currently active.",
+    "parameters": [
+      {
+        "type": "Label",
+        "name": null,
+        "constantname": null
+      }
+    ]
+  },
+  {
+    "id": 59,
+    "name": "if_gas_active",
+    "displayname": "If gas has been released",
+    "description": "Checks if gas has been released from a gas bottle prop. This is different from the gas released in Escape. Gas bottles and this command are a leftover from GoldenEye.",
+    "parameters": [
+      {
+        "type": "Label",
+        "name": null,
+        "constantname": null
+      }
+    ]
+  },
+  {
+    "id": 60,
+    "name": "if_hears_target",
+    "displayname": "If the current character has heard their target",
+    "description": "Checks if the character has heard their target, e.g. due to gunfire.",
+    "parameters": [
+      {
+        "type": "Label",
+        "name": null,
+        "constantname": null
+      }
+    ]
+  },
+  {
+    "id": 61,
+    "name": "if_saw_injury",
+    "displayname": "If the current character sees someone injured",
+    "description": "Checks if the character sees another character being injured.\n\nCheck type: If 0, check all teams and reset \"injury seen\" flag; if 1, check the same team and do not reset \"injury seen\" flag.",
+    "parameters": [
+      {
+        "type": "System.Byte",
+        "name": "Check type",
+        "constantname": null
+      },
+      {
+        "type": "Label",
+        "name": null,
+        "constantname": null
+      }
+    ]
+  },
+  {
+    "id": 62,
+    "name": "if_saw_death",
+    "displayname": "If the current character sees a death",
+    "description": "Checks if the character sees another character dying.\n\nCheck type: If 0, check all teams and do not reset \"death seen\" flag; if 1, check the same team and reset \"death seen\" flag; if 2 and greater, check all teams and reset \"death seen\" flag.",
+    "parameters": [
+      {
+        "type": "System.Byte",
+        "name": null,
+        "constantname": null
+      },
+      {
+        "type": "Label",
+        "name": null,
+        "constantname": null
+      }
+    ]
+  },
+  {
+    "id": 63,
+    "name": "if_los_to_target",
+    "displayname": "If current character has line of sight to target",
+    "description": "Check if the character has a line of sight to their assigned target. The direction the current character faces is irrelevant, but cloak is considered.",
+    "parameters": [
+      {
+        "type": "Label",
+        "name": null,
+        "constantname": null
+      }
+    ]
+  },
+  {
+    "id": 64,
+    "name": "if_target_nearly_in_sight",
+    "displayname": "If current character has line of sight to target with buffer",
+    "description": "Check if the character has a line of sight to their assigned target, or would have one if the target moved the given distance.",
+    "parameters": [
+      {
+        "type": "System.Int32",
+        "name": "Distance",
+        "constantname": null
+      },
+      {
+        "type": "Label",
+        "name": null,
+        "constantname": null
+      }
+    ]
+  },
+  {
+    "id": 65,
+    "name": "if_nearly_in_targets_sight",
+    "displayname": "If target has line of sight to current character with buffer",
+    "description": "Checks if the assigned target has a line of sight to the current character, or would have one if the current character moved the given distance.",
+    "parameters": [
+      {
+        "type": "System.Int32",
+        "name": "Distance",
+        "constantname": null
+      },
+      {
+        "type": "Label",
+        "name": null,
+        "constantname": null
+      }
+    ]
+  },
+  {
+    "id": 66,
+    "name": "set_pad_preset_to_pad_on_route_to_target",
+    "displayname": null,
+    "description": null,
+    "parameters": [
+      {
+        "type": "Label",
+        "name": null,
+        "constantname": null
+      }
+    ]
+  },
+  {
+    "id": 67,
+    "name": "if_saw_target_recently",
+    "displayname": null,
+    "description": null,
+    "parameters": [
+      {
+        "type": "Label",
+        "name": null,
+        "constantname": null
+      }
+    ]
+  },
+  {
+    "id": 68,
+    "name": "if_heard_target_recently",
+    "displayname": null,
+    "description": null,
+    "parameters": [
+      {
+        "type": "Label",
+        "name": null,
+        "constantname": null
+      }
+    ]
+  },
+  {
+    "id": 69,
+    "name": "if_los_to_chr",
+    "displayname": null,
+    "description": null,
+    "parameters": [
+      {
+        "type": "Character",
+        "name": null,
+        "constantname": null
+      },
+      {
+        "type": "Label",
+        "name": null,
+        "constantname": null
+      }
+    ]
+  },
+  {
+    "id": 70,
+    "name": "if_never_been_onscreen",
+    "displayname": null,
+    "description": null,
+    "parameters": [
+      {
+        "type": "Label",
+        "name": null,
+        "constantname": null
+      }
+    ]
+  },
+  {
+    "id": 71,
+    "name": "if_onscreen",
+    "displayname": null,
+    "description": null,
+    "parameters": [
+      {
+        "type": "Label",
+        "name": null,
+        "constantname": null
+      }
+    ]
+  },
+  {
+    "id": 72,
+    "name": "if_chr_in_onscreen_room",
+    "displayname": null,
+    "description": null,
+    "parameters": [
+      {
+        "type": "Character",
+        "name": null,
+        "constantname": null
+      },
+      {
+        "type": "Label",
+        "name": null,
+        "constantname": null
+      }
+    ]
+  },
+  {
+    "id": 73,
+    "name": "if_room_onscreen",
+    "displayname": null,
+    "description": null,
+    "parameters": [
+      {
+        "type": "Room",
+        "name": null,
+        "constantname": null
+      },
+      {
+        "type": "Label",
+        "name": null,
+        "constantname": null
+      }
+    ]
+  },
+  {
+    "id": 74,
+    "name": "if_target_aiming_at_me",
+    "displayname": null,
+    "description": null,
+    "parameters": [
+      {
+        "type": "Label",
+        "name": null,
+        "constantname": null
+      }
+    ]
+  },
+  {
+    "id": 75,
+    "name": "if_near_miss",
+    "displayname": null,
+    "description": null,
+    "parameters": [
+      {
+        "type": "Label",
+        "name": null,
+        "constantname": null
+      }
+    ]
+  },
+  {
+    "id": 76,
+    "name": "if_sees_suspicious_item",
+    "displayname": null,
+    "description": null,
+    "parameters": [
+      {
+        "type": "Label",
+        "name": null,
+        "constantname": null
+      }
+    ]
+  },
+  {
+    "id": 77,
+    "name": "if_target_in_fov_left",
+    "displayname": null,
+    "description": null,
+    "parameters": [
+      {
+        "type": "System.Byte",
+        "name": null,
+        "constantname": null
+      },
+      {
+        "type": "Label",
+        "name": null,
+        "constantname": null
+      }
+    ]
+  },
+  {
+    "id": 78,
+    "name": "if_fov_check_with_target",
+    "displayname": null,
+    "description": null,
+    "parameters": [
+      {
+        "type": "System.Byte",
+        "name": null,
+        "constantname": null
+      },
+      {
+        "type": "System.Boolean",
+        "name": null,
+        "constantname": null
+      },
+      {
+        "type": "System.Boolean",
+        "name": null,
+        "constantname": null
+      },
+      {
+        "type": "Label",
+        "name": null,
+        "constantname": null
+      }
+    ]
+  },
+  {
+    "id": 79,
+    "name": "if_target_out_of_fov_left",
+    "displayname": null,
+    "description": null,
+    "parameters": [
+      {
+        "type": "System.Byte",
+        "name": null,
+        "constantname": null
+      },
+      {
+        "type": "Label",
+        "name": null,
+        "constantname": null
+      }
+    ]
+  },
+  {
+    "id": 80,
+    "name": "if_target_in_fov",
+    "displayname": null,
+    "description": null,
+    "parameters": [
+      {
+        "type": "System.Byte",
+        "name": null,
+        "constantname": null
+      },
+      {
+        "type": "Label",
+        "name": null,
+        "constantname": null
+      }
+    ]
+  },
+  {
+    "id": 81,
+    "name": "if_target_out_of_fov",
+    "displayname": null,
+    "description": null,
+    "parameters": [
+      {
+        "type": "System.Byte",
+        "name": null,
+        "constantname": null
+      },
+      {
+        "type": "Label",
+        "name": null,
+        "constantname": null
+      }
+    ]
+  },
+  {
+    "id": 82,
+    "name": "if_distance_to_target_lt",
+    "displayname": null,
+    "description": null,
+    "parameters": [
+      {
+        "type": "System.Int16",
+        "name": null,
+        "constantname": null
+      },
+      {
+        "type": "Label",
+        "name": null,
+        "constantname": null
+      }
+    ]
+  },
+  {
+    "id": 83,
+    "name": "if_distance_to_target_gt",
+    "displayname": null,
+    "description": null,
+    "parameters": [
+      {
+        "type": "System.Int16",
+        "name": null,
+        "constantname": null
+      },
+      {
+        "type": "Label",
+        "name": null,
+        "constantname": null
+      }
+    ]
+  },
+  {
+    "id": 84,
+    "name": "if_chr_distance_to_pad_lt",
+    "displayname": null,
+    "description": null,
+    "parameters": [
+      {
+        "type": "Character",
+        "name": null,
+        "constantname": null
+      },
+      {
+        "type": "System.Int16",
+        "name": null,
+        "constantname": null
+      },
+      {
+        "type": "Pad",
+        "name": null,
+        "constantname": null
+      },
+      {
+        "type": "Label",
+        "name": null,
+        "constantname": null
+      }
+    ]
+  },
+  {
+    "id": 85,
+    "name": "if_chr_distance_to_pad_gt",
+    "displayname": null,
+    "description": null,
+    "parameters": [
+      {
+        "type": "Character",
+        "name": null,
+        "constantname": null
+      },
+      {
+        "type": "System.Int16",
+        "name": null,
+        "constantname": null
+      },
+      {
+        "type": "Pad",
+        "name": null,
+        "constantname": null
+      },
+      {
+        "type": "Label",
+        "name": null,
+        "constantname": null
+      }
+    ]
+  },
+  {
+    "id": 86,
+    "name": "if_distance_to_chr_lt",
+    "displayname": null,
+    "description": null,
+    "parameters": [
+      {
+        "type": "System.Int16",
+        "name": null,
+        "constantname": null
+      },
+      {
+        "type": "Character",
+        "name": null,
+        "constantname": null
+      },
+      {
+        "type": "Label",
+        "name": null,
+        "constantname": null
+      }
+    ]
+  },
+  {
+    "id": 87,
+    "name": "if_distance_to_chr_gt",
+    "displayname": null,
+    "description": null,
+    "parameters": [
+      {
+        "type": "System.Int16",
+        "name": null,
+        "constantname": null
+      },
+      {
+        "type": "Character",
+        "name": null,
+        "constantname": null
+      },
+      {
+        "type": "Label",
+        "name": null,
+        "constantname": null
+      }
+    ]
+  },
+  {
+    "id": 88,
+    "name": "cmd0058",
+    "displayname": null,
+    "description": null,
+    "parameters": [
+      {
+        "type": "System.Int16",
+        "name": null,
+        "constantname": null
+      },
+      {
+        "type": "Label",
+        "name": null,
+        "constantname": null
+      }
+    ]
+  },
+  {
+    "id": 89,
+    "name": "if_distance_from_target_to_pad_lt",
+    "displayname": null,
+    "description": null,
+    "parameters": [
+      {
+        "type": "System.Int16",
+        "name": null,
+        "constantname": null
+      },
+      {
+        "type": "Pad",
+        "name": null,
+        "constantname": null
+      },
+      {
+        "type": "Label",
+        "name": null,
+        "constantname": null
+      }
+    ]
+  },
+  {
+    "id": 90,
+    "name": "if_distance_from_target_to_pad_gt",
+    "displayname": null,
+    "description": null,
+    "parameters": [
+      {
+        "type": "System.Int16",
+        "name": null,
+        "constantname": null
+      },
+      {
+        "type": "Pad",
+        "name": null,
+        "constantname": null
+      },
+      {
+        "type": "Label",
+        "name": null,
+        "constantname": null
+      }
+    ]
+  },
+  {
+    "id": 91,
+    "name": "if_chr_in_room",
+    "displayname": null,
+    "description": null,
+    "parameters": [
+      {
+        "type": "Character",
+        "name": null,
+        "constantname": null
+      },
+      {
+        "type": "System.Byte",
+        "name": null,
+        "constantname": null
+      },
+      {
+        "type": "Room",
+        "name": null,
+        "constantname": null
+      },
+      {
+        "type": "Label",
+        "name": null,
+        "constantname": null
+      }
+    ]
+  },
+  {
+    "id": 92,
+    "name": "if_target_in_room",
+    "displayname": null,
+    "description": null,
+    "parameters": [
+      {
+        "type": "Room",
+        "name": null,
+        "constantname": null
+      },
+      {
+        "type": "Label",
+        "name": null,
+        "constantname": null
+      }
+    ]
+  },
+  {
+    "id": 93,
+    "name": "if_chr_has_object",
+    "displayname": null,
+    "description": null,
+    "parameters": [
+      {
+        "type": "Character",
+        "name": null,
+        "constantname": null
+      },
+      {
+        "type": "Prop",
+        "name": null,
+        "constantname": null
+      },
+      {
+        "type": "Label",
+        "name": null,
+        "constantname": null
+      }
+    ]
+  },
+  {
+    "id": 94,
+    "name": "if_weapon_thrown",
+    "displayname": null,
+    "description": null,
+    "parameters": [
+      {
+        "type": "Constant",
+        "name": null,
+        "constantname": "WEAPON"
+      },
+      {
+        "type": "Label",
+        "name": null,
+        "constantname": null
+      }
+    ]
+  },
+  {
+    "id": 95,
+    "name": "if_weapon_thrown_on_object",
+    "displayname": null,
+    "description": null,
+    "parameters": [
+      {
+        "type": "Constant",
+        "name": null,
+        "constantname": "WEAPON"
+      },
+      {
+        "type": "Prop",
+        "name": null,
+        "constantname": null
+      },
+      {
+        "type": "Label",
+        "name": null,
+        "constantname": null
+      }
+    ]
+  },
+  {
+    "id": 96,
+    "name": "if_chr_weapon_equipped",
+    "displayname": null,
+    "description": null,
+    "parameters": [
+      {
+        "type": "Character",
+        "name": null,
+        "constantname": null
+      },
+      {
+        "type": "Constant",
+        "name": null,
+        "constantname": "WEAPON"
+      },
+      {
+        "type": "Label",
+        "name": null,
+        "constantname": null
+      }
+    ]
+  },
+  {
+    "id": 97,
+    "name": "if_gun_unclaimed",
+    "displayname": null,
+    "description": null,
+    "parameters": [
+      {
+        "type": "Prop",
+        "name": null,
+        "constantname": null
+      },
+      {
+        "type": "System.Byte",
+        "name": null,
+        "constantname": null
+      },
+      {
+        "type": "Label",
+        "name": null,
+        "constantname": null
+      }
+    ]
+  },
+  {
+    "id": 98,
+    "name": "if_object_in_good_condition",
+    "displayname": null,
+    "description": null,
+    "parameters": [
+      {
+        "type": "Prop",
+        "name": null,
+        "constantname": null
+      },
+      {
+        "type": "Label",
+        "name": null,
+        "constantname": null
+      }
+    ]
+  },
+  {
+    "id": 99,
+    "name": "if_chr_activated_object",
+    "displayname": null,
+    "description": null,
+    "parameters": [
+      {
+        "type": "Character",
+        "name": null,
+        "constantname": null
+      },
+      {
+        "type": "Prop",
+        "name": null,
+        "constantname": null
+      },
+      {
+        "type": "Label",
+        "name": null,
+        "constantname": null
+      }
+    ]
+  },
+  {
+    "id": 101,
+    "name": "obj_interact",
+    "displayname": null,
+    "description": null,
+    "parameters": [
+      {
+        "type": "Prop",
+        "name": null,
+        "constantname": null
+      }
+    ]
+  },
+  {
+    "id": 102,
+    "name": "destroy_object",
+    "displayname": null,
+    "description": null,
+    "parameters": [
+      {
+        "type": "Prop",
+        "name": null,
+        "constantname": null
+      }
+    ]
+  },
+  {
+    "id": 103,
+    "name": "cmd0067",
+    "displayname": null,
+    "description": null,
+    "parameters": [
+      {
+        "type": "Prop",
+        "name": null,
+        "constantname": null
+      }
+    ]
+  },
+  {
+    "id": 104,
+    "name": "drop_concealed_items",
+    "displayname": null,
+    "description": null,
+    "parameters": [
+      {
+        "type": "Character",
+        "name": null,
+        "constantname": null
+      }
+    ]
+  },
+  {
+    "id": 105,
+    "name": "chr_drop_weapon",
+    "displayname": null,
+    "description": null,
+    "parameters": [
+      {
+        "type": "Character",
+        "name": null,
+        "constantname": null
+      }
+    ]
+  },
+  {
+    "id": 106,
+    "name": "give_object_to_chr",
+    "displayname": null,
+    "description": null,
+    "parameters": [
+      {
+        "type": "Prop",
+        "name": null,
+        "constantname": null
+      },
+      {
+        "type": "Character",
+        "name": null,
+        "constantname": null
+      }
+    ]
+  },
+  {
+    "id": 107,
+    "name": "move_object_to_pad",
+    "displayname": null,
+    "description": null,
+    "parameters": [
+      {
+        "type": "Prop",
+        "name": null,
+        "constantname": null
+      },
+      {
+        "type": "Pad",
+        "name": null,
+        "constantname": null
+      }
+    ]
+  },
+  {
+    "id": 108,
+    "name": "open_door",
+    "displayname": null,
+    "description": null,
+    "parameters": [
+      {
+        "type": "Prop",
+        "name": null,
+        "constantname": null
+      }
+    ]
+  },
+  {
+    "id": 109,
+    "name": "close_door",
+    "displayname": null,
+    "description": null,
+    "parameters": [
+      {
+        "type": "Prop",
+        "name": null,
+        "constantname": null
+      }
+    ]
+  },
+  {
+    "id": 110,
+    "name": "if_door_state",
+    "displayname": null,
+    "description": null,
+    "parameters": [
+      {
+        "type": "Prop",
+        "name": null,
+        "constantname": null
+      },
+      {
+        "type": "BitFlag",
+        "name": null,
+        "constantname": "DOORSTATE"
+      },
+      {
+        "type": "Label",
+        "name": null,
+        "constantname": null
+      }
+    ]
+  },
+  {
+    "id": 111,
+    "name": "if_object_is_door",
+    "displayname": null,
+    "description": null,
+    "parameters": [
+      {
+        "type": "Prop",
+        "name": null,
+        "constantname": null
+      },
+      {
+        "type": "Label",
+        "name": null,
+        "constantname": null
+      }
+    ]
+  },
+  {
+    "id": 112,
+    "name": "lock_door",
+    "displayname": null,
+    "description": null,
+    "parameters": [
+      {
+        "type": "Prop",
+        "name": null,
+        "constantname": null
+      },
+      {
+        "type": "BitFlag",
+        "name": null,
+        "constantname": "LOCKFLAG"
+      }
+    ]
+  },
+  {
+    "id": 113,
+    "name": "unlock_door",
+    "displayname": null,
+    "description": null,
+    "parameters": [
+      {
+        "type": "Prop",
+        "name": null,
+        "constantname": null
+      },
+      {
+        "type": "BitFlag",
+        "name": null,
+        "constantname": "LOCKFLAG"
+      }
+    ]
+  },
+  {
+    "id": 114,
+    "name": "if_door_locked",
+    "displayname": null,
+    "description": null,
+    "parameters": [
+      {
+        "type": "Prop",
+        "name": null,
+        "constantname": null
+      },
+      {
+        "type": "BitFlag",
+        "name": null,
+        "constantname": "LOCKFLAG"
+      },
+      {
+        "type": "Label",
+        "name": null,
+        "constantname": null
+      }
+    ]
+  },
+  {
+    "id": 115,
+    "name": "if_objective_complete",
+    "displayname": null,
+    "description": null,
+    "parameters": [
+      {
+        "type": "Objective",
+        "name": null,
+        "constantname": null
+      },
+      {
+        "type": "Label",
+        "name": null,
+        "constantname": null
+      }
+    ]
+  },
+  {
+    "id": 116,
+    "name": "if_objective_failed",
+    "displayname": null,
+    "description": null,
+    "parameters": [
+      {
+        "type": "Objective",
+        "name": null,
+        "constantname": null
+      },
+      {
+        "type": "Label",
+        "name": null,
+        "constantname": null
+      }
+    ]
+  },
+  {
+    "id": 117,
+    "name": "try_set_target_pad_to_something",
+    "displayname": null,
+    "description": null,
+    "parameters": [
+      {
+        "type": "System.Byte",
+        "name": null,
+        "constantname": null
+      },
+      {
+        "type": "Label",
+        "name": null,
+        "constantname": null
+      }
+    ]
+  },
+  {
+    "id": 118,
+    "name": "try_set_padpreset_to_target_quadrant",
+    "displayname": null,
+    "description": null,
+    "parameters": [
+      {
+        "type": "Constant",
+        "name": null,
+        "constantname": "QUADRANT"
+      },
+      {
+        "type": "Label",
+        "name": null,
+        "constantname": null
+      }
+    ]
+  },
+  {
+    "id": 119,
+    "name": "if_difficulty_lt",
+    "displayname": null,
+    "description": null,
+    "parameters": [
+      {
+        "type": "Constant",
+        "name": null,
+        "constantname": "DIFF"
+      },
+      {
+        "type": "Label",
+        "name": null,
+        "constantname": null
+      }
+    ]
+  },
+  {
+    "id": 120,
+    "name": "if_difficulty_gt",
+    "displayname": null,
+    "description": null,
+    "parameters": [
+      {
+        "type": "Constant",
+        "name": null,
+        "constantname": "DIFF"
+      },
+      {
+        "type": "Label",
+        "name": null,
+        "constantname": null
+      }
+    ]
+  },
+  {
+    "id": 121,
+    "name": "if_stage_timer_lt",
+    "displayname": null,
+    "description": null,
+    "parameters": [
+      {
+        "type": "System.Int16",
+        "name": null,
+        "constantname": null
+      },
+      {
+        "type": "Label",
+        "name": null,
+        "constantname": null
+      }
+    ]
+  },
+  {
+    "id": 122,
+    "name": "if_stage_timer_gt",
+    "displayname": null,
+    "description": null,
+    "parameters": [
+      {
+        "type": "System.Int16",
+        "name": null,
+        "constantname": null
+      },
+      {
+        "type": "Label",
+        "name": null,
+        "constantname": null
+      }
+    ]
+  },
+  {
+    "id": 123,
+    "name": "if_stage_lt",
+    "displayname": null,
+    "description": null,
+    "parameters": [
+      {
+        "type": "Stage",
+        "name": null,
+        "constantname": null
+      },
+      {
+        "type": "Label",
+        "name": null,
+        "constantname": null
+      }
+    ]
+  },
+  {
+    "id": 124,
+    "name": "if_stage_gt",
+    "displayname": null,
+    "description": null,
+    "parameters": [
+      {
+        "type": "Stage",
+        "name": null,
+        "constantname": null
+      },
+      {
+        "type": "Label",
+        "name": null,
+        "constantname": null
+      }
+    ]
+  },
+  {
+    "id": 125,
+    "name": "if_num_times_shot_lt",
+    "displayname": null,
+    "description": null,
+    "parameters": [
+      {
+        "type": "System.Byte",
+        "name": null,
+        "constantname": null
+      },
+      {
+        "type": "Label",
+        "name": null,
+        "constantname": null
+      }
+    ]
+  },
+  {
+    "id": 126,
+    "name": "if_num_times_shot_gt",
+    "displayname": null,
+    "description": null,
+    "parameters": [
+      {
+        "type": "System.Byte",
+        "name": null,
+        "constantname": null
+      },
+      {
+        "type": "Label",
+        "name": null,
+        "constantname": null
+      }
+    ]
+  },
+  {
+    "id": 127,
+    "name": "if_num_close_arghs_lt",
+    "displayname": null,
+    "description": null,
+    "parameters": [
+      {
+        "type": "System.Byte",
+        "name": null,
+        "constantname": null
+      },
+      {
+        "type": "Label",
+        "name": null,
+        "constantname": null
+      }
+    ]
+  },
+  {
+    "id": 128,
+    "name": "if_num_close_arghs_gt",
+    "displayname": null,
+    "description": null,
+    "parameters": [
+      {
+        "type": "System.Byte",
+        "name": null,
+        "constantname": null
+      },
+      {
+        "type": "Label",
+        "name": null,
+        "constantname": null
+      }
+    ]
+  },
+  {
+    "id": 129,
+    "name": "if_chr_health_gt",
+    "displayname": null,
+    "description": null,
+    "parameters": [
+      {
+        "type": "Character",
+        "name": null,
+        "constantname": null
+      },
+      {
+        "type": "System.Byte",
+        "name": null,
+        "constantname": null
+      },
+      {
+        "type": "Label",
+        "name": null,
+        "constantname": null
+      }
+    ]
+  },
+  {
+    "id": 130,
+    "name": "if_chr_health_lt",
+    "displayname": null,
+    "description": null,
+    "parameters": [
+      {
+        "type": "Character",
+        "name": null,
+        "constantname": null
+      },
+      {
+        "type": "System.Byte",
+        "name": null,
+        "constantname": null
+      },
+      {
+        "type": "Label",
+        "name": null,
+        "constantname": null
+      }
+    ]
+  },
+  {
+    "id": 131,
+    "name": "if_just_injured",
+    "displayname": null,
+    "description": null,
+    "parameters": [
+      {
+        "type": "Character",
+        "name": null,
+        "constantname": null
+      },
+      {
+        "type": "Label",
+        "name": null,
+        "constantname": null
+      }
+    ]
+  },
+  {
+    "id": 132,
+    "name": "set_morale",
+    "displayname": null,
+    "description": null,
+    "parameters": [
+      {
+        "type": "System.Byte",
+        "name": null,
+        "constantname": null
+      }
+    ]
+  },
+  {
+    "id": 133,
+    "name": "add_morale",
+    "displayname": null,
+    "description": null,
+    "parameters": [
+      {
+        "type": "System.Byte",
+        "name": null,
+        "constantname": null
+      }
+    ]
+  },
+  {
+    "id": 134,
+    "name": "chr_add_morale",
+    "displayname": null,
+    "description": null,
+    "parameters": [
+      {
+        "type": "Character",
+        "name": null,
+        "constantname": null
+      },
+      {
+        "type": "System.Byte",
+        "name": null,
+        "constantname": null
+      }
+    ]
+  },
+  {
+    "id": 135,
+    "name": "subtract_morale",
+    "displayname": null,
+    "description": null,
+    "parameters": [
+      {
+        "type": "System.Byte",
+        "name": null,
+        "constantname": null
+      }
+    ]
+  },
+  {
+    "id": 136,
+    "name": "if_morale_lt",
+    "displayname": null,
+    "description": null,
+    "parameters": [
+      {
+        "type": "System.Byte",
+        "name": null,
+        "constantname": null
+      },
+      {
+        "type": "Label",
+        "name": null,
+        "constantname": null
+      }
+    ]
+  },
+  {
+    "id": 137,
+    "name": "if_morale_lt_random",
+    "displayname": null,
+    "description": null,
+    "parameters": [
+      {
+        "type": "Label",
+        "name": null,
+        "constantname": null
+      }
+    ]
+  },
+  {
+    "id": 138,
+    "name": "set_alertness",
+    "displayname": null,
+    "description": null,
+    "parameters": [
+      {
+        "type": "System.Byte",
+        "name": null,
+        "constantname": null
+      }
+    ]
+  },
+  {
+    "id": 139,
+    "name": "increase_self_alertness",
+    "displayname": null,
+    "description": null,
+    "parameters": [
+      {
+        "type": "System.Byte",
+        "name": null,
+        "constantname": null
+      }
+    ]
+  },
+  {
+    "id": 140,
+    "name": "increase_chr_alertness",
+    "displayname": null,
+    "description": null,
+    "parameters": [
+      {
+        "type": "System.Byte",
+        "name": null,
+        "constantname": null
+      },
+      {
+        "type": "Character",
+        "name": null,
+        "constantname": null
+      }
+    ]
+  },
+  {
+    "id": 141,
+    "name": "subtract_alertness",
+    "displayname": null,
+    "description": null,
+    "parameters": [
+      {
+        "type": "System.Byte",
+        "name": null,
+        "constantname": null
+      },
+      {
+        "type": "Character",
+        "name": null,
+        "constantname": null
+      }
+    ]
+  },
+  {
+    "id": 142,
+    "name": "if_alertness",
+    "displayname": null,
+    "description": null,
+    "parameters": [
+      {
+        "type": "System.Byte",
+        "name": null,
+        "constantname": null
+      },
+      {
+        "type": "Constant",
+        "name": null,
+        "constantname": "OPERATOR"
+      },
+      {
+        "type": "Label",
+        "name": null,
+        "constantname": null
+      }
+    ]
+  },
+  {
+    "id": 143,
+    "name": "if_chr_alertness_lt",
+    "displayname": null,
+    "description": null,
+    "parameters": [
+      {
+        "type": "System.Byte",
+        "name": null,
+        "constantname": null
+      },
+      {
+        "type": "Character",
+        "name": null,
+        "constantname": null
+      },
+      {
+        "type": "Label",
+        "name": null,
+        "constantname": null
+      }
+    ]
+  },
+  {
+    "id": 144,
+    "name": "if_alertness_lt_random",
+    "displayname": null,
+    "description": null,
+    "parameters": [
+      {
+        "type": "Label",
+        "name": null,
+        "constantname": null
+      }
+    ]
+  },
+  {
+    "id": 145,
+    "name": "noop0091",
+    "displayname": null,
+    "description": null,
+    "parameters": []
+  },
+  {
+    "id": 146,
+    "name": "set_hear_distance",
+    "displayname": null,
+    "description": null,
+    "parameters": [
+      {
+        "type": "System.Int16",
+        "name": null,
+        "constantname": null
+      }
+    ]
+  },
+  {
+    "id": 147,
+    "name": "set_view_distance",
+    "displayname": null,
+    "description": null,
+    "parameters": [
+      {
+        "type": "System.Byte",
+        "name": null,
+        "constantname": null
+      }
+    ]
+  },
+  {
+    "id": 148,
+    "name": "set_grenade_probability_out_of_255",
+    "displayname": null,
+    "description": null,
+    "parameters": [
+      {
+        "type": "System.Byte",
+        "name": null,
+        "constantname": null
+      }
+    ]
+  },
+  {
+    "id": 149,
+    "name": "set_chr_id",
+    "displayname": null,
+    "description": null,
+    "parameters": [
+      {
+        "type": "System.Byte",
+        "name": null,
+        "constantname": null
+      }
+    ]
+  },
+  {
+    "id": 150,
+    "name": "set_chr_maxdamage",
+    "displayname": null,
+    "description": null,
+    "parameters": [
+      {
+        "type": "Character",
+        "name": null,
+        "constantname": null
+      },
+      {
+        "type": "System.Int16",
+        "name": null,
+        "constantname": null
+      }
+    ]
+  },
+  {
+    "id": 151,
+    "name": "add_health_or_armor",
+    "displayname": null,
+    "description": null,
+    "parameters": [
+      {
+        "type": "System.Int16",
+        "name": null,
+        "constantname": null
+      }
+    ]
+  },
+  {
+    "id": 152,
+    "name": "set_reaction_speed",
+    "displayname": null,
+    "description": null,
+    "parameters": [
+      {
+        "type": "System.Byte",
+        "name": null,
+        "constantname": null
+      }
+    ]
+  },
+  {
+    "id": 153,
+    "name": "set_recovery_speed",
+    "displayname": null,
+    "description": null,
+    "parameters": [
+      {
+        "type": "System.Byte",
+        "name": null,
+        "constantname": null
+      }
+    ]
+  },
+  {
+    "id": 154,
+    "name": "set_accuracy",
+    "displayname": null,
+    "description": null,
+    "parameters": [
+      {
+        "type": "System.Byte",
+        "name": null,
+        "constantname": null
+      }
+    ]
+  },
+  {
+    "id": 155,
+    "name": "set_self_flag_bankx",
+    "displayname": null,
+    "description": null,
+    "parameters": [
+      {
+        "type": "BitFlag",
+        "name": null,
+        "constantname": "VARIABLE"
+      },
+      {
+        "type": "Constant",
+        "name": null,
+        "constantname": "BANK"
+      }
+    ]
+  },
+  {
+    "id": 156,
+    "name": "unset_self_flag_bankx",
+    "displayname": null,
+    "description": null,
+    "parameters": [
+      {
+        "type": "BitFlag",
+        "name": null,
+        "constantname": "VARIABLE"
+      },
+      {
+        "type": "Constant",
+        "name": null,
+        "constantname": "BANK"
+      }
+    ]
+  },
+  {
+    "id": 157,
+    "name": "if_self_flag_bankx_eq",
+    "displayname": null,
+    "description": null,
+    "parameters": [
+      {
+        "type": "BitFlag",
+        "name": null,
+        "constantname": "VARIABLE"
+      },
+      {
+        "type": "System.Boolean",
+        "name": null,
+        "constantname": null
+      },
+      {
+        "type": "Constant",
+        "name": null,
+        "constantname": "BANK"
+      },
+      {
+        "type": "Label",
+        "name": null,
+        "constantname": null
+      }
+    ]
+  },
+  {
+    "id": 158,
+    "name": "set_chr_flag_bankx",
+    "displayname": null,
+    "description": null,
+    "parameters": [
+      {
+        "type": "Character",
+        "name": null,
+        "constantname": null
+      },
+      {
+        "type": "BitFlag",
+        "name": null,
+        "constantname": "VARIABLE"
+      },
+      {
+        "type": "Constant",
+        "name": null,
+        "constantname": "BANK"
+      }
+    ]
+  },
+  {
+    "id": 159,
+    "name": "unset_chr_flag_bankx",
+    "displayname": null,
+    "description": null,
+    "parameters": [
+      {
+        "type": "Character",
+        "name": null,
+        "constantname": null
+      },
+      {
+        "type": "BitFlag",
+        "name": null,
+        "constantname": "VARIABLE"
+      },
+      {
+        "type": "Constant",
+        "name": null,
+        "constantname": "BANK"
+      }
+    ]
+  },
+  {
+    "id": 160,
+    "name": "if_chr_has_flag_bankx",
+    "displayname": null,
+    "description": null,
+    "parameters": [
+      {
+        "type": "Character",
+        "name": null,
+        "constantname": null
+      },
+      {
+        "type": "BitFlag",
+        "name": null,
+        "constantname": "VARIABLE"
+      },
+      {
+        "type": "Constant",
+        "name": null,
+        "constantname": "BANK"
+      },
+      {
+        "type": "Label",
+        "name": null,
+        "constantname": null
+      }
+    ]
+  },
+  {
+    "id": 161,
+    "name": "set_stage_flag",
+    "displayname": null,
+    "description": null,
+    "parameters": [
+      {
+        "type": "BitFlag",
+        "name": null,
+        "constantname": "STAGEFLAG"
+      }
+    ]
+  },
+  {
+    "id": 162,
+    "name": "unset_stage_flag",
+    "displayname": null,
+    "description": null,
+    "parameters": [
+      {
+        "type": "BitFlag",
+        "name": null,
+        "constantname": "STAGEFLAG"
+      }
+    ]
+  },
+  {
+    "id": 163,
+    "name": "if_stage_flag_eq",
+    "displayname": null,
+    "description": null,
+    "parameters": [
+      {
+        "type": "BitFlag",
+        "name": null,
+        "constantname": "STAGEFLAG"
+      },
+      {
+        "type": "System.Boolean",
+        "name": null,
+        "constantname": null
+      },
+      {
+        "type": "Label",
+        "name": null,
+        "constantname": null
+      }
+    ]
+  },
+  {
+    "id": 164,
+    "name": "set_self_chrflag",
+    "displayname": null,
+    "description": null,
+    "parameters": [
+      {
+        "type": "BitFlag",
+        "name": null,
+        "constantname": "CHRCFLAG"
+      }
+    ]
+  },
+  {
+    "id": 165,
+    "name": "unset_self_chrflag",
+    "displayname": null,
+    "description": null,
+    "parameters": [
+      {
+        "type": "BitFlag",
+        "name": null,
+        "constantname": "CHRCFLAG"
+      }
+    ]
+  },
+  {
+    "id": 166,
+    "name": "if_self_has_chrflag",
+    "displayname": null,
+    "description": null,
+    "parameters": [
+      {
+        "type": "BitFlag",
+        "name": null,
+        "constantname": "CHRCFLAG"
+      },
+      {
+        "type": "Label",
+        "name": null,
+        "constantname": null
+      }
+    ]
+  },
+  {
+    "id": 167,
+    "name": "set_chr_chrflag",
+    "displayname": null,
+    "description": null,
+    "parameters": [
+      {
+        "type": "Character",
+        "name": null,
+        "constantname": null
+      },
+      {
+        "type": "BitFlag",
+        "name": null,
+        "constantname": "CHRCFLAG"
+      }
+    ]
+  },
+  {
+    "id": 168,
+    "name": "unset_chr_chrflag",
+    "displayname": null,
+    "description": null,
+    "parameters": [
+      {
+        "type": "Character",
+        "name": null,
+        "constantname": null
+      },
+      {
+        "type": "BitFlag",
+        "name": null,
+        "constantname": "CHRCFLAG"
+      }
+    ]
+  },
+  {
+    "id": 169,
+    "name": "if_chr_has_chrflag",
+    "displayname": null,
+    "description": null,
+    "parameters": [
+      {
+        "type": "Character",
+        "name": null,
+        "constantname": null
+      },
+      {
+        "type": "BitFlag",
+        "name": null,
+        "constantname": "CHRCFLAG"
+      },
+      {
+        "type": "Label",
+        "name": null,
+        "constantname": null
+      }
+    ]
+  },
+  {
+    "id": 170,
+    "name": "set_object_flag",
+    "displayname": null,
+    "description": null,
+    "parameters": [
+      {
+        "type": "Prop",
+        "name": null,
+        "constantname": null
+      },
+      {
+        "type": "BitFlag",
+        "name": null,
+        "constantname": "OBJFLAG"
+      }
+    ]
+  },
+  {
+    "id": 171,
+    "name": "unset_object_flag",
+    "displayname": null,
+    "description": null,
+    "parameters": [
+      {
+        "type": "Prop",
+        "name": null,
+        "constantname": null
+      },
+      {
+        "type": "BitFlag",
+        "name": null,
+        "constantname": "OBJFLAG"
+      }
+    ]
+  },
+  {
+    "id": 172,
+    "name": "if_object_has_flag",
+    "displayname": null,
+    "description": null,
+    "parameters": [
+      {
+        "type": "Prop",
+        "name": null,
+        "constantname": null
+      },
+      {
+        "type": "BitFlag",
+        "name": null,
+        "constantname": "OBJFLAG"
+      },
+      {
+        "type": "Label",
+        "name": null,
+        "constantname": null
+      }
+    ]
+  },
+  {
+    "id": 173,
+    "name": "set_object_flag2",
+    "displayname": null,
+    "description": null,
+    "parameters": [
+      {
+        "type": "Prop",
+        "name": null,
+        "constantname": null
+      },
+      {
+        "type": "BitFlag",
+        "name": null,
+        "constantname": "OBJFLAG2"
+      }
+    ]
+  },
+  {
+    "id": 174,
+    "name": "unset_object_flag2",
+    "displayname": null,
+    "description": null,
+    "parameters": [
+      {
+        "type": "Prop",
+        "name": null,
+        "constantname": null
+      },
+      {
+        "type": "BitFlag",
+        "name": null,
+        "constantname": "OBJFLAG2"
+      }
+    ]
+  },
+  {
+    "id": 175,
+    "name": "if_object_flag2",
+    "displayname": null,
+    "description": null,
+    "parameters": [
+      {
+        "type": "Prop",
+        "name": null,
+        "constantname": null
+      },
+      {
+        "type": "BitFlag",
+        "name": null,
+        "constantname": "OBJFLAG2"
+      },
+      {
+        "type": "Label",
+        "name": null,
+        "constantname": null
+      }
+    ]
+  },
+  {
+    "id": 176,
+    "name": "set_chrpreset",
+    "displayname": null,
+    "description": null,
+    "parameters": [
+      {
+        "type": "Character",
+        "name": null,
+        "constantname": null
+      }
+    ]
+  },
+  {
+    "id": 177,
+    "name": "set_chr_target_chr",
+    "displayname": null,
+    "description": null,
+    "parameters": [
+      {
+        "type": "Character",
+        "name": null,
+        "constantname": null
+      },
+      {
+        "type": "Character",
+        "name": null,
+        "constantname": null
+      }
+    ]
+  },
+  {
+    "id": 178,
+    "name": "set_padpreset",
+    "displayname": null,
+    "description": null,
+    "parameters": [
+      {
+        "type": "Pad",
+        "name": null,
+        "constantname": null
+      }
+    ]
+  },
+  {
+    "id": 179,
+    "name": "chr_set_target_pad",
+    "displayname": null,
+    "description": null,
+    "parameters": [
+      {
+        "type": "Character",
+        "name": null,
+        "constantname": null
+      },
+      {
+        "type": "Pad",
+        "name": null,
+        "constantname": null
+      }
+    ]
+  },
+  {
+    "id": 180,
+    "name": "chr_copy_target_pad",
+    "displayname": null,
+    "description": null,
+    "parameters": [
+      {
+        "type": "Character",
+        "name": null,
+        "constantname": null
+      },
+      {
+        "type": "Character",
+        "name": null,
+        "constantname": null
+      }
+    ]
+  },
+  {
+    "id": 181,
+    "name": "dprint",
+    "displayname": null,
+    "description": null,
+    "parameters": [
+      {
+        "type": "String",
+        "name": "Comment",
+        "constantname": null
+      }
+    ]
+  },
+  {
+    "id": 182,
+    "name": "restart_timer",
+    "displayname": null,
+    "description": null,
+    "parameters": []
+  },
+  {
+    "id": 183,
+    "name": "reset_timer",
+    "displayname": null,
+    "description": null,
+    "parameters": []
+  },
+  {
+    "id": 184,
+    "name": "pause_timer",
+    "displayname": null,
+    "description": null,
+    "parameters": []
+  },
+  {
+    "id": 185,
+    "name": "resume_timer",
+    "displayname": null,
+    "description": null,
+    "parameters": []
+  },
+  {
+    "id": 186,
+    "name": "if_timer_stopped",
+    "displayname": null,
+    "description": null,
+    "parameters": [
+      {
+        "type": "Label",
+        "name": null,
+        "constantname": null
+      }
+    ]
+  },
+  {
+    "id": 187,
+    "name": "if_timer_gt_random",
+    "displayname": null,
+    "description": null,
+    "parameters": [
+      {
+        "type": "Label",
+        "name": null,
+        "constantname": null
+      }
+    ]
+  },
+  {
+    "id": 189,
+    "name": "if_timer_gt",
+    "displayname": null,
+    "description": null,
+    "parameters": [
+      {
+        "type": "Int24",
+        "name": null,
+        "constantname": null
+      },
+      {
+        "type": "Label",
+        "name": null,
+        "constantname": null
+      }
+    ]
+  },
+  {
+    "id": 188,
+    "name": "if_timer_lt",
+    "displayname": null,
+    "description": null,
+    "parameters": [
+      {
+        "type": "Int24",
+        "name": null,
+        "constantname": null
+      },
+      {
+        "type": "Label",
+        "name": null,
+        "constantname": null
+      }
+    ]
+  },
+  {
+    "id": 190,
+    "name": "show_countdown_timer",
+    "displayname": null,
+    "description": null,
+    "parameters": []
+  },
+  {
+    "id": 191,
+    "name": "hide_countdown_timer",
+    "displayname": null,
+    "description": null,
+    "parameters": []
+  },
+  {
+    "id": 192,
+    "name": "set_countdown_timer",
+    "displayname": null,
+    "description": null,
+    "parameters": [
+      {
+        "type": "System.Int16",
+        "name": null,
+        "constantname": null
+      }
+    ]
+  },
+  {
+    "id": 193,
+    "name": "stop_countdown_timer",
+    "displayname": null,
+    "description": null,
+    "parameters": []
+  },
+  {
+    "id": 194,
+    "name": "start_countdown_timer",
+    "displayname": null,
+    "description": null,
+    "parameters": []
+  },
+  {
+    "id": 195,
+    "name": "if_countdown_timer_stopped",
+    "displayname": null,
+    "description": null,
+    "parameters": [
+      {
+        "type": "Label",
+        "name": null,
+        "constantname": null
+      }
+    ]
+  },
+  {
+    "id": 196,
+    "name": "if_countdown_timer_lt",
+    "displayname": null,
+    "description": null,
+    "parameters": [
+      {
+        "type": "System.Int16",
+        "name": null,
+        "constantname": null
+      },
+      {
+        "type": "Label",
+        "name": null,
+        "constantname": null
+      }
+    ]
+  },
+  {
+    "id": 197,
+    "name": "if_countdown_timer_gt",
+    "displayname": null,
+    "description": null,
+    "parameters": [
+      {
+        "type": "System.Int16",
+        "name": null,
+        "constantname": null
+      },
+      {
+        "type": "Label",
+        "name": null,
+        "constantname": null
+      }
+    ]
+  },
+  {
+    "id": 198,
+    "name": "try_spawn_chr_at_pad",
+    "displayname": null,
+    "description": null,
+    "parameters": [
+      {
+        "type": "Body",
+        "name": null,
+        "constantname": null
+      },
+      {
+        "type": "Head",
+        "name": null,
+        "constantname": null
+      },
+      {
+        "type": "Pad",
+        "name": null,
+        "constantname": null
+      },
+      {
+        "type": "AIList",
+        "name": null,
+        "constantname": null
+      },
+      {
+        "type": "BitFlag",
+        "name": null,
+        "constantname": "SPAWNFLAG"
+      },
+      {
+        "type": "Label",
+        "name": null,
+        "constantname": null
+      }
+    ]
+  },
+  {
+    "id": 199,
+    "name": "try_spawn_chr_at_chr",
+    "displayname": null,
+    "description": null,
+    "parameters": [
+      {
+        "type": "Body",
+        "name": null,
+        "constantname": null
+      },
+      {
+        "type": "Head",
+        "name": null,
+        "constantname": null
+      },
+      {
+        "type": "Character",
+        "name": null,
+        "constantname": null
+      },
+      {
+        "type": "AIList",
+        "name": null,
+        "constantname": null
+      },
+      {
+        "type": "BitFlag",
+        "name": null,
+        "constantname": "SPAWNFLAG"
+      },
+      {
+        "type": "Label",
+        "name": null,
+        "constantname": null
+      }
+    ]
+  },
+  {
+    "id": 200,
+    "name": "try_equip_weapon",
+    "displayname": null,
+    "description": null,
+    "parameters": [
+      {
+        "type": "Model",
+        "name": null,
+        "constantname": null
+      },
+      {
+        "type": "Constant",
+        "name": null,
+        "constantname": "WEAPON"
+      },
+      {
+        "type": "System.Int32",
+        "name": null,
+        "constantname": null
+      },
+      {
+        "type": "Label",
+        "name": null,
+        "constantname": null
+      }
+    ]
+  },
+  {
+    "id": 201,
+    "name": "try_equip_hat",
+    "displayname": null,
+    "description": null,
+    "parameters": [
+      {
+        "type": "Model",
+        "name": null,
+        "constantname": null
+      },
+      {
+        "type": "System.Int32",
+        "name": null,
+        "constantname": null
+      },
+      {
+        "type": "Label",
+        "name": null,
+        "constantname": null
+      }
+    ]
+  },
+  {
+    "id": 202,
+    "name": "try_spawn_clone2",
+    "displayname": null,
+    "description": null,
+    "parameters": [
+      {
+        "type": "Character",
+        "name": null,
+        "constantname": null
+      },
+      {
+        "type": "AIList",
+        "name": null,
+        "constantname": null
+      },
+      {
+        "type": "BitFlag",
+        "name": null,
+        "constantname": "SPAWNFLAG"
+      },
+      {
+        "type": "Label",
+        "name": null,
+        "constantname": null
+      }
+    ]
+  },
+  {
+    "id": 203,
+    "name": "show_hudmsg",
+    "displayname": null,
+    "description": null,
+    "parameters": [
+      {
+        "type": "Character",
+        "name": null,
+        "constantname": null
+      },
+      {
+        "type": "LanguageString",
+        "name": null,
+        "constantname": null
+      }
+    ]
+  },
+  {
+    "id": 204,
+    "name": "show_hudmsg_top_middle",
+    "displayname": null,
+    "description": null,
+    "parameters": [
+      {
+        "type": "Character",
+        "name": null,
+        "constantname": null
+      },
+      {
+        "type": "LanguageString",
+        "name": null,
+        "constantname": null
+      },
+      {
+        "type": "Constant",
+        "name": null,
+        "constantname": "COLOR"
+      }
+    ]
+  },
+  {
+    "id": 205,
+    "name": "speak",
+    "displayname": null,
+    "description": null,
+    "parameters": [
+      {
+        "type": "Character",
+        "name": null,
+        "constantname": null
+      },
+      {
+        "type": "LanguageString",
+        "name": null,
+        "constantname": null
+      },
+      {
+        "type": "SoundEffect",
+        "name": null,
+        "constantname": null
+      },
+      {
+        "type": "Constant",
+        "name": null,
+        "constantname": "CHANNEL"
+      },
+      {
+        "type": "Constant",
+        "name": null,
+        "constantname": "COLOR"
+      }
+    ]
+  },
+  {
+    "id": 206,
+    "name": "play_sound",
+    "displayname": null,
+    "description": null,
+    "parameters": [
+      {
+        "type": "SoundEffect",
+        "name": null,
+        "constantname": null
+      },
+      {
+        "type": "Constant",
+        "name": null,
+        "constantname": "CHANNEL"
+      }
+    ]
+  },
+  {
+    "id": 207,
+    "name": "set_object_sound_playing",
+    "displayname": null,
+    "description": null,
+    "parameters": [
+      {
+        "type": "Constant",
+        "name": null,
+        "constantname": "CHANNEL"
+      },
+      {
+        "type": "Prop",
+        "name": null,
+        "constantname": null
+      },
+	  {
+        "type": "null",
+        "name": null,
+        "constantname": null
+      },
+      {
+        "type": "System.Boolean",
+        "name": null,
+        "constantname": null
+      }
+    ]
+  },
+  {
+    "id": 208,
+    "name": "play_repeating_sound_from_pad",
+    "displayname": null,
+    "description": null,
+    "parameters": [
+	  {
+        "type": "null",
+        "name": null,
+        "constantname": null
+      },
+      {
+        "type": "Pad",
+        "name": null,
+        "constantname": null
+      },
+      {
+        "type": "SoundEffect",
+        "name": null,
+        "constantname": null
+      }
+    ]
+  },
+  {
+    "id": 209,
+    "name": "set_object_sound_volume",
+    "displayname": null,
+    "description": null,
+    "parameters": [
+      {
+        "type": "Constant",
+        "name": null,
+        "constantname": "CHANNEL"
+      },
+      {
+        "type": "System.Int16",
+        "name": null,
+        "constantname": null
+      },
+      {
+        "type": "System.Int16",
+        "name": null,
+        "constantname": null
+      }
+    ]
+  },
+  {
+    "id": 210,
+    "name": "set_object_sound_volume_by_distance",
+    "displayname": null,
+    "description": null,
+    "parameters": [
+      {
+        "type": "Constant",
+        "name": null,
+        "constantname": "CHANNEL"
+      },
+      {
+        "type": "System.Int16",
+        "name": null,
+        "constantname": null
+      },
+      {
+        "type": "System.Int16",
+        "name": null,
+        "constantname": null
+      }
+    ]
+  },
+  {
+    "id": 211,
+    "name": "mute_channel",
+    "displayname": null,
+    "description": null,
+    "parameters": [
+      {
+        "type": "Constant",
+        "name": null,
+        "constantname": "CHANNEL"
+      }
+    ]
+  },
+  {
+    "id": 212,
+    "name": "if_object_sound_volume_less_than",
+    "displayname": null,
+    "description": null,
+    "parameters": [
+      {
+        "type": "Constant",
+        "name": null,
+        "constantname": "CHANNEL"
+      },
+      {
+        "type": "System.Int16",
+        "name": null,
+        "constantname": null
+      },
+      {
+        "type": "Label",
+        "name": null,
+        "constantname": null
+      }
+    ]
+  },
+  {
+    "id": 213,
+    "name": "begin_hovercar_path",
+    "displayname": null,
+    "description": null,
+    "parameters": [
+      {
+        "type": "Path",
+        "name": null,
+        "constantname": null
+      }
+    ]
+  },
+  {
+    "id": 214,
+    "name": "set_vehicle_speed",
+    "displayname": null,
+    "description": null,
+    "parameters": [
+      {
+        "type": "System.Int16",
+        "name": null,
+        "constantname": null
+      },
+      {
+        "type": "System.Int16",
+        "name": null,
+        "constantname": null
+      }
+    ]
+  },
+  {
+    "id": 215,
+    "name": "set_rotor_speed",
+    "displayname": null,
+    "description": null,
+    "parameters": [
+      {
+        "type": "System.Int16",
+        "name": null,
+        "constantname": null
+      },
+      {
+        "type": "System.Int16",
+        "name": null,
+        "constantname": null
+      }
+    ]
+  },
+  {
+    "id": 216,
+    "name": "noop00d8",
+    "displayname": null,
+    "description": null,
+    "parameters": [
+      {
+        "type": "System.Byte",
+        "name": null,
+        "constantname": null
+      }
+    ]
+  },
+  {
+    "id": 217,
+    "name": "noop00d9",
+    "displayname": null,
+    "description": null,
+    "parameters": [
+      {
+        "type": "System.Byte",
+        "name": null,
+        "constantname": null
+      }
+    ]
+  },
+  {
+    "id": 218,
+    "name": "set_object_image",
+    "displayname": null,
+    "description": null,
+    "parameters": [
+      {
+        "type": "Prop",
+        "name": null,
+        "constantname": null
+      },
+      {
+        "type": "System.Byte",
+        "name": null,
+        "constantname": null
+      },
+      {
+        "type": "Constant",
+        "name": null,
+        "constantname": "TVPROGRAM"
+      }
+    ]
+  },
+  {
+    "id": 219,
+    "name": "noop00db",
+    "displayname": null,
+    "description": null,
+    "parameters": [
+      {
+        "type": "System.Byte",
+        "name": null,
+        "constantname": null
+      }
+    ]
+  },
+  {
+    "id": 220,
+    "name": "end_level",
+    "displayname": null,
+    "description": null,
+    "parameters": []
+  },
+  {
+    "id": 221,
+    "name": "enter_firstperson",
+    "displayname": null,
+    "description": null,
+    "parameters": []
+  },
+  {
+    "id": 222,
+    "name": "enter_camera_and_move_to_pad",
+    "displayname": null,
+    "description": null,
+    "parameters": [
+      {
+        "type": "Pad",
+        "name": null,
+        "constantname": null
+      }
+    ]
+  },
+  {
+    "id": 223,
+    "name": "cmd00df",
+    "displayname": null,
+    "description": null,
+    "parameters": [
+      {
+        "type": "Prop",
+        "name": null,
+        "constantname": null
+      },
+      {
+        "type": "System.Int16",
+        "name": null,
+        "constantname": null
+      },
+      {
+        "type": "System.Int16",
+        "name": null,
+        "constantname": null
+      }
+    ]
+  },
+  {
+    "id": 224,
+    "name": "revoke_control",
+    "displayname": null,
+    "description": null,
+    "parameters": [
+      {
+        "type": "Character",
+        "name": null,
+        "constantname": null
+      },
+      {
+        "type": "System.Byte",
+        "name": null,
+        "constantname": null
+      }
+    ]
+  },
+  {
+    "id": 225,
+    "name": "grant_control",
+    "displayname": null,
+    "description": null,
+    "parameters": [
+      {
+        "type": "Character",
+        "name": null,
+        "constantname": null
+      }
+    ]
+  },
+  {
+    "id": 226,
+    "name": "chr_move_to_pad",
+    "displayname": null,
+    "description": null,
+    "parameters": [
+      {
+        "type": "Character",
+        "name": null,
+        "constantname": null
+      },
+      {
+        "type": "Pad",
+        "name": null,
+        "constantname": null
+      },
+      {
+        "type": "System.Byte",
+        "name": null,
+        "constantname": null
+      },
+      {
+        "type": "Label",
+        "name": null,
+        "constantname": null
+      }
+    ]
+  },
+  {
+    "id": 227,
+    "name": "cmd00e3",
+    "displayname": null,
+    "description": null,
+    "parameters": [
+      {
+        "type": "Character",
+        "name": null,
+        "constantname": null
+      }
+    ]
+  },
+  {
+    "id": 228,
+    "name": "cmd00e4",
+    "displayname": null,
+    "description": null,
+    "parameters": [
+      {
+        "type": "System.Byte",
+        "name": null,
+        "constantname": null
+      }
+    ]
+  },
+  {
+    "id": 229,
+    "name": "if_colour_fade_complete",
+    "displayname": null,
+    "description": null,
+    "parameters": [
+      {
+        "type": "Character",
+        "name": null,
+        "constantname": null
+      },
+      {
+        "type": "Label",
+        "name": null,
+        "constantname": null
+      }
+    ]
+  },
+  {
+    "id": 232,
+    "name": "set_door_open",
+    "displayname": null,
+    "description": null,
+    "parameters": [
+      {
+        "type": "Prop",
+        "name": null,
+        "constantname": null
+      }
+    ]
+  },
+  {
+    "id": 233,
+    "name": "cmd00e9",
+    "displayname": null,
+    "description": null,
+    "parameters": [
+      {
+        "type": "Character",
+        "name": null,
+        "constantname": null
+      },
+      {
+        "type": "System.Byte",
+        "name": null,
+        "constantname": null
+      }
+    ]
+  },
+  {
+    "id": 234,
+    "name": "if_num_human_players_lt",
+    "displayname": null,
+    "description": null,
+    "parameters": [
+      {
+        "type": "System.Byte",
+        "name": null,
+        "constantname": null
+      },
+      {
+        "type": "Label",
+        "name": null,
+        "constantname": null
+      }
+    ]
+  },
+  {
+    "id": 235,
+    "name": "if_ammo_quantity_lt",
+    "displayname": null,
+    "description": null,
+    "parameters": [
+      {
+        "type": "Character",
+        "name": null,
+        "constantname": null
+      },
+      {
+        "type": "Constant",
+        "name": null,
+        "constantname": "AMMOTYPE"
+      },
+      {
+        "type": "System.Byte",
+        "name": null,
+        "constantname": null
+      },
+      {
+        "type": "Label",
+        "name": null,
+        "constantname": null
+      }
+    ]
+  },
+  {
+    "id": 236,
+    "name": "chr_draw_weapon",
+    "displayname": null,
+    "description": null,
+    "parameters": [
+      {
+        "type": "Character",
+        "name": null,
+        "constantname": null
+      },
+      {
+        "type": "Constant",
+        "name": null,
+        "constantname": "WEAPON"
+      }
+    ]
+  },
+  {
+    "id": 237,
+    "name": "chr_draw_weapon_in_cutscene",
+    "displayname": null,
+    "description": null,
+    "parameters": [
+      {
+        "type": "Character",
+        "name": null,
+        "constantname": null
+      },
+      {
+        "type": "Constant",
+        "name": null,
+        "constantname": "WEAPON"
+      }
+    ]
+  },
+  {
+    "id": 238,
+    "name": "cmd00ee",
+    "displayname": null,
+    "description": null,
+    "parameters": [
+      {
+        "type": "Character",
+        "name": null,
+        "constantname": null
+      },
+      {
+        "type": "System.Byte",
+        "name": null,
+        "constantname": null
+      },
+      {
+        "type": "System.Byte",
+        "name": null,
+        "constantname": null
+      }
+    ]
+  },
+  {
+    "id": 239,
+    "name": "if_object_in_room",
+    "displayname": null,
+    "description": null,
+    "parameters": [
+      {
+        "type": "Prop",
+        "name": null,
+        "constantname": null
+      },
+      {
+        "type": "Room",
+        "name": null,
+        "constantname": null
+      },
+      {
+        "type": "Label",
+        "name": null,
+        "constantname": null
+      }
+    ]
+  },
+  {
+    "id": 240,
+    "name": "cmd00f0",
+    "displayname": null,
+    "description": null,
+    "parameters": [
+      {
+        "type": "Label",
+        "name": null,
+        "constantname": null
+      }
+    ]
+  },
+  {
+    "id": 241,
+    "name": "if_attacking",
+    "displayname": null,
+    "description": null,
+    "parameters": [
+      {
+        "type": "Label",
+        "name": null,
+        "constantname": null
+      }
+    ]
+  },
+  {
+    "id": 242,
+    "name": "switch_to_alt_sky",
+    "displayname": null,
+    "description": null,
+    "parameters": []
+  },
+  {
+    "id": 243,
+    "name": "set_invincible",
+    "displayname": null,
+    "description": null,
+    "parameters": [
+      {
+        "type": "Character",
+        "name": null,
+        "constantname": null
+      }
+    ]
+  },
+  {
+    "id": 244,
+    "name": "cmd00f4",
+    "displayname": null,
+    "description": null,
+    "parameters": [
+      {
+        "type": "System.Int32",
+        "name": null,
+        "constantname": null
+      },
+      {
+        "type": "System.Int32",
+        "name": null,
+        "constantname": null
+      },
+      {
+        "type": "System.Int32",
+        "name": null,
+        "constantname": null
+      },
+      {
+        "type": "System.Int32",
+        "name": null,
+        "constantname": null
+      },
+      {
+        "type": "System.Int32",
+        "name": null,
+        "constantname": null
+      },
+      {
+        "type": "System.Int32",
+        "name": null,
+        "constantname": null
+      }
+    ]
+  },
+  {
+    "id": 245,
+    "name": "cmd00f5",
+    "displayname": null,
+    "description": null,
+    "parameters": []
+  },
+  {
+    "id": 246,
+    "name": "cmd00f6",
+    "displayname": null,
+    "description": null,
+    "parameters": [
+      {
+        "type": "Label",
+        "name": null,
+        "constantname": null
+      }
+    ]
+  },
+  {
+    "id": 247,
+    "name": "if_all_objectives_complete",
+    "displayname": null,
+    "description": null,
+    "parameters": [
+      {
+        "type": "Label",
+        "name": null,
+        "constantname": null
+      }
+    ]
+  },
+  {
+    "id": 248,
+    "name": "if_player_is_invincible",
+    "displayname": null,
+    "description": null,
+    "parameters": [
+      {
+        "type": "Character",
+        "name": null,
+        "constantname": null
+      },
+      {
+        "type": "Label",
+        "name": null,
+        "constantname": null
+      }
+    ]
+  },
+  {
+    "id": 249,
+    "name": "play_x_track",
+    "displayname": null,
+    "description": null,
+    "parameters": [
+      {
+        "type": "Constant",
+        "name": null,
+        "constantname": "XREASON"
+      },
+      {
+        "type": "System.Byte",
+        "name": null,
+        "constantname": null
+      },
+      {
+        "type": "System.Byte",
+        "name": null,
+        "constantname": null
+      }
+    ]
+  },
+  {
+    "id": 250,
+    "name": "stop_x_track",
+    "displayname": null,
+    "description": null,
+    "parameters": [
+      {
+        "type": "Constant",
+        "name": null,
+        "constantname": "XREASON"
+      }
+    ]
+  },
+  {
+    "id": 251,
+    "name": "explosions_around_chr",
+    "displayname": null,
+    "description": null,
+    "parameters": [
+      {
+        "type": "Character",
+        "name": null,
+        "constantname": null
+      }
+    ]
+  },
+  {
+    "id": 252,
+    "name": "if_kill_count_gt",
+    "displayname": null,
+    "description": null,
+    "parameters": [
+      {
+        "type": "System.Byte",
+        "name": null,
+        "constantname": null
+      },
+      {
+        "type": "Label",
+        "name": null,
+        "constantname": null
+      }
+    ]
+  },
+  {
+    "id": 253,
+    "name": "cmd00fd",
+    "displayname": null,
+    "description": null,
+    "parameters": [
+      {
+        "type": "Character",
+        "name": null,
+        "constantname": null
+      },
+      {
+        "type": "Label",
+        "name": null,
+        "constantname": null
+      }
+    ]
+  },
+  {
+    "id": 254,
+    "name": "kill_bond",
+    "displayname": null,
+    "description": null,
+    "parameters": []
+  },
+  {
+    "id": 255,
+    "name": "be_surprised_surrender",
+    "displayname": null,
+    "description": null,
+    "parameters": []
+  },
+  {
+    "id": 256,
+    "name": "cmd0100_noop",
+    "displayname": null,
+    "description": null,
+    "parameters": [
+      {
+        "type": "System.Byte",
+        "name": null,
+        "constantname": null
+      }
+    ]
+  },
+  {
+    "id": 257,
+    "name": "cmd0101_noop",
+    "displayname": null,
+    "description": null,
+    "parameters": [
+      {
+        "type": "System.Byte",
+        "name": null,
+        "constantname": null
+      }
+    ]
+  },
+  {
+    "id": 258,
+    "name": "set_lights_state",
+    "displayname": null,
+    "description": null,
+    "parameters": [
+      {
+        "type": "Room",
+        "name": null,
+        "constantname": null
+      },
+      {
+        "type": "Constant",
+        "name": null,
+        "constantname": "LIGHTOP"
+      },
+      {
+        "type": "System.Byte",
+        "name": null,
+        "constantname": null
+      },
+      {
+        "type": "System.Byte",
+        "name": null,
+        "constantname": null
+      },
+      {
+        "type": "System.Byte",
+        "name": null,
+        "constantname": null
+      },
+	  {
+        "type": "null",
+        "name": null,
+        "constantname": null
+      },
+	  {
+        "type": "null",
+        "name": null,
+        "constantname": null
+      },
+	  {
+        "type": "null",
+        "name": null,
+        "constantname": null
+      },
+    ]
+  },
+  {
+    "id": 259,
+    "name": "if_proppreset_blocking_sight_to_target",
+    "displayname": null,
+    "description": null,
+    "parameters": [
+      {
+        "type": "Label",
+        "name": null,
+        "constantname": null
+      }
+    ]
+  },
+  {
+    "id": 260,
+    "name": "remove_object_at_proppreset",
+    "displayname": null,
+    "description": null,
+    "parameters": []
+  },
+  {
+    "id": 261,
+    "name": "if_proppreset_height_lt",
+    "displayname": null,
+    "description": null,
+    "parameters": [
+      {
+        "type": "System.Int16",
+        "name": null,
+        "constantname": null
+      },
+      {
+        "type": "Label",
+        "name": null,
+        "constantname": null
+      }
+    ]
+  },
+  {
+    "id": 262,
+    "name": "set_target_chr",
+    "displayname": null,
+    "description": null,
+    "parameters": [
+      {
+        "type": "Character",
+        "name": null,
+        "constantname": null
+      },
+	  {
+        "type": "null",
+        "name": null,
+        "constantname": null
+      },
+	  {
+        "type": "null",
+        "name": null,
+        "constantname": null
+      },
+    ]
+  },
+  {
+    "id": 263,
+    "name": "if_chrpresets_target_is_different",
+    "displayname": null,
+    "description": null,
+    "parameters": [
+      {
+        "type": "Label",
+        "name": null,
+        "constantname": null
+      }
+    ]
+  },
+  {
+    "id": 264,
+    "name": "if_chr_target_eq",
+    "displayname": null,
+    "description": null,
+    "parameters": [
+      {
+        "type": "Character",
+        "name": null,
+        "constantname": null
+      },
+      {
+        "type": "Character",
+        "name": null,
+        "constantname": null
+      },
+      {
+        "type": "System.Boolean",
+        "name": null,
+        "constantname": null
+      },
+      {
+        "type": "Label",
+        "name": null,
+        "constantname": null
+      }
+    ]
+  },
+  {
+    "id": 265,
+    "name": "set_chrpreset_to_chr_near_self",
+    "displayname": null,
+    "description": null,
+    "parameters": [
+      {
+        "type": "System.Byte",
+        "name": null,
+        "constantname": null
+      },
+      {
+        "type": "System.Byte",
+        "name": null,
+        "constantname": null
+      },
+      {
+        "type": "Label",
+        "name": null,
+        "constantname": null
+      }
+    ]
+  },
+  {
+    "id": 266,
+    "name": "set_chrpreset_to_chr_near_pad",
+    "displayname": null,
+    "description": null,
+    "parameters": [
+      {
+        "type": "System.Byte",
+        "name": null,
+        "constantname": null
+      },
+      {
+        "type": "System.Int16",
+        "name": null,
+        "constantname": null
+      },
+      {
+        "type": "Pad",
+        "name": null,
+        "constantname": null
+      },
+      {
+        "type": "Label",
+        "name": null,
+        "constantname": null
+      }
+    ]
+  },
+  {
+    "id": 267,
+    "name": "set_chr_team",
+    "displayname": null,
+    "description": null,
+    "parameters": [
+      {
+        "type": "Character",
+        "name": null,
+        "constantname": null
+      },
+      {
+        "type": "Constant",
+        "name": null,
+        "constantname": "TEAM"
+      }
+    ]
+  },
+  {
+    "id": 268,
+    "name": "if_compare_chrpresets_team",
+    "displayname": null,
+    "description": null,
+    "parameters": [
+      {
+        "type": "System.Byte",
+        "name": null,
+        "constantname": null
+      },
+      {
+        "type": "Label",
+        "name": null,
+        "constantname": null
+      }
+    ]
+  },
+  {
+    "id": 269,
+    "name": "noop010d",
+    "displayname": null,
+    "description": null,
+    "parameters": []
+  },
+  {
+    "id": 270,
+    "name": "set_shield",
+    "displayname": null,
+    "description": null,
+    "parameters": [
+      {
+        "type": "System.Int16",
+        "name": null,
+        "constantname": null
+      }
+    ]
+  },
+  {
+    "id": 271,
+    "name": "if_chr_shield_lt",
+    "displayname": null,
+    "description": null,
+    "parameters": [
+      {
+        "type": "Character",
+        "name": null,
+        "constantname": null
+      },
+      {
+        "type": "System.Int16",
+        "name": null,
+        "constantname": null
+      },
+      {
+        "type": "Label",
+        "name": null,
+        "constantname": null
+      }
+    ]
+  },
+  {
+    "id": 272,
+    "name": "if_chr_shield_gt",
+    "displayname": null,
+    "description": null,
+    "parameters": [
+      {
+        "type": "Character",
+        "name": null,
+        "constantname": null
+      },
+      {
+        "type": "System.Int16",
+        "name": null,
+        "constantname": null
+      },
+      {
+        "type": "Label",
+        "name": null,
+        "constantname": null
+      }
+    ]
+  },
+  {
+    "id": 273,
+    "name": "camera_movement",
+    "displayname": null,
+    "description": null,
+    "parameters": [
+      {
+        "type": "Animation",
+        "name": null,
+        "constantname": null
+      }
+    ]
+  },
+  {
+    "id": 274,
+    "name": "object_do_animation",
+    "displayname": null,
+    "description": null,
+    "parameters": [
+      {
+        "type": "Animation",
+        "name": null,
+        "constantname": null
+      },
+      {
+        "type": "Prop",
+        "name": null,
+        "constantname": null
+      },
+      {
+        "type": "System.Byte",
+        "name": null,
+        "constantname": null
+      },
+      {
+        "type": "System.Int16",
+        "name": null,
+        "constantname": null
+      }
+    ]
+  },
+  {
+    "id": 275,
+    "name": "if_camera_animating",
+    "displayname": null,
+    "description": null,
+    "parameters": [
+      {
+        "type": "Label",
+        "name": null,
+        "constantname": null
+      }
+    ]
+  },
+  {
+    "id": 276,
+    "name": "enable_chr",
+    "displayname": null,
+    "description": null,
+    "parameters": [
+      {
+        "type": "Character",
+        "name": null,
+        "constantname": null
+      }
+    ]
+  },
+  {
+    "id": 277,
+    "name": "disable_chr",
+    "displayname": null,
+    "description": null,
+    "parameters": [
+      {
+        "type": "Character",
+        "name": null,
+        "constantname": null
+      }
+    ]
+  },
+  {
+    "id": 278,
+    "name": "enable_object",
+    "displayname": null,
+    "description": null,
+    "parameters": [
+      {
+        "type": "Prop",
+        "name": null,
+        "constantname": null
+      }
+    ]
+  },
+  {
+    "id": 279,
+    "name": "disable_object",
+    "displayname": null,
+    "description": null,
+    "parameters": [
+      {
+        "type": "Prop",
+        "name": null,
+        "constantname": null
+      }
+    ]
+  },
+  {
+    "id": 280,
+    "name": "set_object_flag3",
+    "displayname": null,
+    "description": null,
+    "parameters": [
+      {
+        "type": "Prop",
+        "name": null,
+        "constantname": null
+      },
+      {
+        "type": "BitFlag",
+        "name": null,
+        "constantname": "OBJFLAG3"
+      }
+    ]
+  },
+  {
+    "id": 281,
+    "name": "unset_object_flag3",
+    "displayname": null,
+    "description": null,
+    "parameters": [
+      {
+        "type": "Prop",
+        "name": null,
+        "constantname": null
+      },
+      {
+        "type": "BitFlag",
+        "name": null,
+        "constantname": "OBJFLAG3"
+      }
+    ]
+  },
+  {
+    "id": 282,
+    "name": "if_object_flag3",
+    "displayname": null,
+    "description": null,
+    "parameters": [
+      {
+        "type": "Prop",
+        "name": null,
+        "constantname": null
+      },
+      {
+        "type": "BitFlag",
+        "name": null,
+        "constantname": "OBJFLAG3"
+      },
+      {
+        "type": "Label",
+        "name": null,
+        "constantname": null
+      }
+    ]
+  },
+  {
+    "id": 283,
+    "name": "set_chr_hiddenflag",
+    "displayname": null,
+    "description": null,
+    "parameters": [
+      {
+        "type": "Character",
+        "name": null,
+        "constantname": null
+      },
+      {
+        "type": "BitFlag",
+        "name": null,
+        "constantname": "CHRHFLAG"
+      }
+    ]
+  },
+  {
+    "id": 284,
+    "name": "unset_chr_hiddenflag",
+    "displayname": null,
+    "description": null,
+    "parameters": [
+      {
+        "type": "Character",
+        "name": null,
+        "constantname": null
+      },
+      {
+        "type": "BitFlag",
+        "name": null,
+        "constantname": "CHRHFLAG"
+      }
+    ]
+  },
+  {
+    "id": 285,
+    "name": "if_chr_has_hiddenflag",
+    "displayname": null,
+    "description": null,
+    "parameters": [
+      {
+        "type": "Character",
+        "name": null,
+        "constantname": null
+      },
+      {
+        "type": "BitFlag",
+        "name": null,
+        "constantname": "CHRHFLAG"
+      },
+      {
+        "type": "Label",
+        "name": null,
+        "constantname": null
+      }
+    ]
+  },
+  {
+    "id": 286,
+    "name": "if_chr_is_human",
+    "displayname": null,
+    "description": null,
+    "parameters": [
+      {
+        "type": "Character",
+        "name": null,
+        "constantname": null
+      },
+      {
+        "type": "Label",
+        "name": null,
+        "constantname": null
+      }
+    ]
+  },
+  {
+    "id": 287,
+    "name": "if_chr_is_skedar",
+    "displayname": null,
+    "description": null,
+    "parameters": [
+      {
+        "type": "Character",
+        "name": null,
+        "constantname": null
+      },
+      {
+        "type": "Label",
+        "name": null,
+        "constantname": null
+      }
+    ]
+  },
+  {
+    "id": 288,
+    "name": "if_calculated_safety2_lt",
+    "displayname": null,
+    "description": null,
+    "parameters": [
+      {
+        "type": "System.Byte",
+        "name": null,
+        "constantname": null
+      },
+      {
+        "type": "Label",
+        "name": null,
+        "constantname": null
+      }
+    ]
+  },
+  {
+    "id": 289,
+    "name": "find_cover",
+    "displayname": null,
+    "description": null,
+    "parameters": [
+      {
+        "type": "BitFlag",
+        "name": null,
+        "constantname": "COVERCRITERIA"
+      },
+      {
+        "type": "Label",
+        "name": null,
+        "constantname": null
+      }
+    ]
+  },
+  {
+    "id": 290,
+    "name": "find_cover_within_dist",
+    "displayname": null,
+    "description": null,
+    "parameters": [
+      {
+        "type": "BitFlag",
+        "name": null,
+        "constantname": "COVERCRITERIA"
+      },
+      {
+        "type": "System.Int32",
+        "name": null,
+        "constantname": null
+      },
+      {
+        "type": "Label",
+        "name": null,
+        "constantname": null
+      }
+    ]
+  },
+  {
+    "id": 291,
+    "name": "find_cover_outside_dist",
+    "displayname": null,
+    "description": null,
+    "parameters": [
+      {
+        "type": "BitFlag",
+        "name": null,
+        "constantname": "COVERCRITERIA"
+      },
+      {
+        "type": "System.Int32",
+        "name": null,
+        "constantname": null
+      },
+      {
+        "type": "Label",
+        "name": null,
+        "constantname": null
+      }
+    ]
+  },
+  {
+    "id": 292,
+    "name": "go_to_cover",
+    "displayname": null,
+    "description": null,
+    "parameters": [
+      {
+        "type": "Constant",
+        "name": null,
+        "constantname": "GOPOSFLAG"
+      }
+    ]
+  },
+  {
+    "id": 293,
+    "name": "check_cover_out_of_sight",
+    "displayname": null,
+    "description": null,
+    "parameters": [
+      {
+        "type": "Label",
+        "name": null,
+        "constantname": null
+      }
+    ]
+  },
+  {
+    "id": 294,
+    "name": "if_player_using_cmp150_or_ar34",
+    "displayname": null,
+    "description": null,
+    "parameters": [
+      {
+        "type": "Label",
+        "name": null,
+        "constantname": null
+      }
+    ]
+  },
+  {
+    "id": 295,
+    "name": "set_target_to_enemy_on_same_floor",
+    "displayname": null,
+    "description": null,
+    "parameters": [
+      {
+        "type": "Label",
+        "name": null,
+        "constantname": null
+      }
+    ]
+  },
+  {
+    "id": 296,
+    "name": "if_enemy_distance_lt_and_los",
+    "displayname": null,
+    "description": null,
+    "parameters": [
+      {
+        "type": "System.Byte",
+        "name": null,
+        "constantname": null
+      },
+      {
+        "type": "Label",
+        "name": null,
+        "constantname": null
+      }
+    ]
+  },
+  {
+    "id": 297,
+    "name": "if_calculated_safety_lt",
+    "displayname": null,
+    "description": null,
+    "parameters": [
+      {
+        "type": "System.Byte",
+        "name": null,
+        "constantname": null
+      },
+      {
+        "type": "Label",
+        "name": null,
+        "constantname": null
+      }
+    ]
+  },
+  {
+    "id": 298,
+    "name": "if_target_moving_slowly",
+    "displayname": null,
+    "description": null,
+    "parameters": [
+      {
+        "type": "Character",
+        "name": null,
+        "constantname": null
+      },
+      {
+        "type": "Label",
+        "name": null,
+        "constantname": null
+      }
+    ]
+  },
+  {
+    "id": 299,
+    "name": "if_target_moving_closer",
+    "displayname": null,
+    "description": null,
+    "parameters": [
+      {
+        "type": "Label",
+        "name": null,
+        "constantname": null
+      }
+    ]
+  },
+  {
+    "id": 300,
+    "name": "if_target_moving_away",
+    "displayname": null,
+    "description": null,
+    "parameters": [
+      {
+        "type": "Label",
+        "name": null,
+        "constantname": null
+      }
+    ]
+  },
+  {
+    "id": 303,
+    "name": "cmd012f",
+    "displayname": null,
+    "description": null,
+    "parameters": []
+  },
+  {
+    "id": 304,
+    "name": "say_quip",
+    "displayname": null,
+    "description": null,
+    "parameters": [
+      {
+        "type": "Character",
+        "name": null,
+        "constantname": null
+      },
+      {
+        "type": "Quip",
+        "name": null,
+        "constantname": null
+      },
+      {
+        "type": "System.Byte",
+        "name": null,
+        "constantname": null
+      },
+      {
+        "type": "System.Byte",
+        "name": null,
+        "constantname": null
+      },
+      {
+        "type": "System.Byte",
+        "name": null,
+        "constantname": null
+      },
+      {
+        "type": "SpecialSoundBank",
+        "name": null,
+        "constantname": null
+      },
+      {
+        "type": "System.Byte",
+        "name": null,
+        "constantname": null
+      },
+      {
+        "type": "System.Byte",
+        "name": null,
+        "constantname": null
+      }
+    ]
+  },
+  {
+    "id": 305,
+    "name": "increase_squadron_alertness",
+    "displayname": null,
+    "description": null,
+    "parameters": [
+      {
+        "type": "System.Byte",
+        "name": null,
+        "constantname": null
+      }
+    ]
+  },
+  {
+    "id": 306,
+    "name": "set_action",
+    "displayname": null,
+    "description": null,
+    "parameters": [
+      {
+        "type": "Constant",
+        "name": null,
+        "constantname": "MA"
+      },
+      {
+        "type": "System.Boolean",
+        "name": null,
+        "constantname": null
+      }
+    ]
+  },
+  {
+    "id": 307,
+    "name": "set_team_orders",
+    "displayname": null,
+    "description": null,
+    "parameters": [
+      {
+        "type": "Constant",
+        "name": null,
+        "constantname": "MA"
+      },
+      {
+        "type": "Label",
+        "name": null,
+        "constantname": null
+      }
+    ]
+  },
+  {
+    "id": 308,
+    "name": "if_orders_eq",
+    "displayname": null,
+    "description": null,
+    "parameters": [
+	  {
+        "type": "null",
+        "name": null,
+        "constantname": null
+      },
+      {
+        "type": "Constant",
+        "name": null,
+        "constantname": "MA"
+      },
+      {
+        "type": "Label",
+        "name": null,
+        "constantname": null
+      }
+    ]
+  },
+  {
+    "id": 309,
+    "name": "if_has_orders",
+    "displayname": null,
+    "description": null,
+    "parameters": [
+      {
+        "type": "Label",
+        "name": null,
+        "constantname": null
+      }
+    ]
+  },
+  {
+    "id": 310,
+    "name": "retreat",
+    "displayname": null,
+    "description": null,
+    "parameters": [
+      {
+        "type": "Constant",
+        "name": null,
+        "constantname": "GOPOSFLAG"
+      },
+      {
+        "type": "System.Byte",
+        "name": null,
+        "constantname": null
+      }
+    ]
+  },
+  {
+    "id": 311,
+    "name": "if_chr_in_squadron_doing_action",
+    "displayname": null,
+    "description": null,
+    "parameters": [
+      {
+        "type": "Constant",
+        "name": null,
+        "constantname": "MA"
+      },
+      {
+        "type": "Label",
+        "name": null,
+        "constantname": null
+      }
+    ]
+  },
+  {
+    "id": 312,
+    "name": "if_sound_finished",
+    "displayname": null,
+    "description": null,
+    "parameters": [
+      {
+        "type": "Constant",
+        "name": null,
+        "constantname": "CHANNEL"
+      },
+      {
+        "type": "Label",
+        "name": null,
+        "constantname": null
+      }
+    ]
+  },
+  {
+    "id": 313,
+    "name": "cmd0139",
+    "displayname": null,
+    "description": null,
+    "parameters": [
+      {
+        "type": "System.Int32",
+        "name": null,
+        "constantname": null
+      },
+      {
+        "type": "Constant",
+        "name": null,
+        "constantname": "GOPOSFLAG"
+      },
+      {
+        "type": "System.Boolean",
+        "name": null,
+        "constantname": null
+      }
+    ]
+  },
+  {
+    "id": 314,
+    "name": "try_set_chrpreset_to_unalerted_teammate",
+    "displayname": null,
+    "description": null,
+    "parameters": [
+      {
+        "type": "System.Byte",
+        "name": null,
+        "constantname": null
+      },
+	  {
+        "type": "null",
+        "name": null,
+        "constantname": null
+      },
+      {
+        "type": "Label",
+        "name": null,
+        "constantname": null
+      }
+    ]
+  },
+  {
+    "id": 315,
+    "name": "set_squadron",
+    "displayname": null,
+    "description": null,
+    "parameters": [
+      {
+        "type": "Constant",
+        "name": null,
+        "constantname": "SQUADRON"
+      }
+    ]
+  },
+  {
+    "id": 316,
+    "name": "face_cover",
+    "displayname": null,
+    "description": null,
+    "parameters": [
+      {
+        "type": "Label",
+        "name": null,
+        "constantname": null
+      }
+    ]
+  },
+  {
+    "id": 317,
+    "name": "if_dangerous_object_nearby",
+    "displayname": null,
+    "description": null,
+    "parameters": [
+      {
+        "type": "System.Byte",
+        "name": null,
+        "constantname": null
+      },
+      {
+        "type": "Label",
+        "name": null,
+        "constantname": null
+      }
+    ]
+  },
+  {
+    "id": 318,
+    "name": "run_from_grenade",
+    "displayname": null,
+    "description": null,
+    "parameters": []
+  },
+  {
+    "id": 319,
+    "name": "if_chopper_weapons_armed",
+    "displayname": null,
+    "description": null,
+    "parameters": [
+      {
+        "type": "Label",
+        "name": null,
+        "constantname": null
+      }
+    ]
+  },
+  {
+    "id": 320,
+    "name": "if_hoverbot_next_step",
+    "displayname": null,
+    "description": null,
+    "parameters": [
+      {
+        "type": "Constant",
+        "name": null,
+        "constantname": "OPERATOR"
+      },
+      {
+        "type": "System.Byte",
+        "name": null,
+        "constantname": null
+      },
+      {
+        "type": "Label",
+        "name": null,
+        "constantname": null
+      }
+    ]
+  },
+  {
+    "id": 321,
+    "name": "shuffle_investigation_terminals",
+    "displayname": null,
+    "description": null,
+    "parameters": [
+      {
+        "type": "Prop",
+        "name": null,
+        "constantname": null
+      },
+      {
+        "type": "Prop",
+        "name": null,
+        "constantname": null
+      },
+      {
+        "type": "Prop",
+        "name": null,
+        "constantname": null
+      },
+      {
+        "type": "Prop",
+        "name": null,
+        "constantname": null
+      },
+      {
+        "type": "Prop",
+        "name": null,
+        "constantname": null
+      },
+      {
+        "type": "Prop",
+        "name": null,
+        "constantname": null
+      },
+	  {
+        "type": "null",
+        "name": null,
+        "constantname": null
+      }
+    ]
+  },
+  {
+    "id": 322,
+    "name": "set_pad_preset_to_investigation_terminal",
+    "displayname": null,
+    "description": null,
+    "parameters": [
+      {
+        "type": "Prop",
+        "name": null,
+        "constantname": null
+      },
+	  {
+        "type": "null",
+        "name": null,
+        "constantname": null
+      }
+    ]
+  },
+  {
+    "id": 323,
+    "name": "chopper_arm_weapons",
+    "displayname": null,
+    "description": null,
+    "parameters": []
+  },
+  {
+    "id": 324,
+    "name": "chopper_unarm_weapons",
+    "displayname": null,
+    "description": null,
+    "parameters": []
+  },
+  {
+    "id": 325,
+    "name": "rebuild_teams",
+    "displayname": null,
+    "description": null,
+    "parameters": []
+  },
+  {
+    "id": 326,
+    "name": "rebuild_squadrons",
+    "displayname": null,
+    "description": null,
+    "parameters": []
+  },
+  {
+    "id": 327,
+    "name": "if_all_chrs_in_squadron_are_dead",
+    "displayname": null,
+    "description": null,
+    "parameters": [
+      {
+        "type": "Constant",
+        "name": null,
+        "constantname": "SQUADRON"
+      },
+      {
+        "type": "Label",
+        "name": null,
+        "constantname": null
+      }
+    ]
+  },
+  {
+    "id": 328,
+    "name": "chr_set_listening",
+    "displayname": null,
+    "description": null,
+    "parameters": [
+      {
+        "type": "Character",
+        "name": null,
+        "constantname": null
+      },
+      {
+        "type": "System.Byte",
+        "name": null,
+        "constantname": null
+      }
+    ]
+  },
+  {
+    "id": 329,
+    "name": "if_chr_listening",
+    "displayname": null,
+    "description": null,
+    "parameters": [
+      {
+        "type": "Character",
+        "name": null,
+        "constantname": null
+      },
+      {
+        "type": "System.Byte",
+        "name": null,
+        "constantname": null
+      },
+      {
+        "type": "System.Byte",
+        "name": null,
+        "constantname": null
+      },
+      {
+        "type": "Label",
+        "name": null,
+        "constantname": null
+      }
+    ]
+  },
+  {
+    "id": 330,
+    "name": "if_true",
+    "displayname": null,
+    "description": null,
+    "parameters": [
+      {
+        "type": "System.Byte",
+        "name": null,
+        "constantname": null
+      },
+      {
+        "type": "System.Byte",
+        "name": null,
+        "constantname": null
+      },
+      {
+        "type": "System.Byte",
+        "name": null,
+        "constantname": null
+      },
+      {
+        "type": "Label",
+        "name": null,
+        "constantname": null
+      }
+    ]
+  },
+  {
+    "id": 331,
+    "name": "if_not_listening",
+    "displayname": null,
+    "description": null,
+    "parameters": [
+      {
+        "type": "Label",
+        "name": null,
+        "constantname": null
+      }
+    ]
+  },
+  {
+    "id": 338,
+    "name": "if_num_chrs_in_squadron_gt",
+    "displayname": null,
+    "description": null,
+    "parameters": [
+      {
+        "type": "System.Byte",
+        "name": null,
+        "constantname": null
+      },
+      {
+        "type": "Constant",
+        "name": null,
+        "constantname": "SQUADRON"
+      },
+      {
+        "type": "Label",
+        "name": null,
+        "constantname": null
+      }
+    ]
+  },
+  {
+    "id": 343,
+    "name": "set_tinted_glass_enabled",
+    "displayname": null,
+    "description": null,
+    "parameters": [
+      {
+        "type": "System.Boolean",
+        "name": null,
+        "constantname": null
+      }
+    ]
+  },
+  {
+    "id": 347,
+    "name": "play_track_isolated",
+    "displayname": null,
+    "description": null,
+    "parameters": [
+      {
+        "type": "MusicTrack",
+        "name": null,
+        "constantname": null
+      }
+    ]
+  },
+  {
+    "id": 348,
+    "name": "play_default_tracks",
+    "displayname": null,
+    "description": null,
+    "parameters": []
+  },
+  {
+    "id": 357,
+    "name": "if_chr_injured_target",
+    "displayname": null,
+    "description": null,
+    "parameters": [
+      {
+        "type": "Character",
+        "name": null,
+        "constantname": null
+      },
+      {
+        "type": "Label",
+        "name": null,
+        "constantname": null
+      }
+    ]
+  },
+  {
+    "id": 358,
+    "name": "if_action_eq",
+    "displayname": null,
+    "description": null,
+    "parameters": [
+      {
+        "type": "Constant",
+        "name": null,
+        "constantname": "MA"
+      },
+      {
+        "type": "Label",
+        "name": null,
+        "constantname": null
+      }
+    ]
+  },
+  {
+    "id": 359,
+    "name": "hovercopter_fire_rocket",
+    "displayname": null,
+    "description": null,
+    "parameters": [
+      {
+        "type": "System.Byte",
+        "name": null,
+        "constantname": null
+      }
+    ]
+  },
+  {
+    "id": 360,
+    "name": "if_chr_shield_damaged",
+    "displayname": null,
+    "description": null,
+    "parameters": [
+      {
+        "type": "Character",
+        "name": null,
+        "constantname": null
+      },
+      {
+        "type": "Label",
+        "name": null,
+        "constantname": null
+      }
+    ]
+  },
+  {
+    "id": 361,
+    "name": "if_chr_idle_action_eq",
+    "displayname": null,
+    "description": null,
+    "parameters": [
+      {
+        "type": "Constant",
+        "name": null,
+        "constantname": "IDLEACTION"
+      },
+      {
+        "type": "Label",
+        "name": null,
+        "constantname": null
+      }
+    ]
+  },
+  {
+    "id": 362,
+    "name": "if_chr_y",
+    "displayname": null,
+    "description": null,
+    "parameters": [
+      {
+        "type": "Character",
+        "name": null,
+        "constantname": null
+      },
+      {
+        "type": "System.Int16",
+        "name": null,
+        "constantname": null
+      },
+      {
+        "type": "Constant",
+        "name": null,
+        "constantname": "OPERATOR"
+      },
+      {
+        "type": "Label",
+        "name": null,
+        "constantname": null
+      }
+    ]
+  },
+  {
+    "id": 363,
+    "name": "play_repeating_sound_from_object",
+    "displayname": null,
+    "description": null,
+    "parameters": [
+      {
+        "type": "Constant",
+        "name": null,
+        "constantname": "CHANNEL"
+      },
+      {
+        "type": "Prop",
+        "name": null,
+        "constantname": null
+      },
+      {
+        "type": "System.Int16",
+        "name": null,
+        "constantname": null
+      },
+      {
+        "type": "System.Int16",
+        "name": null,
+        "constantname": null
+      },
+      {
+        "type": "System.Int16",
+        "name": null,
+        "constantname": null
+      }
+    ]
+  },
+  {
+    "id": 364,
+    "name": "noop016c",
+    "displayname": null,
+    "description": null,
+    "parameters": []
+  },
+  {
+    "id": 365,
+    "name": "add_motion_blur",
+    "displayname": null,
+    "description": null,
+    "parameters": [
+      {
+        "type": "Character",
+        "name": null,
+        "constantname": null
+      },
+      {
+        "type": "System.Byte",
+        "name": null,
+        "constantname": null
+      },
+      {
+        "type": "System.Boolean",
+        "name": null,
+        "constantname": null
+      }
+    ]
+  },
+  {
+    "id": 366,
+    "name": "damage_chr_by_amount",
+    "displayname": null,
+    "description": null,
+    "parameters": [
+      {
+        "type": "Character",
+        "name": null,
+        "constantname": null
+      },
+      {
+        "type": "System.Byte",
+        "name": null,
+        "constantname": null
+      },
+      {
+        "type": "System.Byte",
+        "name": null,
+        "constantname": null
+      }
+    ]
+  },
+  {
+    "id": 367,
+    "name": "if_has_gun",
+    "displayname": null,
+    "description": null,
+    "parameters": [
+      {
+        "type": "Character",
+        "name": null,
+        "constantname": null
+      },
+	  {
+        "type": "null",
+        "name": null,
+        "constantname": null
+      },
+      {
+        "type": "Label",
+        "name": null,
+        "constantname": null
+      }
+    ]
+  },
+  {
+    "id": 368,
+    "name": "do_gun_command",
+    "displayname": null,
+    "description": null,
+    "parameters": [
+      {
+        "type": "System.Boolean",
+        "name": null,
+        "constantname": null
+      },
+      {
+        "type": "Label",
+        "name": null,
+        "constantname": null
+      }
+    ]
+  },
+  {
+    "id": 369,
+    "name": "if_distance_to_gun_lt",
+    "displayname": null,
+    "description": null,
+    "parameters": [
+      {
+        "type": "System.Int16",
+        "name": null,
+        "constantname": null
+      },
+      {
+        "type": "Label",
+        "name": null,
+        "constantname": null
+      }
+    ]
+  },
+  {
+    "id": 370,
+    "name": "chr_recover_gun",
+    "displayname": null,
+    "description": null,
+    "parameters": [
+      {
+        "type": "Character",
+        "name": null,
+        "constantname": null
+      },
+      {
+        "type": "Label",
+        "name": null,
+        "constantname": null
+      }
+    ]
+  },
+  {
+    "id": 371,
+    "name": "try_inherit_properties",
+    "displayname": null,
+    "description": null,
+    "parameters": [
+      {
+        "type": "Character",
+        "name": null,
+        "constantname": null
+      },
+      {
+        "type": "Label",
+        "name": null,
+        "constantname": null
+      }
+    ]
+  },
+  {
+    "id": 372,
+    "name": "if_controller_button_pressed",
+    "displayname": null,
+    "description": null,
+    "parameters": [
+      {
+        "type": "Label",
+        "name": null,
+        "constantname": null
+      }
+    ]
+  },
+  {
+    "id": 373,
+    "name": "cmd0175",
+    "displayname": null,
+    "description": null,
+    "parameters": [
+      {
+        "type": "System.Byte",
+        "name": null,
+        "constantname": null
+      }
+    ]
+  },
+  {
+    "id": 374,
+    "name": "if_bot_respawning",
+    "displayname": null,
+    "description": null,
+    "parameters": [
+      {
+        "type": "Label",
+        "name": null,
+        "constantname": null
+      }
+    ]
+  },
+  {
+    "id": 375,
+    "name": "force_walk",
+    "displayname": null,
+    "description": null,
+    "parameters": [
+      {
+        "type": "Character",
+        "name": null,
+        "constantname": null
+      },
+      {
+        "type": "Pad",
+        "name": null,
+        "constantname": null
+      },
+      {
+        "type": "System.Byte",
+        "name": null,
+        "constantname": null
+      },
+      {
+        "type": "System.Byte",
+        "name": null,
+        "constantname": null
+      },
+      {
+        "type": "System.Byte",
+        "name": null,
+        "constantname": null
+      },
+      {
+        "type": "System.Byte",
+        "name": null,
+        "constantname": null
+      }
+    ]
+  },
+  {
+    "id": 376,
+    "name": "if_force_walk_finished",
+    "displayname": null,
+    "description": null,
+    "parameters": [
+      {
+        "type": "Character",
+        "name": null,
+        "constantname": null
+      },
+      {
+        "type": "Label",
+        "name": null,
+        "constantname": null
+      }
+    ]
+  },
+  {
+    "id": 377,
+    "name": "play_sound_from_entity",
+    "displayname": null,
+    "description": null,
+    "parameters": [
+      {
+        "type": "Constant",
+        "name": null,
+        "constantname": "CHANNEL"
+      },
+      {
+        "type": "PropOrCharacter",
+        "name": null,
+        "constantname": null
+      },
+	  {
+        "type": "null",
+        "name": null,
+        "constantname": null
+      },
+	  {
+        "type": "null",
+        "name": null,
+        "constantname": "1"
+      },
+      {
+        "type": "System.Int16",
+        "name": null,
+        "constantname": null
+      },
+      {
+        "type": "System.Int16",
+        "name": null,
+        "constantname": null
+      },
+      {
+        "type": "System.Byte",
+        "name": null,
+        "constantname": null
+      }
+    ]
+  },
+  {
+    "id": 378,
+    "name": "if_can_see_attack_target",
+    "displayname": null,
+    "description": null,
+    "parameters": [
+      {
+        "type": "Label",
+        "name": null,
+        "constantname": null
+      }
+    ]
+  },
+  {
+    "id": 379,
+    "name": "if_chr_knockedout",
+    "displayname": null,
+    "description": null,
+    "parameters": [
+      {
+        "type": "Character",
+        "name": null,
+        "constantname": null
+      },
+      {
+        "type": "Label",
+        "name": null,
+        "constantname": null
+      }
+    ]
+  },
+  {
+    "id": 380,
+    "name": "assign_sound",
+    "displayname": null,
+    "description": null,
+    "parameters": [
+      {
+        "type": "SoundEffect",
+        "name": null,
+        "constantname": null
+      },
+      {
+        "type": "Constant",
+        "name": null,
+        "constantname": "CHANNEL"
+      }
+    ]
+  },
+  {
+    "id": 381,
+    "name": "play_cutscene_track",
+    "displayname": null,
+    "description": null,
+    "parameters": [
+      {
+        "type": "MusicTrack",
+        "name": null,
+        "constantname": null
+      }
+    ]
+  },
+  {
+    "id": 382,
+    "name": "stop_cutscene_track",
+    "displayname": null,
+    "description": null,
+    "parameters": []
+  },
+  {
+    "id": 383,
+    "name": "play_temporary_track",
+    "displayname": null,
+    "description": null,
+    "parameters": [
+      {
+        "type": "MusicTrack",
+        "name": null,
+        "constantname": null
+      }
+    ]
+  },
+  {
+    "id": 384,
+    "name": "stop_ambient_track",
+    "displayname": null,
+    "description": null,
+    "parameters": []
+  },
+  {
+    "id": 385,
+    "name": "if_chr_looking_at_object",
+    "displayname": null,
+    "description": null,
+    "parameters": [
+      {
+        "type": "Character",
+        "name": null,
+        "constantname": null
+      },
+      {
+        "type": "Prop",
+        "name": null,
+        "constantname": null
+      },
+      {
+        "type": "Label",
+        "name": null,
+        "constantname": null
+      }
+    ]
+  },
+  {
+    "id": 386,
+    "name": "try_punch_or_kick",
+    "displayname": null,
+    "description": null,
+    "parameters": [
+	  {
+        "type": "null",
+        "name": null,
+        "constantname": null
+      },
+      {
+        "type": "Label",
+        "name": null,
+        "constantname": null
+      }
+    ]
+  },
+  {
+    "id": 387,
+    "name": "if_target_is_player",
+    "displayname": null,
+    "description": null,
+    "parameters": [
+      {
+        "type": "Label",
+        "name": null,
+        "constantname": null
+      }
+    ]
+  },
+  {
+    "id": 388,
+    "name": "try_attack_amount",
+    "displayname": null,
+    "description": null,
+    "parameters": [
+      {
+        "type": "System.Byte",
+        "name": null,
+        "constantname": null
+      },
+      {
+        "type": "System.Byte",
+        "name": null,
+        "constantname": null
+      }
+    ]
+  },
+  {
+    "id": 389,
+    "name": "mp_init_simulants",
+    "displayname": null,
+    "description": null,
+    "parameters": []
+  },
+  {
+    "id": 390,
+    "name": "if_chr_soundtimer",
+    "displayname": null,
+    "description": null,
+    "parameters": [
+      {
+        "type": "System.Int16",
+        "name": null,
+        "constantname": null
+      },
+      {
+        "type": "Constant",
+        "name": null,
+        "constantname": "OPERATOR"
+      },
+      {
+        "type": "Label",
+        "name": null,
+        "constantname": null
+      }
+    ]
+  },
+  {
+    "id": 391,
+    "name": "set_target_to_camspy_if_in_sight",
+    "displayname": null,
+    "description": null,
+    "parameters": [
+      {
+        "type": "Label",
+        "name": null,
+        "constantname": null
+      }
+    ]
+  },
+  {
+    "id": 392,
+    "name": "if_lift_stationary",
+    "displayname": null,
+    "description": null,
+    "parameters": [
+      {
+        "type": "Prop",
+        "name": null,
+        "constantname": null
+      },
+      {
+        "type": "Label",
+        "name": null,
+        "constantname": null
+      }
+    ]
+  },
+  {
+    "id": 393,
+    "name": "lift_go_to_stop",
+    "displayname": null,
+    "description": null,
+    "parameters": [
+      {
+        "type": "Prop",
+        "name": null,
+        "constantname": null
+      },
+      {
+        "type": "System.Byte",
+        "name": null,
+        "constantname": null
+      }
+    ]
+  },
+  {
+    "id": 394,
+    "name": "if_lift_at_stop",
+    "displayname": null,
+    "description": null,
+    "parameters": [
+      {
+        "type": "Prop",
+        "name": null,
+        "constantname": null
+      },
+      {
+        "type": "System.Byte",
+        "name": null,
+        "constantname": null
+      },
+      {
+        "type": "Label",
+        "name": null,
+        "constantname": null
+      }
+    ]
+  },
+  {
+    "id": 395,
+    "name": "enable_rain",
+    "displayname": null,
+    "description": null,
+    "parameters": [
+      {
+        "type": "System.Byte",
+        "name": null,
+        "constantname": null
+      }
+    ]
+  },
+  {
+    "id": 396,
+    "name": "chr_toggle_modelpart",
+    "displayname": null,
+    "description": null,
+    "parameters": [
+      {
+        "type": "Character",
+        "name": null,
+        "constantname": null
+      },
+      {
+        "type": "Constant",
+        "name": null,
+        "constantname": "MODELPART"
+      }
+    ]
+  },
+  {
+    "id": 397,
+    "name": "activate_lift",
+    "displayname": null,
+    "description": null,
+    "parameters": [
+      {
+        "type": "System.Byte",
+        "name": null,
+        "constantname": null
+      },
+      {
+        "type": "Prop",
+        "name": null,
+        "constantname": null
+      }
+    ]
+  },
+  {
+    "id": 398,
+    "name": "miniskedar_try_pounce",
+    "displayname": null,
+    "description": null,
+    "parameters": [
+      {
+        "type": "System.Byte",
+        "name": null,
+        "constantname": null
+      },
+      {
+        "type": "System.Int16",
+        "name": null,
+        "constantname": null
+      },
+	  {
+        "type": "null",
+        "name": null,
+        "constantname": null
+      },
+      {
+        "type": "Label",
+        "name": null,
+        "constantname": null
+      }
+    ]
+  },
+  {
+    "id": 399,
+    "name": "if_object_distance_to_pad_lt",
+    "displayname": null,
+    "description": null,
+    "parameters": [
+      {
+        "type": "Prop",
+        "name": null,
+        "constantname": null
+      },
+      {
+        "type": "System.Int16",
+        "name": null,
+        "constantname": null
+      },
+      {
+        "type": "Pad",
+        "name": null,
+        "constantname": null
+      },
+      {
+        "type": "Label",
+        "name": null,
+        "constantname": null
+      }
+    ]
+  },
+  {
+    "id": 400,
+    "name": "set_savefile_flag",
+    "displayname": null,
+    "description": null,
+    "parameters": [
+      {
+        "type": "Constant",
+        "name": null,
+        "constantname": "GAMEFILEFLAG"
+      }
+    ]
+  },
+  {
+    "id": 401,
+    "name": "unset_savefile_flag",
+    "displayname": null,
+    "description": null,
+    "parameters": [
+      {
+        "type": "Constant",
+        "name": null,
+        "constantname": "GAMEFILEFLAG"
+      }
+    ]
+  },
+  {
+    "id": 402,
+    "name": "if_savefile_flag_is_set",
+    "displayname": null,
+    "description": null,
+    "parameters": [
+      {
+        "type": "Constant",
+        "name": null,
+        "constantname": "GAMEFILEFLAG"
+      },
+      {
+        "type": "Label",
+        "name": null,
+        "constantname": null
+      }
+    ]
+  },
+  {
+    "id": 403,
+    "name": "if_savefile_flag_is_unset",
+    "displayname": null,
+    "description": null,
+    "parameters": [
+      {
+        "type": "Constant",
+        "name": null,
+        "constantname": "GAMEFILEFLAG"
+      },
+      {
+        "type": "Label",
+        "name": null,
+        "constantname": null
+      }
+    ]
+  },
+  {
+    "id": 414,
+    "name": "if_object_health_lt",
+    "displayname": null,
+    "description": null,
+    "parameters": [
+      {
+        "type": "Prop",
+        "name": null,
+        "constantname": null
+      },
+      {
+        "type": "System.Int16",
+        "name": null,
+        "constantname": null
+      },
+      {
+        "type": "Label",
+        "name": null,
+        "constantname": null
+      }
+    ]
+  },
+  {
+    "id": 415,
+    "name": "set_object_health",
+    "displayname": null,
+    "description": null,
+    "parameters": [
+      {
+        "type": "Prop",
+        "name": null,
+        "constantname": null
+      },
+      {
+        "type": "System.Int16",
+        "name": null,
+        "constantname": null
+      }
+    ]
+  },
+  {
+    "id": 416,
+    "name": "set_chr_special_death_animation",
+    "displayname": null,
+    "description": null,
+    "parameters": [
+      {
+        "type": "Character",
+        "name": null,
+        "constantname": null
+      },
+      {
+        "type": "Constant",
+        "name": null,
+        "constantname": "SPECIALDIE"
+      }
+    ]
+  },
+  {
+    "id": 417,
+    "name": "set_chr_roomtosearch",
+    "displayname": null,
+    "description": null,
+    "parameters": []
+  },
+  {
+    "id": 418,
+    "name": "play_cistaff_quip",
+    "displayname": null,
+    "description": null,
+    "parameters": [
+      {
+        "type": "Constant",
+        "name": null,
+        "constantname": "CIQUIP"
+      },
+      {
+        "type": "Constant",
+        "name": null,
+        "constantname": "CHANNEL"
+      }
+    ]
+  },
+  {
+    "id": 419,
+    "name": "do_preset_animation",
+    "displayname": null,
+    "description": null,
+    "parameters": [
+      {
+        "type": "Constant",
+        "name": null,
+        "constantname": "PRESETANIM"
+      }
+    ]
+  },
+  {
+    "id": 420,
+    "name": "show_hudmsg_middle",
+    "displayname": null,
+    "description": null,
+    "parameters": [
+      {
+        "type": "System.Byte",
+        "name": null,
+        "constantname": null
+      },
+      {
+        "type": "Constant",
+        "name": null,
+        "constantname": "COLOR"
+      },
+      {
+        "type": "LanguageString",
+        "name": null,
+        "constantname": null
+      }
+    ]
+  },
+  {
+    "id": 421,
+    "name": "if_using_lift",
+    "displayname": null,
+    "description": null,
+    "parameters": [
+      {
+        "type": "Label",
+        "name": null,
+        "constantname": null
+      }
+    ]
+  },
+  {
+    "id": 422,
+    "name": "if_target_y_difference_lt",
+    "displayname": null,
+    "description": null,
+    "parameters": [
+      {
+        "type": "System.Byte",
+        "name": null,
+        "constantname": null
+      },
+      {
+        "type": "Label",
+        "name": null,
+        "constantname": null
+      }
+    ]
+  },
+  {
+    "id": 423,
+    "name": "if_chr_not_talking",
+    "displayname": null,
+    "description": null,
+    "parameters": [
+      {
+        "type": "Character",
+        "name": null,
+        "constantname": null
+      },
+      {
+        "type": "Label",
+        "name": null,
+        "constantname": null
+      }
+    ]
+  },
+  {
+    "id": 426,
+    "name": "cmd01aa",
+    "displayname": null,
+    "description": null,
+    "parameters": [
+      {
+        "type": "Label",
+        "name": null,
+        "constantname": null
+      }
+    ]
+  },
+  {
+    "id": 427,
+    "name": "if_num_subdued",
+    "displayname": null,
+    "description": null,
+    "parameters": [
+      {
+        "type": "System.Byte",
+        "name": null,
+        "constantname": null
+      },
+      {
+        "type": "Constant",
+        "name": null,
+        "constantname": "OPERATOR"
+      },
+      {
+        "type": "Label",
+        "name": null,
+        "constantname": null
+      }
+    ]
+  },
+  {
+    "id": 429,
+    "name": "release_grabbed_object",
+    "displayname": null,
+    "description": null,
+    "parameters": [
+      {
+        "type": "Character",
+        "name": null,
+        "constantname": null
+      }
+    ]
+  },
+  {
+    "id": 430,
+    "name": "clear_inventory",
+    "displayname": null,
+    "description": null,
+    "parameters": [
+      {
+        "type": "Character",
+        "name": null,
+        "constantname": null
+      }
+    ]
+  },
+  {
+    "id": 431,
+    "name": "grab_object",
+    "displayname": null,
+    "description": null,
+    "parameters": [
+      {
+        "type": "Character",
+        "name": null,
+        "constantname": null
+      },
+      {
+        "type": "Prop",
+        "name": null,
+        "constantname": null
+      }
+    ]
+  },
+  {
+    "id": 433,
+    "name": "shuffle_ruins_pillars",
+    "displayname": null,
+    "description": null,
+    "parameters": [
+      {
+        "type": "Prop",
+        "name": null,
+        "constantname": null
+      },
+      {
+        "type": "Prop",
+        "name": null,
+        "constantname": null
+      },
+      {
+        "type": "Prop",
+        "name": null,
+        "constantname": null
+      },
+      {
+        "type": "Prop",
+        "name": null,
+        "constantname": null
+      },
+      {
+        "type": "Prop",
+        "name": null,
+        "constantname": null
+      },
+      {
+        "type": "Prop",
+        "name": null,
+        "constantname": null
+      },
+      {
+        "type": "Prop",
+        "name": null,
+        "constantname": null
+      },
+      {
+        "type": "Prop",
+        "name": null,
+        "constantname": null
+      },
+      {
+        "type": "Prop",
+        "name": null,
+        "constantname": null
+      },
+      {
+        "type": "Prop",
+        "name": null,
+        "constantname": null
+      },
+      {
+        "type": "Prop",
+        "name": null,
+        "constantname": null
+      },
+      {
+        "type": "Prop",
+        "name": null,
+        "constantname": null
+      },
+      {
+        "type": "Prop",
+        "name": null,
+        "constantname": null
+      },
+      {
+        "type": "Prop",
+        "name": null,
+        "constantname": null
+      },
+      {
+        "type": "Prop",
+        "name": null,
+        "constantname": null
+      },
+      {
+        "type": "Prop",
+        "name": null,
+        "constantname": null
+      }
+    ]
+  },
+  {
+    "id": 434,
+    "name": "set_wind_speed",
+    "displayname": null,
+    "description": null,
+    "parameters": [
+      {
+        "type": "System.Byte",
+        "name": null,
+        "constantname": null
+      }
+    ]
+  },
+  {
+    "id": 435,
+    "name": "chr_toggle_p1p2",
+    "displayname": null,
+    "description": null,
+    "parameters": [
+      {
+        "type": "Character",
+        "name": null,
+        "constantname": null
+      }
+    ]
+  },
+  {
+    "id": 436,
+    "name": "cmd01b4_if_something",
+    "displayname": null,
+    "description": null,
+    "parameters": [
+      {
+        "type": "Label",
+        "name": null,
+        "constantname": null
+      }
+    ]
+  },
+  {
+    "id": 437,
+    "name": "chr_set_p1p2",
+    "displayname": null,
+    "description": null,
+    "parameters": [
+      {
+        "type": "Character",
+        "name": null,
+        "constantname": null
+      },
+      {
+        "type": "Character",
+        "name": null,
+        "constantname": null
+      }
+    ]
+  },
+  {
+    "id": 438,
+    "name": "enable_snow",
+    "displayname": null,
+    "description": null,
+    "parameters": [
+      {
+        "type": "System.Boolean",
+        "name": null,
+        "constantname": null
+      }
+    ]
+  },
+  {
+    "id": 439,
+    "name": "set_chr_cloaked",
+    "displayname": null,
+    "description": null,
+    "parameters": [
+      {
+        "type": "Character",
+        "name": null,
+        "constantname": null
+      },
+      {
+        "type": "System.Boolean",
+        "name": null,
+        "constantname": null
+      },
+      {
+        "type": "System.Boolean",
+        "name": null,
+        "constantname": null
+      }
+    ]
+  },
+  {
+    "id": 440,
+    "name": "set_autogun_target_team",
+    "displayname": null,
+    "description": null,
+    "parameters": [
+      {
+        "type": "Prop",
+        "name": null,
+        "constantname": null
+      },
+      {
+        "type": "Constant",
+        "name": null,
+        "constantname": "TEAM"
+      }
+    ]
+  },
+  {
+    "id": 441,
+    "name": "shuffle_pelagic_switches",
+    "displayname": null,
+    "description": null,
+    "parameters": []
+  },
+  {
+    "id": 442,
+    "name": "try_attack_lie",
+    "displayname": null,
+    "description": null,
+    "parameters": [
+      {
+        "type": "BitFlag",
+        "name": null,
+        "constantname": "ATTACKFLAG"
+      },
+      {
+        "type": "AimEntity",
+        "name": null,
+        "constantname": null
+      },
+      {
+        "type": "Label",
+        "name": null,
+        "constantname": null
+      }
+    ]
+  },
+  {
+    "id": 443,
+    "name": "noop01bb",
+    "displayname": null,
+    "description": null,
+    "parameters": [
+	  {
+        "type": "null",
+        "name": null,
+        "constantname": null
+      }
+	]
+  },
+  {
+    "id": 444,
+    "name": "cmd01bc",
+    "displayname": null,
+    "description": null,
+    "parameters": [
+      {
+        "type": "System.Byte",
+        "name": null,
+        "constantname": null
+      },
+      {
+        "type": "Label",
+        "name": null,
+        "constantname": null
+      }
+    ]
+  },
+  {
+    "id": 445,
+    "name": "if_training_pc_holographed",
+    "displayname": null,
+    "description": null,
+    "parameters": [
+      {
+        "type": "Label",
+        "name": null,
+        "constantname": null
+      }
+    ]
+  },
+  {
+    "id": 446,
+    "name": "if_player_using_device",
+    "displayname": null,
+    "description": null,
+    "parameters": [
+      {
+        "type": "Character",
+        "name": null,
+        "constantname": null
+      },
+      {
+        "type": "Constant",
+        "name": null,
+        "constantname": "WEAPON"
+      },
+      {
+        "type": "Label",
+        "name": null,
+        "constantname": null
+      }
+    ]
+  },
+  {
+    "id": 447,
+    "name": "teleport_to_pad",
+    "displayname": null,
+    "description": null,
+    "parameters": [
+      {
+        "type": "Pad",
+        "name": null,
+        "constantname": null
+      },
+      {
+        "type": "Character",
+        "name": null,
+        "constantname": null
+      }
+    ]
+  },
+  {
+    "id": 448,
+    "name": "if_teleport_full_white",
+    "displayname": null,
+    "description": null,
+    "parameters": [
+      {
+        "type": "Label",
+        "name": null,
+        "constantname": null
+      },
+      {
+        "type": "Character",
+        "name": null,
+        "constantname": null
+      }
+    ]
+  },
+  {
+    "id": 449,
+    "name": "set_aipunchdodgelist",
+    "displayname": null,
+    "description": null,
+    "parameters": [
+      {
+        "type": "AIList",
+        "name": null,
+        "constantname": null
+      }
+    ]
+  },
+  {
+    "id": 450,
+    "name": "set_aishootingatmelist",
+    "displayname": null,
+    "description": null,
+    "parameters": [
+      {
+        "type": "AIList",
+        "name": null,
+        "constantname": null
+      }
+    ]
+  },
+  {
+    "id": 451,
+    "name": "set_darkroomlist",
+    "displayname": null,
+    "description": null,
+    "parameters": [
+      {
+        "type": "AIList",
+        "name": null,
+        "constantname": null
+      }
+    ]
+  },
+  {
+    "id": 452,
+    "name": "set_aiplayerdeadlist",
+    "displayname": null,
+    "description": null,
+    "parameters": [
+      {
+        "type": "AIList",
+        "name": null,
+        "constantname": null
+      }
+    ]
+  },
+  {
+    "id": 453,
+    "name": "avoid",
+    "displayname": null,
+    "description": null,
+    "parameters": []
+  },
+  {
+    "id": 454,
+    "name": "set_chr_dodge_rating",
+    "displayname": null,
+    "description": null,
+    "parameters": [
+      {
+        "type": "System.Byte",
+        "name": null,
+        "constantname": null
+      },
+      {
+        "type": "System.Byte",
+        "name": null,
+        "constantname": null
+      }
+    ]
+  },
+  {
+    "id": 455,
+    "name": "set_unarmeddodgerating",
+    "displayname": null,
+    "description": null,
+    "parameters": [
+      {
+        "type": "System.Byte",
+        "name": null,
+        "constantname": null
+      }
+    ]
+  },
+  {
+    "id": 456,
+    "name": "title_init_mode",
+    "displayname": null,
+    "description": null,
+    "parameters": [
+      {
+        "type": "Constant",
+        "name": null,
+        "constantname": "TITLEAIMODE"
+      }
+    ]
+  },
+  {
+    "id": 457,
+    "name": "try_exit_title",
+    "displayname": null,
+    "description": null,
+    "parameters": [
+      {
+        "type": "Label",
+        "name": null,
+        "constantname": null
+      }
+    ]
+  },
+  {
+    "id": 458,
+    "name": "set_cutscene_weapon",
+    "displayname": null,
+    "description": null,
+    "parameters": [
+      {
+        "type": "Character",
+        "name": null,
+        "constantname": null
+      },
+      {
+        "type": "Constant",
+        "name": null,
+        "constantname": "CUTSCENEWEAPON"
+      },
+      {
+        "type": "Constant",
+        "name": null,
+        "constantname": "CUTSCENEWEAPON"
+      }
+    ]
+  },
+  {
+    "id": 459,
+    "name": "fade_to_color",
+    "displayname": null,
+    "description": null,
+    "parameters": [
+      {
+        "type": "System.Int32",
+        "name": null,
+        "constantname": null
+      },
+      {
+        "type": "System.Int16",
+        "name": null,
+        "constantname": null
+      }
+    ]
+  },
+  {
+    "id": 460,
+    "name": "if_fade_complete",
+    "displayname": null,
+    "description": null,
+    "parameters": [
+      {
+        "type": "Label",
+        "name": null,
+        "constantname": null
+      }
+    ]
+  },
+  {
+    "id": 461,
+    "name": "set_chr_hudpiece_visible",
+    "displayname": null,
+    "description": null,
+    "parameters": [
+      {
+        "type": "Character",
+        "name": null,
+        "constantname": null
+      },
+      {
+        "type": "System.Boolean",
+        "name": null,
+        "constantname": null
+      }
+    ]
+  },
+  {
+    "id": 462,
+    "name": "passive_mode",
+    "displayname": null,
+    "description": null,
+    "parameters": [
+      {
+        "type": "System.Boolean",
+        "name": null,
+        "constantname": null
+      }
+    ]
+  },
+  {
+    "id": 463,
+    "name": "set_chr_shooting_in_cutscene",
+    "displayname": null,
+    "description": null,
+    "parameters": [
+      {
+        "type": "Character",
+        "name": null,
+        "constantname": null
+      },
+      {
+        "type": "System.Boolean",
+        "name": null,
+        "constantname": null
+      }
+    ]
+  },
+  {
+    "id": 464,
+    "name": "set_portal_flag",
+    "displayname": null,
+    "description": null,
+    "parameters": [
+      {
+        "type": "Portal",
+        "name": null,
+        "constantname": null
+      },
+      {
+        "type": "BitFlag",
+        "name": null,
+        "constantname": "PORTALFLAG"
+      }
+    ]
+  },
+  {
+    "id": 465,
+    "name": "object_set_modelpart_visible",
+    "displayname": null,
+    "description": null,
+    "parameters": [
+      {
+        "type": "Prop",
+        "name": null,
+        "constantname": null
+      },
+      {
+        "type": "Constant",
+        "name": null,
+        "constantname": "MODELPART"
+      },
+      {
+        "type": "System.Boolean",
+        "name": null,
+        "constantname": null
+      }
+    ]
+  },
+  {
+    "id": 466,
+    "name": "emit_sparks",
+    "displayname": null,
+    "description": null,
+    "parameters": [
+      {
+        "type": "Character",
+        "name": null,
+        "constantname": null
+      }
+    ]
+  },
+  {
+    "id": 467,
+    "name": "set_drcaroll_images",
+    "displayname": null,
+    "description": null,
+    "parameters": [
+      {
+        "type": "Character",
+        "name": null,
+        "constantname": null
+      },
+      {
+        "type": "Constant",
+        "name": null,
+        "constantname": "DRCAROLLIMAGE"
+      },
+      {
+        "type": "Constant",
+        "name": null,
+        "constantname": "DRCAROLLIMAGE"
+      }
+    ]
+  },
+  {
+    "id": 468,
+    "name": "set_room_flag",
+    "displayname": null,
+    "description": null,
+    "parameters": [
+      {
+        "type": "Room",
+        "name": null,
+        "constantname": null
+      },
+      {
+        "type": "BitFlag",
+        "name": null,
+        "constantname": "ROOMFLAG"
+      }
+    ]
+  },
+  {
+    "id": 469,
+    "name": "show_nonessential_chrs",
+    "displayname": null,
+    "description": null,
+    "parameters": [
+      {
+        "type": "System.Boolean",
+        "name": null,
+        "constantname": null
+      }
+    ]
+  },
+  {
+    "id": 470,
+    "name": "configure_environment",
+    "displayname": null,
+    "description": null,
+    "parameters": [
+      {
+        "type": "Room",
+        "name": null,
+        "constantname": null
+      },
+      {
+        "type": "Constant",
+        "name": null,
+        "constantname": "AIENVCMD"
+      },
+      {
+        "type": "System.Byte",
+        "name": null,
+        "constantname": null
+      }
+    ]
+  },
+  {
+    "id": 471,
+    "name": "if_distance_to_target2_lt",
+    "displayname": null,
+    "description": null,
+    "parameters": [
+      {
+        "type": "System.Int16",
+        "name": null,
+        "constantname": null
+      },
+      {
+        "type": "Label",
+        "name": null,
+        "constantname": null
+      }
+    ]
+  },
+  {
+    "id": 472,
+    "name": "if_distance_to_target2_gt",
+    "displayname": null,
+    "description": null,
+    "parameters": [
+      {
+        "type": "System.Int16",
+        "name": null,
+        "constantname": null
+      },
+      {
+        "type": "Label",
+        "name": null,
+        "constantname": null
+      }
+    ]
+  },
+  {
+    "id": 473,
+    "name": "play_sound_from_object2",
+    "displayname": null,
+    "description": null,
+    "parameters": [
+      {
+        "type": "Constant",
+        "name": null,
+        "constantname": "CHANNEL"
+      },
+      {
+        "type": "Prop",
+        "name": null,
+        "constantname": null
+      },
+      {
+        "type": "SoundEffect",
+        "name": null,
+        "constantname": null
+      },
+	  {
+        "type": "null",
+        "name": null,
+        "constantname": "255"
+      },
+	  {
+        "type": "null",
+        "name": null,
+        "constantname": "255"
+      },
+      {
+        "type": "Constant",
+        "name": null,
+        "constantname": "PSTYPE"
+      },
+      {
+        "type": "BitFlag",
+        "name": null,
+        "constantname": "PSFLAG"
+      }
+    ]
+  },
+  {
+    "id": 474,
+    "name": "play_music_continuously",
+    "displayname": null,
+    "description": null,
+    "parameters": [
+      {
+        "type": "MusicTrack",
+        "name": null,
+        "constantname": null
+      }
+    ]
+  },
+  {
+    "id": 475,
+    "name": "kill",
+    "displayname": null,
+    "description": null,
+    "parameters": [
+      {
+        "type": "Character",
+        "name": null,
+        "constantname": null
+      }
+    ]
+  },
+  {
+    "id": 476,
+    "name": "remove_weapon_from_inventory",
+    "displayname": null,
+    "description": null,
+    "parameters": [
+      {
+        "type": "Constant",
+        "name": null,
+        "constantname": "WEAPON"
+      }
+    ]
+  },
+  {
+    "id": 477,
+    "name": "if_music_event_queue_empty",
+    "displayname": null,
+    "description": null,
+    "parameters": [
+      {
+        "type": "System.Byte",
+        "name": null,
+        "constantname": null
+      },
+      {
+        "type": "Label",
+        "name": null,
+        "constantname": null
+      }
+    ]
+  },
+  {
+    "id": 479,
+    "name": "if_chr_same_floor_distance_to_pad_lt",
+    "displayname": null,
+    "description": null,
+    "parameters": [
+      {
+        "type": "Character",
+        "name": null,
+        "constantname": null
+      },
+      {
+        "type": "System.Int16",
+        "name": null,
+        "constantname": null
+      },
+      {
+        "type": "Pad",
+        "name": null,
+        "constantname": null
+      },
+      {
+        "type": "Label",
+        "name": null,
+        "constantname": null
+      }
+    ]
+  },
+  {
+    "id": 478,
+    "name": "if_coop_mode",
+    "displayname": null,
+    "description": null,
+    "parameters": [
+      {
+        "type": "Label",
+        "name": null,
+        "constantname": null
+      }
+    ]
+  },
+  {
+    "id": 480,
+    "name": "remove_references_to_chr",
+    "displayname": null,
+    "description": null,
+    "parameters": []
+  }
+]

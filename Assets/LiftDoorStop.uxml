@@ -1,0 +1,6 @@
+<ui:UXML xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" editor-extension-mode="False">
+    <ui:VisualElement name="LiftDoorStop" style="flex-direction: column;">
+        <ui:DropdownField label="Lift door" index="-1" />
+        <ui:RadioButtonGroup label="Stop: " value="-1" choices="1,2,3,4" style="flex-direction: row; flex-wrap: nowrap; justify-content: flex-start; align-items: stretch;" />
+    </ui:VisualElement>
+</ui:UXML>

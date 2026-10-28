@@ -1,0 +1,7761 @@
+[
+  {
+    "name": "OBJFLAG",
+    "type": "BitFlag",
+	"size": 32,
+    "constants": [
+      {
+        "name": "OBJFLAG_FALL",
+        "value": 1,
+        "displayname": null,
+        "description": null
+      },
+      {
+        "name": "OBJFLAG_00000002",
+        "value": 2,
+        "displayname": null,
+        "description": null
+      },
+      {
+        "name": "OBJFLAG_UPSIDEDOWN",
+        "value": 4,
+        "displayname": null,
+        "description": null
+      },
+      {
+        "name": "OBJFLAG_00000008",
+        "value": 8,
+        "displayname": null,
+        "description": null
+      },
+      {
+        "name": "OBJFLAG_00000010",
+        "value": 16,
+        "displayname": null,
+        "description": null
+      },
+      {
+        "name": "OBJFLAG_XTOPADBOUNDS",
+        "value": 32,
+        "displayname": null,
+        "description": null
+      },
+      {
+        "name": "OBJFLAG_YTOPADBOUNDS",
+        "value": 64,
+        "displayname": null,
+        "description": null
+      },
+      {
+        "name": "OBJFLAG_ZTOPADBOUNDS",
+        "value": 128,
+        "displayname": null,
+        "description": null
+      },
+      {
+        "name": "OBJFLAG_00000100",
+        "value": 256,
+        "displayname": null,
+        "description": null
+      },
+      {
+        "name": "OBJFLAG_ORTHOGONAL",
+        "value": 512,
+        "displayname": null,
+        "description": null
+      },
+      {
+        "name": "OBJFLAG_IGNOREFLOORCOLOUR",
+        "value": 1024,
+        "displayname": null,
+        "description": null
+      },
+      {
+        "name": "OBJFLAG_PATHBLOCKER",
+        "value": 2048,
+        "displayname": null,
+        "description": null
+      },
+      {
+        "name": "OBJFLAG_IGNOREROOMCOLOUR",
+        "value": 4096,
+        "displayname": null,
+        "description": null
+      },
+      {
+        "name": "OBJFLAG_AIUNDROPPABLE",
+        "value": 8192,
+        "displayname": null,
+        "description": null
+      },
+      {
+        "name": "OBJFLAG_ASSIGNEDTOCHR",
+        "value": 16384,
+        "displayname": null,
+        "description": null
+      },
+      {
+        "name": "OBJFLAG_INSIDEANOTHEROBJ",
+        "value": 32768,
+        "displayname": null,
+        "description": null
+      },
+      {
+        "name": "OBJFLAG_FORCEMORTAL",
+        "value": 65536,
+        "displayname": null,
+        "description": null
+      },
+      {
+        "name": "OBJFLAG_INVINCIBLE",
+        "value": 131072,
+        "displayname": null,
+        "description": null
+      },
+      {
+        "name": "OBJFLAG_COLLECTABLE",
+        "value": 262144,
+        "displayname": null,
+        "description": null
+      },
+      {
+        "name": "OBJFLAG_THROWNLAPTOP",
+        "value": 524288,
+        "displayname": null,
+        "description": null
+      },
+      {
+        "name": "OBJFLAG_UNCOLLECTABLE",
+        "value": 1048576,
+        "displayname": null,
+        "description": null
+      },
+      {
+        "name": "OBJFLAG_BOUNCEIFSHOT",
+        "value": 2097152,
+        "displayname": null,
+        "description": null
+      },
+      {
+        "name": "OBJFLAG_FORCENOBOUNCE",
+        "value": 4194304,
+        "displayname": null,
+        "description": null
+      },
+      {
+        "name": "OBJFLAG_HELDROCKET",
+        "value": 8388608,
+        "displayname": null,
+        "description": null
+      },
+      {
+        "name": "OBJFLAG_01000000",
+        "value": 16777216,
+        "displayname": null,
+        "description": null
+      },
+      {
+        "name": "OBJFLAG_CANNOT_ACTIVATE",
+        "value": 33554432,
+        "displayname": null,
+        "description": null
+      },
+      {
+        "name": "OBJFLAG_AISEETHROUGH",
+        "value": 67108864,
+        "displayname": null,
+        "description": null
+      },
+      {
+        "name": "OBJFLAG_AUTOGUN_3DRANGE",
+        "value": 134217728,
+        "displayname": null,
+        "description": null
+      },
+      {
+        "name": "OBJFLAG_DEACTIVATED",
+        "value": 268435456,
+        "displayname": null,
+        "description": null
+      },
+      {
+        "name": "OBJFLAG_AMMOCRATE_EXPLODENOW",
+        "value": 268435456,
+        "displayname": null,
+        "description": null
+      },
+      {
+        "name": "OBJFLAG_DOOR_HASPORTAL",
+        "value": 268435456,
+        "displayname": null,
+        "description": null
+      },
+      {
+        "name": "OBJFLAG_GLASS_HASPORTAL",
+        "value": 268435456,
+        "displayname": null,
+        "description": null
+      },
+      {
+        "name": "OBJFLAG_WEAPON_LEFTHANDED",
+        "value": 268435456,
+        "displayname": null,
+        "description": null
+      },
+      {
+        "name": "OBJFLAG_ESCSTEP_ZALIGNED",
+        "value": 268435456,
+        "displayname": null,
+        "description": null
+      },
+      {
+        "name": "OBJFLAG_AUTOGUN_SEENTARGET",
+        "value": 536870912,
+        "displayname": null,
+        "description": null
+      },
+      {
+        "name": "OBJFLAG_CAMERA_DISABLED",
+        "value": 536870912,
+        "displayname": null,
+        "description": null
+      },
+      {
+        "name": "OBJFLAG_CHOPPER_INIT",
+        "value": 536870912,
+        "displayname": null,
+        "description": null
+      },
+      {
+        "name": "OBJFLAG_DOOR_OPENTOFRONT",
+        "value": 536870912,
+        "displayname": null,
+        "description": null
+      },
+      {
+        "name": "OBJFLAG_HOVERCAR_INIT",
+        "value": 536870912,
+        "displayname": null,
+        "description": null
+      },
+      {
+        "name": "OBJFLAG_HOVERPROP_20000000",
+        "value": 536870912,
+        "displayname": null,
+        "description": null
+      },
+      {
+        "name": "OBJFLAG_LIFT_LATERALMOVEMENT",
+        "value": 536870912,
+        "displayname": null,
+        "description": null
+      },
+      {
+        "name": "OBJFLAG_MONITOR_20000000",
+        "value": 536870912,
+        "displayname": null,
+        "description": null
+      },
+      {
+        "name": "OBJFLAG_WEAPON_AICANNOTUSE",
+        "value": 536870912,
+        "displayname": null,
+        "description": null
+      },
+      {
+        "name": "OBJFLAG_AUTOGUN_DAMAGED",
+        "value": 1073741824,
+        "displayname": null,
+        "description": null
+      },
+      {
+        "name": "OBJFLAG_CAMERA_BONDINVIEW",
+        "value": 1073741824,
+        "displayname": null,
+        "description": null
+      },
+      {
+        "name": "OBJFLAG_DOOR_KEEPOPEN",
+        "value": 1073741824,
+        "displayname": null,
+        "description": null
+      },
+      {
+        "name": "OBJFLAG_HOVERBIKE_MOVINGWHILEEMPTY",
+        "value": 1073741824,
+        "displayname": null,
+        "description": null
+      },
+      {
+        "name": "OBJFLAG_HOVERCAR_40000000",
+        "value": 1073741824,
+        "displayname": null,
+        "description": null
+      },
+      {
+        "name": "OBJFLAG_LIFT_TRIGGERDISABLE",
+        "value": 1073741824,
+        "displayname": null,
+        "description": null
+      },
+      {
+        "name": "OBJFLAG_MONITOR_RENDERPOSTBG",
+        "value": 1073741824,
+        "displayname": null,
+        "description": null
+      },
+      {
+        "name": "OBJFLAG_WEAPON_NOAMMO",
+        "value": 1073741824,
+        "displayname": null,
+        "description": null
+      },
+      {
+        "name": "OBJFLAG_80000000",
+        "value": -2147483648,
+        "displayname": null,
+        "description": null
+      },
+      {
+        "name": "OBJFLAG_CHOPPER_INACTIVE",
+        "value": -2147483648,
+        "displayname": null,
+        "description": null
+      },
+      {
+        "name": "OBJFLAG_DOOR_TWOWAY",
+        "value": -2147483648,
+        "displayname": null,
+        "description": null
+      },
+      {
+        "name": "OBJFLAG_HOVERCAR_ISHOVERBOT",
+        "value": -2147483648,
+        "displayname": null,
+        "description": null
+      },
+      {
+        "name": "OBJFLAG_LIFT_CHECKCEILING",
+        "value": -2147483648,
+        "displayname": null,
+        "description": null
+      },
+      {
+        "name": "OBJFLAG_WEAPON_CANMIXDUAL",
+        "value": -2147483648,
+        "displayname": null,
+        "description": null
+      }
+    ]
+  },
+  {
+    "name": "OBJFLAG2",
+    "type": "BitFlag",
+	"size": 32,
+    "constants": [
+      {
+        "name": "OBJFLAG2_IMMUNETOANTI",
+        "value": 1,
+        "displayname": null,
+        "description": null
+      },
+      {
+        "name": "OBJFLAG2_BOUNCEIFSHOTWHENDEAD",
+        "value": 2,
+        "displayname": null,
+        "description": null
+      },
+      {
+        "name": "OBJFLAG2_SKIPDOORLOCKEDMSG",
+        "value": 4,
+        "displayname": null,
+        "description": null
+      },
+      {
+        "name": "OBJFLAG2_DOOR_PENDINGACTIVATION",
+        "value": 8,
+        "displayname": null,
+        "description": null
+      },
+      {
+        "name": "OBJFLAG2_EXCLUDE_A",
+        "value": 16,
+        "displayname": null,
+        "description": null
+      },
+      {
+        "name": "OBJFLAG2_EXCLUDE_SA",
+        "value": 32,
+        "displayname": null,
+        "description": null
+      },
+      {
+        "name": "OBJFLAG2_EXCLUDE_PA",
+        "value": 64,
+        "displayname": null,
+        "description": null
+      },
+      {
+        "name": "OBJFLAG2_EXCLUDE_PD",
+        "value": 128,
+        "displayname": null,
+        "description": null
+      },
+      {
+        "name": "OBJFLAG2_NOFALL",
+        "value": 256,
+        "displayname": null,
+        "description": null
+      },
+      {
+        "name": "OBJFLAG2_FALLWITHOUTROTATION",
+        "value": 512,
+        "displayname": null,
+        "description": null
+      },
+      {
+        "name": "OBJFLAG2_LINKEDTOSAFE",
+        "value": 1024,
+        "displayname": null,
+        "description": null
+      },
+      {
+        "name": "OBJFLAG2_INTERACTCHECKLOS",
+        "value": 2048,
+        "displayname": null,
+        "description": null
+      },
+      {
+        "name": "OBJFLAG2_PICKUPWITHOUTLOS",
+        "value": 4096,
+        "displayname": null,
+        "description": null
+      },
+      {
+        "name": "OBJFLAG2_REMOVEWHENDESTROYED",
+        "value": 8192,
+        "displayname": null,
+        "description": null
+      },
+      {
+        "name": "OBJFLAG2_IMMUNETOGUNFIRE",
+        "value": 16384,
+        "displayname": null,
+        "description": null
+      },
+      {
+        "name": "OBJFLAG2_SHOOTTHROUGH",
+        "value": 32768,
+        "displayname": null,
+        "description": null
+      },
+      {
+        "name": "OBJFLAG2_DRAWONTOP",
+        "value": 65536,
+        "displayname": null,
+        "description": null
+      },
+      {
+        "name": "OBJFLAG2_DONTPAUSE",
+        "value": 131072,
+        "displayname": null,
+        "description": null
+      },
+      {
+        "name": "OBJFLAG2_INVHIDDEN",
+        "value": 262144,
+        "displayname": null,
+        "description": null
+      },
+      {
+        "name": "OBJFLAG2_INVISIBLE",
+        "value": 524288,
+        "displayname": null,
+        "description": null
+      },
+      {
+        "name": "OBJFLAG2_BULLETPROOF",
+        "value": 1048576,
+        "displayname": null,
+        "description": null
+      },
+      {
+        "name": "OBJFLAG2_IMMUNETOEXPLOSIONS",
+        "value": 2097152,
+        "displayname": null,
+        "description": null
+      },
+      {
+        "name": "OBJFLAG2_EXCLUDE_2P",
+        "value": 4194304,
+        "displayname": null,
+        "description": null
+      },
+      {
+        "name": "OBJFLAG2_EXCLUDE_3P",
+        "value": 8388608,
+        "displayname": null,
+        "description": null
+      },
+      {
+        "name": "OBJFLAG2_EXCLUDE_4P",
+        "value": 16777216,
+        "displayname": null,
+        "description": null
+      },
+      {
+        "name": "OBJFLAG2_THROWTHROUGH",
+        "value": 33554432,
+        "displayname": null,
+        "description": null
+      },
+      {
+        "name": "OBJFLAG2_CANFILLVIEWPORT",
+        "value": 67108864,
+        "displayname": null,
+        "description": null
+      },
+      {
+        "name": "OBJFLAG2_LOCKEDFRONT",
+        "value": 134217728,
+        "displayname": null,
+        "description": null
+      },
+      {
+        "name": "OBJFLAG2_LOCKEDBACK",
+        "value": 268435456,
+        "displayname": null,
+        "description": null
+      },
+      {
+        "name": "OBJFLAG2_AICANNOTUSE",
+        "value": 536870912,
+        "displayname": null,
+        "description": null
+      },
+      {
+        "name": "OBJFLAG2_AUTOGUN_MALFUNCTIONING2",
+        "value": 536870912,
+        "displayname": null,
+        "description": null
+      },
+      {
+        "name": "OBJFLAG2_AIRLOCKDOOR",
+        "value": 1073741824,
+        "displayname": null,
+        "description": null
+      },
+      {
+        "name": "OBJFLAG2_AUTOGUN_ZEROTOROT",
+        "value": 1073741824,
+        "displayname": null,
+        "description": null
+      },
+      {
+        "name": "OBJFLAG2_AUTOGUN_MALFUNCTIONING1",
+        "value": -2147483648,
+        "displayname": null,
+        "description": null
+      },
+      {
+        "name": "OBJFLAG2_DEBRIS_80000000",
+        "value": -2147483648,
+        "displayname": null,
+        "description": null
+      },
+      {
+        "name": "OBJFLAG2_DEFAULT_80000000",
+        "value": -2147483648,
+        "displayname": null,
+        "description": null
+      },
+      {
+        "name": "OBJFLAG2_DOOR_ALTCOORDSYSTEM",
+        "value": -2147483648,
+        "displayname": null,
+        "description": null
+      },
+      {
+        "name": "OBJFLAG2_GLASS_80000000",
+        "value": -2147483648,
+        "displayname": null,
+        "description": null
+      },
+      {
+        "name": "OBJFLAG2_HOVERPROP_80000000",
+        "value": -2147483648,
+        "displayname": null,
+        "description": null
+      },
+      {
+        "name": "OBJFLAG2_WEAPON_HUGEEXP",
+        "value": -2147483648,
+        "displayname": null,
+        "description": null
+      }
+    ]
+  },
+  {
+    "name": "OBJFLAG3",
+    "type": "BitFlag",
+	"size": 32,
+    "constants": [
+      {
+        "name": "OBJFLAG3_PUSHABLE",
+        "value": 1,
+        "displayname": null,
+        "description": null
+      },
+      {
+        "name": "OBJFLAG3_GRABBABLE",
+        "value": 2,
+        "displayname": null,
+        "description": null
+      },
+      {
+        "name": "OBJFLAG3_DOOR_STICKY",
+        "value": 4,
+        "displayname": null,
+        "description": null
+      },
+      {
+        "name": "OBJFLAG3_00000008",
+        "value": 8,
+        "displayname": null,
+        "description": null
+      },
+      {
+        "name": "OBJFLAG3_00000010",
+        "value": 16,
+        "displayname": null,
+        "description": null
+      },
+      {
+        "name": "OBJFLAG3_AUTOCUTSCENESOUNDS",
+        "value": 32,
+        "displayname": null,
+        "description": null
+      },
+      {
+        "name": "OBJFLAG3_RTRACKED_YELLOW",
+        "value": 64,
+        "displayname": null,
+        "description": null
+      },
+      {
+        "name": "OBJFLAG3_CANHARDFREE",
+        "value": 128,
+        "displayname": null,
+        "description": null
+      },
+      {
+        "name": "OBJFLAG3_HARDFREEING",
+        "value": 256,
+        "displayname": null,
+        "description": null
+      },
+      {
+        "name": "OBJFLAG3_00000200",
+        "value": 512,
+        "displayname": null,
+        "description": null
+      },
+      {
+        "name": "OBJFLAG3_WALKTHROUGH",
+        "value": 1024,
+        "displayname": null,
+        "description": null
+      },
+      {
+        "name": "OBJFLAG3_RTRACKED_BLUE",
+        "value": 2048,
+        "displayname": null,
+        "description": null
+      },
+      {
+        "name": "OBJFLAG3_SHOWSHIELD",
+        "value": 4096,
+        "displayname": null,
+        "description": null
+      },
+      {
+        "name": "OBJFLAG3_HTMTERMINAL",
+        "value": 8192,
+        "displayname": null,
+        "description": null
+      },
+      {
+        "name": "OBJFLAG3_ISFETCHTARGET",
+        "value": 16384,
+        "displayname": null,
+        "description": null
+      },
+      {
+        "name": "OBJFLAG3_REACTTOSIGHT",
+        "value": 32768,
+        "displayname": null,
+        "description": null
+      },
+      {
+        "name": "OBJFLAG3_INTERACTABLE",
+        "value": 65536,
+        "displayname": null,
+        "description": null
+      },
+      {
+        "name": "OBJFLAG3_SHIELDHIT",
+        "value": 131072,
+        "displayname": null,
+        "description": null
+      },
+      {
+        "name": "OBJFLAG3_RENDERPOSTBG",
+        "value": 262144,
+        "displayname": null,
+        "description": null
+      },
+      {
+        "name": "OBJFLAG3_DRAWONTOP",
+        "value": 524288,
+        "displayname": null,
+        "description": null
+      },
+      {
+        "name": "OBJFLAG3_HOVERBEDSHIELD",
+        "value": 1048576,
+        "displayname": null,
+        "description": null
+      },
+      {
+        "name": "OBJFLAG3_INTERACTSHORTRANGE",
+        "value": 2097152,
+        "displayname": null,
+        "description": null
+      },
+      {
+        "name": "OBJFLAG3_PLAYERUNDROPPABLE",
+        "value": 4194304,
+        "displayname": null,
+        "description": null
+      },
+      {
+        "name": "OBJFLAG3_LONGPUSHRANGE",
+        "value": 8388608,
+        "displayname": null,
+        "description": null
+      },
+      {
+        "name": "OBJFLAG3_PUSHFREELY",
+        "value": 16777216,
+        "displayname": null,
+        "description": null
+      },
+      {
+        "name": "OBJFLAG3_GEOCYL",
+        "value": 33554432,
+        "displayname": null,
+        "description": null
+      },
+      {
+        "name": "OBJFLAG3_04000000",
+        "value": 67108864,
+        "displayname": null,
+        "description": null
+      },
+      {
+        "name": "OBJFLAG3_08000000",
+        "value": 134217728,
+        "displayname": null,
+        "description": null
+      },
+      {
+        "name": "OBJFLAG3_10000000",
+        "value": 268435456,
+        "displayname": null,
+        "description": null
+      },
+      {
+        "name": "OBJFLAG3_ONSHELF",
+        "value": 536870912,
+        "displayname": null,
+        "description": null
+      },
+      {
+        "name": "OBJFLAG3_INFRARED",
+        "value": 1073741824,
+        "displayname": null,
+        "description": null
+      },
+      {
+        "name": "OBJFLAG3_80000000",
+        "value": -2147483648,
+        "displayname": null,
+        "description": null
+      }
+    ]
+  },
+  {
+    "name": "DOORFLAG",
+    "type": "BitFlag",
+	"size": 16,
+    "constants": [
+      {
+        "name": "DOORFLAG_0001",
+        "value": 1,
+        "displayname": null,
+        "description": null
+      },
+      {
+        "name": "DOORFLAG_WINDOWED",
+        "value": 2,
+        "displayname": null,
+        "description": null
+      },
+      {
+        "name": "DOORFLAG_0004",
+        "value": 4,
+        "displayname": null,
+        "description": null
+      },
+      {
+        "name": "DOORFLAG_FLIP",
+        "value": 8,
+        "displayname": null,
+        "description": null
+      },
+      {
+        "name": "DOORFLAG_AUTOMATIC",
+        "value": 16,
+        "displayname": null,
+        "description": null
+      },
+      {
+        "name": "DOORFLAG_0020",
+        "value": 32,
+        "displayname": null,
+        "description": null
+      },
+      {
+        "name": "DOORFLAG_ROTATEDPAD",
+        "value": 64,
+        "displayname": null,
+        "description": null
+      },
+      {
+        "name": "DOORFLAG_0080",
+        "value": 128,
+        "displayname": null,
+        "description": null
+      },
+      {
+        "name": "DOORFLAG_0100",
+        "value": 256,
+        "displayname": null,
+        "description": null
+      },
+      {
+        "name": "DOORFLAG_LONGRANGE",
+        "value": 512,
+        "displayname": null,
+        "description": null
+      },
+      {
+        "name": "DOORFLAG_DAMAGEONCONTACT",
+        "value": 1024,
+        "displayname": null,
+        "description": null
+      },
+      {
+        "name": "DOORFLAG_UNBLOCKABLEOPEN",
+        "value": 2048,
+        "displayname": null,
+        "description": null
+      },
+      {
+        "name": "DOORFLAG_4000",
+        "value": 16384,
+        "displayname": null,
+        "description": null
+      }
+    ]
+  },
+  {
+    "name": "CHRFLAG0",
+    "type": "BitFlag",
+	"size": 32,
+    "constants": [
+      {
+        "name": "CHRFLAG0_CANT_ALERT_GROUP",
+        "value": 1,
+        "displayname": null,
+        "description": null
+      },
+      {
+        "name": "CHRFLAG0_UNUSED_00000002",
+        "value": 2,
+        "displayname": null,
+        "description": null
+      },
+      {
+        "name": "CHRFLAG0_GP1",
+        "value": 4,
+        "displayname": null,
+        "description": null
+      },
+      {
+        "name": "CHRFLAG0_CAN_EXAMINE_BODY",
+        "value": 8,
+        "displayname": null,
+        "description": null
+      },
+      {
+        "name": "CHRFLAG0_UNDERCOVER",
+        "value": 16,
+        "displayname": null,
+        "description": null
+      },
+      {
+        "name": "CHRFLAG0_SAID_INJURY_QUIP",
+        "value": 32,
+        "displayname": null,
+        "description": null
+      },
+      {
+        "name": "CHRFLAG0_COVER_TYPE1",
+        "value": 64,
+        "displayname": null,
+        "description": null
+      },
+      {
+        "name": "CHRFLAG0_CHUCKNORRIS",
+        "value": 128,
+        "displayname": null,
+        "description": null
+      },
+      {
+        "name": "CHRFLAG0_CAN_BACKOFF",
+        "value": 256,
+        "displayname": null,
+        "description": null
+      },
+      {
+        "name": "CHRFLAG0_CAN_RETREAT",
+        "value": 512,
+        "displayname": null,
+        "description": null
+      },
+      {
+        "name": "CHRFLAG0_SURPRISABLE",
+        "value": 1024,
+        "displayname": null,
+        "description": null
+      },
+      {
+        "name": "CHRFLAG0_CAN_THROW_GRENADES",
+        "value": 2048,
+        "displayname": null,
+        "description": null
+      },
+      {
+        "name": "CHRFLAG0_CAN_FLANK",
+        "value": 4096,
+        "displayname": null,
+        "description": null
+      },
+      {
+        "name": "CHRFLAG0_SKIPSAFETYCHECKS",
+        "value": 8192,
+        "displayname": null,
+        "description": null
+      },
+      {
+        "name": "CHRFLAG0_FORCESAFETYCHECKS",
+        "value": 16384,
+        "displayname": null,
+        "description": null
+      },
+      {
+        "name": "CHRFLAG0_00008000",
+        "value": 32768,
+        "displayname": null,
+        "description": null
+      },
+      {
+        "name": "CHRFLAG0_AIVSAI",
+        "value": 65536,
+        "displayname": null,
+        "description": null
+      },
+      {
+        "name": "CHRFLAG0_CAN_TRAP",
+        "value": 131072,
+        "displayname": null,
+        "description": null
+      },
+      {
+        "name": "CHRFLAG0_ACTIVATEALARM",
+        "value": 262144,
+        "displayname": null,
+        "description": null
+      },
+      {
+        "name": "CHRFLAG0_SQUADALERTANYDIST",
+        "value": 524288,
+        "displayname": null,
+        "description": null
+      },
+      {
+        "name": "CHRFLAG0_ALERT_ON_HEARSPAWN",
+        "value": 1048576,
+        "displayname": null,
+        "description": null
+      },
+      {
+        "name": "CHRFLAG0_CAN_FLEESURRENDER",
+        "value": 2097152,
+        "displayname": null,
+        "description": null
+      },
+      {
+        "name": "CHRFLAG0_UNUSED_00400000",
+        "value": 4194304,
+        "displayname": null,
+        "description": null
+      },
+      {
+        "name": "CHRFLAG0_CAN_HEAR_ALARMS",
+        "value": 8388608,
+        "displayname": null,
+        "description": null
+      },
+      {
+        "name": "CHRFLAG0_NOACCURACYAFTERJAM",
+        "value": 16777216,
+        "displayname": null,
+        "description": null
+      },
+      {
+        "name": "CHRFLAG0_SAID_AMBUSH_QUIP",
+        "value": 33554432,
+        "displayname": null,
+        "description": null
+      },
+      {
+        "name": "CHRFLAG0_HOLD_POSITION",
+        "value": 67108864,
+        "displayname": null,
+        "description": null
+      },
+      {
+        "name": "CHRFLAG0_COVER_TYPE2",
+        "value": 134217728,
+        "displayname": null,
+        "description": null
+      },
+      {
+        "name": "CHRFLAG0_CAMP",
+        "value": 268435456,
+        "displayname": null,
+        "description": null
+      },
+      {
+        "name": "CHRFLAG0_CAN_HEARSPAWN",
+        "value": 536870912,
+        "displayname": null,
+        "description": null
+      },
+      {
+        "name": "CHRFLAG0_HEAR_REQUIRE_LOS",
+        "value": 1073741824,
+        "displayname": null,
+        "description": null
+      },
+      {
+        "name": "CHRFLAG0_CANLOSEGUN",
+        "value": -2147483648,
+        "displayname": null,
+        "description": null
+      }
+    ]
+  },
+  {
+    "name": "CHRFLAG1",
+    "type": "BitFlag",
+	"size": 32,
+    "constants": [
+      {
+        "name": "CHRFLAG1_HANDCOMBATONLY",
+        "value": 1,
+        "displayname": null,
+        "description": null
+      },
+      {
+        "name": "CHRFLAG1_LOSTGUN",
+        "value": 2,
+        "displayname": null,
+        "description": null
+      },
+      {
+        "name": "CHRFLAG1_CAN_ATTACKAMOUNT",
+        "value": 4,
+        "displayname": null,
+        "description": null
+      },
+      {
+        "name": "CHRFLAG1_WARFIRSTKING",
+        "value": 8,
+        "displayname": null,
+        "description": null
+      },
+      {
+        "name": "CHRFLAG1_CAN_ATTACKAMOUNTRELOAD",
+        "value": 16,
+        "displayname": null,
+        "description": null
+      },
+      {
+        "name": "CHRFLAG1_CAN_RELOAD",
+        "value": 32,
+        "displayname": null,
+        "description": null
+      },
+      {
+        "name": "CHRFLAG1_CAN_SNIPE",
+        "value": 64,
+        "displayname": null,
+        "description": null
+      },
+      {
+        "name": "CHRFLAG1_ADJUSTPUNCHSPEED",
+        "value": 128,
+        "displayname": null,
+        "description": null
+      },
+      {
+        "name": "CHRFLAG1_DOINGIDLEANIMATION",
+        "value": 256,
+        "displayname": null,
+        "description": null
+      },
+      {
+        "name": "CHRFLAG1_PREWARNED",
+        "value": 512,
+        "displayname": null,
+        "description": null
+      },
+      {
+        "name": "CHRFLAG1_INDARKROOM",
+        "value": 1024,
+        "displayname": null,
+        "description": null
+      },
+      {
+        "name": "CHRFLAG1_PUNCHAIEXTRADAMAGE",
+        "value": 2048,
+        "displayname": null,
+        "description": null
+      },
+      {
+        "name": "CHRFLAG1_NOHANDCOMBAT",
+        "value": 4096,
+        "displayname": null,
+        "description": null
+      },
+      {
+        "name": "CHRFLAG1_THROWGRENADEFIRST",
+        "value": 8192,
+        "displayname": null,
+        "description": null
+      },
+      {
+        "name": "CHRFLAG1_ALLOWSOFTCOVER",
+        "value": 16384,
+        "displayname": null,
+        "description": null
+      },
+      {
+        "name": "CHRFLAG1_LONG_CAMSPY_OBSERVATION",
+        "value": 32768,
+        "displayname": null,
+        "description": null
+      },
+      {
+        "name": "CHRFLAG1_HEARSPAWN_ALERT_IF_ALARM",
+        "value": 65536,
+        "displayname": null,
+        "description": null
+      },
+      {
+        "name": "CHRFLAG1_DODGED",
+        "value": 131072,
+        "displayname": null,
+        "description": null
+      },
+      {
+        "name": "CHRFLAG1_FLANKED",
+        "value": 262144,
+        "displayname": null,
+        "description": null
+      },
+      {
+        "name": "CHRFLAG1_NOIDLEANIMS",
+        "value": 524288,
+        "displayname": null,
+        "description": null
+      },
+      {
+        "name": "CHRFLAG1_AIVSAI_ADVANTAGED",
+        "value": 1048576,
+        "displayname": null,
+        "description": null
+      },
+      {
+        "name": "CHRFLAG1_NOOP_00200000",
+        "value": 2097152,
+        "displayname": null,
+        "description": null
+      },
+      {
+        "name": "CHRFLAG1_PUNCH_THEN_GENERAL_COMBAT",
+        "value": 4194304,
+        "displayname": null,
+        "description": null
+      },
+      {
+        "name": "CHRFLAG1_DONE_SEARCH_ANIM",
+        "value": 8388608,
+        "displayname": null,
+        "description": null
+      },
+      {
+        "name": "CHRFLAG1_LOOKINGFORTARGET",
+        "value": 16777216,
+        "displayname": null,
+        "description": null
+      },
+      {
+        "name": "CHRFLAG1_STOPTRACKINGIFLOOKEDAT",
+        "value": 33554432,
+        "displayname": null,
+        "description": null
+      },
+      {
+        "name": "CHRFLAG1_CAN_LOOK_AROUND",
+        "value": 67108864,
+        "displayname": null,
+        "description": null
+      },
+      {
+        "name": "CHRFLAG1_TALKINGTODISGUISE",
+        "value": 134217728,
+        "displayname": null,
+        "description": null
+      },
+      {
+        "name": "CHRFLAG1_SEARCHSAMEROOM",
+        "value": 268435456,
+        "displayname": null,
+        "description": null
+      },
+      {
+        "name": "CHRFLAG1_CAN_DRAW_PISTOL",
+        "value": 536870912,
+        "displayname": null,
+        "description": null
+      },
+      {
+        "name": "CHRFLAG1_IGNORECOVER",
+        "value": 1073741824,
+        "displayname": null,
+        "description": null
+      },
+      {
+        "name": "CHRFLAG1_PUNCHHARDER",
+        "value": -2147483648,
+        "displayname": null,
+        "description": null
+      }
+    ]
+  },
+  {
+    "name": "SPAWNFLAG",
+    "type": "BitFlag",
+	"size": 32,
+    "constants": [
+      {
+        "name": "SPAWNFLAG_FORCESUNGLASSES",
+        "value": 1,
+        "displayname": null,
+        "description": null
+      },
+      {
+        "name": "SPAWNFLAG_MAYBESUNGLASSES",
+        "value": 2,
+        "displayname": null,
+        "description": null
+      },
+      {
+        "name": "SPAWNFLAG_INVINCIBLE",
+        "value": 8,
+        "displayname": null,
+        "description": null
+      },
+      {
+        "name": "SPAWNFLAG_ALLOWONSCREEN",
+        "value": 16,
+        "displayname": null,
+        "description": null
+      },
+      {
+        "name": "SPAWNFLAG_ONLYONA",
+        "value": 32,
+        "displayname": null,
+        "description": null
+      },
+      {
+        "name": "SPAWNFLAG_ONLYONSA",
+        "value": 64,
+        "displayname": null,
+        "description": null
+      },
+      {
+        "name": "SPAWNFLAG_ONLYONPA",
+        "value": 128,
+        "displayname": null,
+        "description": null
+      },
+      {
+        "name": "SPAWNFLAG_IGNORECOLLISION",
+        "value": 256,
+        "displayname": null,
+        "description": null
+      },
+      {
+        "name": "SPAWNFLAG_BASICGUARD",
+        "value": 512,
+        "displayname": null,
+        "description": null
+      },
+      {
+        "name": "SPAWNFLAG_ANTINONINTERACTABLE",
+        "value": 1024,
+        "displayname": null,
+        "description": null
+      },
+      {
+        "name": "SPAWNFLAG_DONTSHOOTME",
+        "value": 2048,
+        "displayname": null,
+        "description": null
+      },
+      {
+        "name": "SPAWNFLAG_HIDDEN",
+        "value": 4096,
+        "displayname": null,
+        "description": null
+      },
+      {
+        "name": "SPAWNFLAG_NOBLOOD",
+        "value": 8192,
+        "displayname": null,
+        "description": null
+      },
+      {
+        "name": "SPAWNFLAG_FIXEDHEIGHT",
+        "value": 16384,
+        "displayname": null,
+        "description": null
+      },
+      {
+        "name": "SPAWNFLAG_RTRACKED",
+        "value": 32768,
+        "displayname": null,
+        "description": null
+      },
+      {
+        "name": "SPAWNFLAG_BLUESIGHT",
+        "value": 65536,
+        "displayname": null,
+        "description": null
+      }
+    ]
+  },
+  {
+    "name": "PATHFLAG",
+    "type": "BitFlag",
+	"size": 8,
+    "constants": [
+      {
+        "name": "PATHFLAG_CIRCULAR",
+        "value": 1,
+        "displayname": null,
+        "description": null
+      },
+      {
+        "name": "PATHFLAG_FLYING",
+        "value": 2,
+        "displayname": null,
+        "description": null
+      },
+      {
+        "name": "PATHFLAG_INUSE",
+        "value": 4,
+        "displayname": null,
+        "description": null
+      }
+    ]
+  },
+  {
+    "name": "PORTALFLAG",
+    "type": "BitFlag",
+	"size": 8,
+    "constants": [
+      {
+        "name": "PORTALFLAG_CLOSED",
+        "value": 1,
+        "displayname": null,
+        "description": null
+      },
+      {
+        "name": "PORTALFLAG_02",
+        "value": 2,
+        "displayname": null,
+        "description": null
+      },
+      {
+        "name": "PORTALFLAG_FORCEOPEN",
+        "value": 4,
+        "displayname": null,
+        "description": null
+      },
+      {
+        "name": "PORTALFLAG_SKIP",
+        "value": 8,
+        "displayname": null,
+        "description": null
+      }
+    ]
+  },
+  {
+    "name": "CHRANIMFLAG",
+    "type": "BitFlag",
+	"size": 8,
+    "constants": [
+      {
+        "name": "CHRANIMFLAG_FLIP",
+        "value": 1,
+        "displayname": null,
+        "description": null
+      },
+      {
+        "name": "CHRANIMFLAG_MOVEWHENINVIS",
+        "value": 2,
+        "displayname": null,
+        "description": null
+      },
+      {
+        "name": "CHRANIMFLAG_PAUSEATEND",
+        "value": 4,
+        "displayname": null,
+        "description": null
+      },
+      {
+        "name": "CHRANIMFLAG_COMPLETED",
+        "value": 8,
+        "displayname": null,
+        "description": null
+      },
+      {
+        "name": "CHRANIMFLAG_SLOWUPDATE",
+        "value": 16,
+        "displayname": null,
+        "description": null
+      },
+      {
+        "name": "CHRANIMFLAG_LOCKPOS",
+        "value": 64,
+        "displayname": null,
+        "description": null
+      },
+      {
+        "name": "CHRANIMFLAG_REVERSE",
+        "value": 128,
+        "displayname": null,
+        "description": null
+      }
+    ]
+  },
+  {
+    "name": "ATTACKFLAG",
+    "type": "BitFlag",
+	"size": 16,
+    "constants": [
+      {
+        "name": "ATTACKFLAG_AIMATBOND",
+        "value": 1,
+        "displayname": null,
+        "description": null
+      },
+      {
+        "name": "ATTACKFLAG_AIMFORWARD",
+        "value": 2,
+        "displayname": null,
+        "description": null
+      },
+      {
+        "name": "ATTACKFLAG_AIMATCHR",
+        "value": 4,
+        "displayname": null,
+        "description": null
+      },
+      {
+        "name": "ATTACKFLAG_AIMATPAD",
+        "value": 8,
+        "displayname": null,
+        "description": null
+      },
+      {
+        "name": "ATTACKFLAG_AIMATDIRECTION",
+        "value": 16,
+        "displayname": null,
+        "description": null
+      },
+      {
+        "name": "ATTACKFLAG_AIMONLY",
+        "value": 32,
+        "displayname": null,
+        "description": null
+      },
+      {
+        "name": "ATTACKFLAG_DONTTURN",
+        "value": 64,
+        "displayname": null,
+        "description": null
+      },
+      {
+        "name": "ATTACKFLAG_SINGLESHOT",
+        "value": 128,
+        "displayname": null,
+        "description": null
+      },
+      {
+        "name": "ATTACKFLAG_NOVERTICAL",
+        "value": 256,
+        "displayname": null,
+        "description": null
+      },
+      {
+        "name": "ATTACKFLAG_AIMATTARGET",
+        "value": 512,
+        "displayname": null,
+        "description": null
+      }
+    ]
+  },
+  {
+    "name": "CHRCFLAG",
+    "type": "BitFlag",
+	"size": 32,
+    "constants": [
+      {
+        "name": "CHRCFLAG_FORCETOGROUND",
+        "value": 1,
+        "displayname": null,
+        "description": null
+      },
+      {
+        "name": "CHRCFLAG_CLONEABLE",
+        "value": 2,
+        "displayname": null,
+        "description": null
+      },
+      {
+        "name": "CHRCFLAG_NEAR_MISS",
+        "value": 4,
+        "displayname": null,
+        "description": null
+      },
+      {
+        "name": "CHRCFLAG_EVERONSCREEN",
+        "value": 8,
+        "displayname": null,
+        "description": null
+      },
+      {
+        "name": "CHRCFLAG_INVINCIBLE",
+        "value": 16,
+        "displayname": null,
+        "description": null
+      },
+      {
+        "name": "CHRCFLAG_LOSEXTRAHEIGHT",
+        "value": 32,
+        "displayname": null,
+        "description": null
+      },
+      {
+        "name": "CHRCFLAG_NOFRIENDLYFIRE",
+        "value": 64,
+        "displayname": null,
+        "description": null
+      },
+      {
+        "name": "CHRCFLAG_CANFACEWALL",
+        "value": 128,
+        "displayname": null,
+        "description": null
+      },
+      {
+        "name": "CHRCFLAG_JUST_INJURED",
+        "value": 256,
+        "displayname": null,
+        "description": null
+      },
+      {
+        "name": "CHRCFLAG_CANCHANGEACTDURINGARGH",
+        "value": 512,
+        "displayname": null,
+        "description": null
+      },
+      {
+        "name": "CHRCFLAG_HIDDEN",
+        "value": 1024,
+        "displayname": null,
+        "description": null
+      },
+      {
+        "name": "CHRCFLAG_NOAUTOAIM",
+        "value": 2048,
+        "displayname": null,
+        "description": null
+      },
+      {
+        "name": "CHRCFLAG_UNEXPLODABLE",
+        "value": 4096,
+        "displayname": null,
+        "description": null
+      },
+      {
+        "name": "CHRCFLAG_NOSHADOW",
+        "value": 8192,
+        "displayname": null,
+        "description": null
+      },
+      {
+        "name": "CHRCFLAG_HAS_SPECIAL_DEATH_ANIMATION",
+        "value": 16384,
+        "displayname": null,
+        "description": null
+      },
+      {
+        "name": "CHRCFLAG_DIEWITHFORCE",
+        "value": 32768,
+        "displayname": null,
+        "description": null
+      },
+      {
+        "name": "CHRCFLAG_PERIMDISABLEDTMP",
+        "value": 65536,
+        "displayname": null,
+        "description": null
+      },
+      {
+        "name": "CHRCFLAG_FORCEAUTOAIM",
+        "value": 131072,
+        "displayname": null,
+        "description": null
+      },
+      {
+        "name": "CHRCFLAG_NEVERSLEEP",
+        "value": 262144,
+        "displayname": null,
+        "description": null
+      },
+      {
+        "name": "CHRCFLAG_RUNFASTER",
+        "value": 524288,
+        "displayname": null,
+        "description": null
+      },
+      {
+        "name": "CHRCFLAG_KILLCOUNTABLE",
+        "value": 1048576,
+        "displayname": null,
+        "description": null
+      },
+      {
+        "name": "CHRCFLAG_TRIGGERSHOTLIST",
+        "value": 2097152,
+        "displayname": null,
+        "description": null
+      },
+      {
+        "name": "CHRCFLAG_00400000",
+        "value": 4194304,
+        "displayname": null,
+        "description": null
+      },
+      {
+        "name": "CHRCFLAG_UNPLAYABLE",
+        "value": 8388608,
+        "displayname": null,
+        "description": null
+      },
+      {
+        "name": "CHRCFLAG_PUSHABLE",
+        "value": 16777216,
+        "displayname": null,
+        "description": null
+      },
+      {
+        "name": "CHRCFLAG_SHIELDDAMAGED",
+        "value": 33554432,
+        "displayname": null,
+        "description": null
+      },
+      {
+        "name": "CHRCFLAG_KEEPCORPSEKO",
+        "value": 67108864,
+        "displayname": null,
+        "description": null
+      },
+      {
+        "name": "CHRCFLAG_CONSIDER_DODGE",
+        "value": 134217728,
+        "displayname": null,
+        "description": null
+      },
+      {
+        "name": "CHRCFLAG_AVOIDING",
+        "value": 268435456,
+        "displayname": null,
+        "description": null
+      },
+      {
+        "name": "CHRCFLAG_DELAYANIM",
+        "value": 536870912,
+        "displayname": null,
+        "description": null
+      },
+      {
+        "name": "CHRCFLAG_40000000",
+        "value": 1073741824,
+        "displayname": null,
+        "description": null
+      },
+      {
+        "name": "CHRCFLAG_INJUREDTARGET",
+        "value": -2147483648,
+        "displayname": null,
+        "description": null
+      }
+    ]
+  },
+  {
+    "name": "CHRHFLAG",
+    "type": "BitFlag",
+	"size": 32,
+    "constants": [
+      {
+        "name": "CHRHFLAG_DROPPINGITEM",
+        "value": 1,
+        "displayname": null,
+        "description": null
+      },
+      {
+        "name": "CHRHFLAG_IS_HEARING_TARGET",
+        "value": 2,
+        "displayname": null,
+        "description": null
+      },
+      {
+        "name": "CHRHFLAG_FIRINGLEFT",
+        "value": 4,
+        "displayname": null,
+        "description": null
+      },
+      {
+        "name": "CHRHFLAG_FIRINGRIGHT",
+        "value": 8,
+        "displayname": null,
+        "description": null
+      },
+      {
+        "name": "CHRHFLAG_BLOCKINGDOOR",
+        "value": 16,
+        "displayname": null,
+        "description": null
+      },
+      {
+        "name": "CHRHFLAG_DELETING",
+        "value": 32,
+        "displayname": null,
+        "description": null
+      },
+      {
+        "name": "CHRHFLAG_TIMER_RUNNING",
+        "value": 64,
+        "displayname": null,
+        "description": null
+      },
+      {
+        "name": "CHRHFLAG_FIRESOUNDDONE",
+        "value": 128,
+        "displayname": null,
+        "description": null
+      },
+      {
+        "name": "CHRHFLAG_PERIMDISABLED",
+        "value": 256,
+        "displayname": null,
+        "description": null
+      },
+      {
+        "name": "CHRHFLAG_CONSIDERPROXIES",
+        "value": 512,
+        "displayname": null,
+        "description": null
+      },
+      {
+        "name": "CHRHFLAG_SPAWNONLYSURROUNDING",
+        "value": 512,
+        "displayname": null,
+        "description": null
+      },
+      {
+        "name": "CHRHFLAG_PASSIVE",
+        "value": 1024,
+        "displayname": null,
+        "description": null
+      },
+      {
+        "name": "CHRHFLAG_00000800",
+        "value": 2048,
+        "displayname": null,
+        "description": null
+      },
+      {
+        "name": "CHRHFLAG_UNTARGETABLE",
+        "value": 4096,
+        "displayname": null,
+        "description": null
+      },
+      {
+        "name": "CHRHFLAG_DONTLOSETARGET",
+        "value": 8192,
+        "displayname": null,
+        "description": null
+      },
+      {
+        "name": "CHRHFLAG_TRIGGER_BUDDY_WARP",
+        "value": 16384,
+        "displayname": null,
+        "description": null
+      },
+      {
+        "name": "CHRHFLAG_PERFECTACCURACY",
+        "value": 32768,
+        "displayname": null,
+        "description": null
+      },
+      {
+        "name": "CHRHFLAG_DISGUISE_UNCOVERED",
+        "value": 65536,
+        "displayname": null,
+        "description": null
+      },
+      {
+        "name": "CHRHFLAG_00020000",
+        "value": 131072,
+        "displayname": null,
+        "description": null
+      },
+      {
+        "name": "CHRHFLAG_00040000",
+        "value": 262144,
+        "displayname": null,
+        "description": null
+      },
+      {
+        "name": "CHRHFLAG_DISGUISED",
+        "value": 524288,
+        "displayname": null,
+        "description": null
+      },
+      {
+        "name": "CHRHFLAG_WARPONSCREEN",
+        "value": 1048576,
+        "displayname": null,
+        "description": null
+      },
+      {
+        "name": "CHRHFLAG_NEEDANIM",
+        "value": 2097152,
+        "displayname": null,
+        "description": null
+      },
+      {
+        "name": "CHRHFLAG_BASICGUARD",
+        "value": 4194304,
+        "displayname": null,
+        "description": null
+      },
+      {
+        "name": "CHRHFLAG_ONBONDSSCREEN",
+        "value": 8388608,
+        "displayname": null,
+        "description": null
+      },
+      {
+        "name": "CHRHFLAG_ASKEDABOUTGUN",
+        "value": 16777216,
+        "displayname": null,
+        "description": null
+      },
+      {
+        "name": "CHRHFLAG_ALMOSTUNCOVERED",
+        "value": 33554432,
+        "displayname": null,
+        "description": null
+      },
+      {
+        "name": "CHRHFLAG_ASKEDTHENSHOT",
+        "value": 67108864,
+        "displayname": null,
+        "description": null
+      },
+      {
+        "name": "CHRHFLAG_DONTSHOOTME",
+        "value": 134217728,
+        "displayname": null,
+        "description": null
+      },
+      {
+        "name": "CHRHFLAG_INFINITESHIELD",
+        "value": 268435456,
+        "displayname": null,
+        "description": null
+      },
+      {
+        "name": "CHRHFLAG_CLOAKED",
+        "value": 536870912,
+        "displayname": null,
+        "description": null
+      },
+      {
+        "name": "CHRHFLAG_ANTINONINTERACTABLE",
+        "value": 1073741824,
+        "displayname": null,
+        "description": null
+      },
+      {
+        "name": "CHRHFLAG_DETECTED",
+        "value": -2147483648,
+        "displayname": null,
+        "description": null
+      },
+      {
+        "name": "CHRHFLAG_PSYCHOSISED",
+        "value": -2147483648,
+        "displayname": null,
+        "description": null
+      }
+    ]
+  },
+  {
+    "name": "COVERCRITERIA",
+    "type": "BitFlag",
+	"size": 8,
+    "constants": [
+      {
+        "name": "COVERCRITERIA_0001",
+        "value": 1,
+        "displayname": null,
+        "description": null
+      },
+      {
+        "name": "COVERCRITERIA_FURTHEREST",
+        "value": 2,
+        "displayname": null,
+        "description": null
+      },
+      {
+        "name": "COVERCRITERIA_DISTTOME",
+        "value": 4,
+        "displayname": null,
+        "description": null
+      },
+      {
+        "name": "COVERCRITERIA_DISTTOTARGET",
+        "value": 8,
+        "displayname": null,
+        "description": null
+      },
+      {
+        "name": "COVERCRITERIA_FORCENEWCOVER",
+        "value": 16,
+        "displayname": null,
+        "description": null
+      },
+      {
+        "name": "COVERCRITERIA_0020",
+        "value": 32,
+        "displayname": null,
+        "description": null
+      },
+      {
+        "name": "COVERCRITERIA_0040",
+        "value": 64,
+        "displayname": null,
+        "description": null
+      },
+      {
+        "name": "COVERCRITERIA_ALLOWNEIGHBOURINGROOMS",
+        "value": 128,
+        "displayname": null,
+        "description": null
+      },
+      {
+        "name": "COVERCRITERIA_ONLYNEIGHBOURINGROOMS",
+        "value": 256,
+        "displayname": null,
+        "description": null
+      },
+      {
+        "name": "COVERCRITERIA_0200",
+        "value": 512,
+        "displayname": null,
+        "description": null
+      },
+      {
+        "name": "COVERCRITERIA_ROOMSFROMTARGET",
+        "value": 1024,
+        "displayname": null,
+        "description": null
+      },
+      {
+        "name": "COVERCRITERIA_ROOMSFROMME",
+        "value": 2048,
+        "displayname": null,
+        "description": null
+      },
+      {
+        "name": "COVERCRITERIA_1000",
+        "value": 4096,
+        "displayname": null,
+        "description": null
+      },
+      {
+        "name": "COVERCRITERIA_2000",
+        "value": 8192,
+        "displayname": null,
+        "description": null
+      },
+      {
+        "name": "COVERCRITERIA_DISTTOFETCHPROP",
+        "value": 16384,
+        "displayname": null,
+        "description": null
+      },
+      {
+        "name": "COVERCRITERIA_ALLOWSOFT",
+        "value": 32768,
+        "displayname": null,
+        "description": null
+      }
+    ]
+  },
+  {
+    "name": "ROOMFLAG",
+    "type": "BitFlag",
+	"size": 16,
+    "constants": [
+      {
+        "name": "ROOMFLAG_DISABLEDBYSCRIPT",
+        "value": 1,
+        "displayname": null,
+        "description": null
+      },
+      {
+        "name": "ROOMFLAG_HASDYNTEX",
+        "value": 2,
+        "displayname": null,
+        "description": null
+      },
+      {
+        "name": "ROOMFLAG_ONSCREEN",
+        "value": 4,
+        "displayname": null,
+        "description": null
+      },
+      {
+        "name": "ROOMFLAG_STANDBY",
+        "value": 8,
+        "displayname": null,
+        "description": null
+      },
+      {
+        "name": "ROOMFLAG_COMPLICATEDPORTALS",
+        "value": 16,
+        "displayname": null,
+        "description": null
+      },
+      {
+        "name": "ROOMFLAG_LOADCANDIDATE",
+        "value": 32,
+        "displayname": null,
+        "description": null
+      },
+      {
+        "name": "ROOMFLAG_BRIGHTNESS_CALCED",
+        "value": 64,
+        "displayname": null,
+        "description": null
+      },
+      {
+        "name": "ROOMFLAG_RENDERALWAYS",
+        "value": 128,
+        "displayname": null,
+        "description": null
+      },
+      {
+        "name": "ROOMFLAG_LIGHTS_DIRTY",
+        "value": 256,
+        "displayname": null,
+        "description": null
+      },
+      {
+        "name": "ROOMFLAG_BRIGHTNESS_DIRTY_PERM",
+        "value": 512,
+        "displayname": null,
+        "description": null
+      },
+      {
+        "name": "ROOMFLAG_BRIGHTNESS_DIRTY_TEMP",
+        "value": 1024,
+        "displayname": null,
+        "description": null
+      },
+      {
+        "name": "ROOMFLAG_BBOXHACK",
+        "value": 2048,
+        "displayname": null,
+        "description": null
+      },
+      {
+        "name": "ROOMFLAG_NEEDRESHADE",
+        "value": 4096,
+        "displayname": null,
+        "description": null
+      },
+      {
+        "name": "ROOMFLAG_LIGHTSOFF",
+        "value": 8192,
+        "displayname": null,
+        "description": null
+      },
+      {
+        "name": "ROOMFLAG_PLAYAMBIENTTRACK",
+        "value": 16384,
+        "displayname": null,
+        "description": null
+      },
+      {
+        "name": "ROOMFLAG_OUTDOORS",
+        "value": 32768,
+        "displayname": null,
+        "description": null
+      }
+    ]
+  },
+    {
+    "name": "TEAMFLAG",
+    "type": "BitFlag",
+	"size": 8,
+    "constants": [
+      {
+        "name": "TEAMFLAG_00",
+        "value": 0,
+        "displayname": null,
+        "description": null
+      },
+      {
+        "name": "TEAMFLAG_01",
+        "value": 1,
+        "displayname": null,
+        "description": null
+      },
+      {
+        "name": "TEAMFLAG_ENEMY",
+        "value": 2,
+        "displayname": null,
+        "description": null
+      },
+      {
+        "name": "TEAMFLAG_04",
+        "value": 4,
+        "displayname": null,
+        "description": null
+      },
+      {
+        "name": "TEAMFLAG_ALLY",
+        "value": 16,
+        "displayname": null,
+        "description": null
+      },
+      {
+        "name": "TEAMFLAG_20",
+        "value": 32,
+        "displayname": null,
+        "description": null
+      },
+      {
+        "name": "TEAMFLAG_NONCOMBAT",
+        "value": 128,
+        "displayname": null,
+        "description": null
+      }
+    ]
+  },
+  {
+    "name": "PSFLAG",
+    "type": "BitFlag",
+	"size": 16,
+    "constants": [
+      {
+        "name": "PSFLAG_FREE",
+        "value": 1,
+        "displayname": null,
+        "description": null
+      },
+      {
+        "name": "PSFLAG_REPEATING",
+        "value": 2,
+        "displayname": null,
+        "description": null
+      },
+      {
+        "name": "PSFLAG_FORPROP",
+        "value": 8,
+        "displayname": null,
+        "description": null
+      },
+      {
+        "name": "PSFLAG_ISMP3",
+        "value": 16,
+        "displayname": null,
+        "description": null
+      },
+      {
+        "name": "PSFLAG_HASCONFIGPAN",
+        "value": 32,
+        "displayname": null,
+        "description": null
+      },
+      {
+        "name": "PSFLAG_HASCONFIG",
+        "value": 64,
+        "displayname": null,
+        "description": null
+      },
+      {
+        "name": "PSFLAG_CUTSCENE",
+        "value": 128,
+        "displayname": null,
+        "description": null
+      },
+      {
+        "name": "PSFLAG_FORHUDMSG",
+        "value": 512,
+        "displayname": null,
+        "description": null
+      },
+      {
+        "name": "PSFLAG_0400",
+        "value": 1024,
+        "displayname": null,
+        "description": null
+      },
+      {
+        "name": "PSFLAG_0800",
+        "value": 2048,
+        "displayname": null,
+        "description": null
+      },
+      {
+        "name": "PSFLAG_FIRSTTICK",
+        "value": 4096,
+        "displayname": null,
+        "description": null
+      },
+      {
+        "name": "PSFLAG_OUTOFRANGE",
+        "value": 8192,
+        "displayname": null,
+        "description": null
+      },
+      {
+        "name": "PSFLAG_CHANGINGPAN",
+        "value": 16384,
+        "displayname": null,
+        "description": null
+      },
+      {
+        "name": "PSFLAG_IGNOREROOMS",
+        "value": 32768,
+        "displayname": null,
+        "description": null
+      }
+    ]
+  },
+  {
+    "name": "DOORTYPE",
+    "type": "Constant",
+	"size": 8,
+    "constants": [
+      {
+        "name": "DOORTYPE_SLIDING",
+        "value": 0,
+        "displayname": null,
+        "description": null
+      },
+      {
+        "name": "DOORTYPE_FLEXI1",
+        "value": 1,
+        "displayname": null,
+        "description": null
+      },
+      {
+        "name": "DOORTYPE_FLEXI2",
+        "value": 2,
+        "displayname": null,
+        "description": null
+      },
+      {
+        "name": "DOORTYPE_FLEXI3",
+        "value": 3,
+        "displayname": null,
+        "description": null
+      },
+      {
+        "name": "DOORTYPE_VERTICAL",
+        "value": 4,
+        "displayname": null,
+        "description": null
+      },
+      {
+        "name": "DOORTYPE_SWINGING",
+        "value": 5,
+        "displayname": null,
+        "description": null
+      },
+      {
+        "name": "DOORTYPE_EYE",
+        "value": 6,
+        "displayname": null,
+        "description": null
+      },
+      {
+        "name": "DOORTYPE_IRIS",
+        "value": 7,
+        "displayname": null,
+        "description": null
+      },
+      {
+        "name": "DOORTYPE_FALLAWAY",
+        "value": 8,
+        "displayname": null,
+        "description": null
+      },
+      {
+        "name": "DOORTYPE_AZTECCHAIR",
+        "value": 9,
+        "displayname": null,
+        "description": null
+      },
+      {
+        "name": "DOORTYPE_HULL",
+        "value": 10,
+        "displayname": null,
+        "description": null
+      },
+      {
+        "name": "DOORTYPE_LASER",
+        "value": 11,
+        "displayname": null,
+        "description": null
+      }
+    ]
+  },
+  {
+    "name": "AMMOTYPE",
+    "type": "Constant",
+	"size": 8,
+    "constants": [
+      {
+        "name": "AMMOTYPE_PISTOL",
+        "value": 1,
+        "displayname": null,
+        "description": null
+      },
+      {
+        "name": "AMMOTYPE_SMG",
+        "value": 2,
+        "displayname": null,
+        "description": null
+      },
+      {
+        "name": "AMMOTYPE_CROSSBOW",
+        "value": 3,
+        "displayname": null,
+        "description": null
+      },
+      {
+        "name": "AMMOTYPE_RIFLE",
+        "value": 4,
+        "displayname": null,
+        "description": null
+      },
+      {
+        "name": "AMMOTYPE_SHOTGUN",
+        "value": 5,
+        "displayname": null,
+        "description": null
+      },
+      {
+        "name": "AMMOTYPE_FARSIGHT",
+        "value": 6,
+        "displayname": null,
+        "description": null
+      },
+      {
+        "name": "AMMOTYPE_GRENADE",
+        "value": 7,
+        "displayname": null,
+        "description": null
+      },
+      {
+        "name": "AMMOTYPE_ROCKET",
+        "value": 8,
+        "displayname": null,
+        "description": null
+      },
+      {
+        "name": "AMMOTYPE_KNIFE",
+        "value": 9,
+        "displayname": null,
+        "description": null
+      },
+      {
+        "name": "AMMOTYPE_MAGNUM",
+        "value": 10,
+        "displayname": null,
+        "description": null
+      },
+      {
+        "name": "AMMOTYPE_DEVASTATOR",
+        "value": 11,
+        "displayname": null,
+        "description": null
+      },
+      {
+        "name": "AMMOTYPE_REMOTE_MINE",
+        "value": 12,
+        "displayname": null,
+        "description": null
+      },
+      {
+        "name": "AMMOTYPE_PROXY_MINE",
+        "value": 13,
+        "displayname": null,
+        "description": null
+      },
+      {
+        "name": "AMMOTYPE_TIMED_MINE",
+        "value": 14,
+        "displayname": null,
+        "description": null
+      },
+      {
+        "name": "AMMOTYPE_REAPER",
+        "value": 15,
+        "displayname": null,
+        "description": null
+      },
+      {
+        "name": "AMMOTYPE_HOMINGROCKET",
+        "value": 16,
+        "displayname": null,
+        "description": null
+      },
+      {
+        "name": "AMMOTYPE_DART",
+        "value": 17,
+        "displayname": null,
+        "description": null
+      },
+      {
+        "name": "AMMOTYPE_NBOMB",
+        "value": 18,
+        "displayname": null,
+        "description": null
+      },
+      {
+        "name": "AMMOTYPE_SEDATIVE",
+        "value": 19,
+        "displayname": null,
+        "description": null
+      },
+      {
+        "name": "AMMOTYPE_CLOAK",
+        "value": 20,
+        "displayname": null,
+        "description": null
+      },
+      {
+        "name": "AMMOTYPE_BOOST",
+        "value": 21,
+        "displayname": null,
+        "description": null
+      },
+      {
+        "name": "AMMOTYPE_PSYCHOSIS",
+        "value": 22,
+        "displayname": null,
+        "description": null
+      },
+      {
+        "name": "AMMOTYPE_17",
+        "value": 23,
+        "displayname": null,
+        "description": null
+      },
+      {
+        "name": "AMMOTYPE_BUG",
+        "value": 24,
+        "displayname": null,
+        "description": null
+      },
+      {
+        "name": "AMMOTYPE_MICROCAMERA",
+        "value": 25,
+        "displayname": null,
+        "description": null
+      },
+      {
+        "name": "AMMOTYPE_PLASTIQUE",
+        "value": 26,
+        "displayname": null,
+        "description": null
+      },
+      {
+        "name": "AMMOTYPE_1B",
+        "value": 27,
+        "displayname": null,
+        "description": null
+      },
+      {
+        "name": "AMMOTYPE_1C",
+        "value": 28,
+        "displayname": null,
+        "description": null
+      },
+      {
+        "name": "AMMOTYPE_1D",
+        "value": 29,
+        "displayname": null,
+        "description": null
+      },
+      {
+        "name": "AMMOTYPE_TOKEN",
+        "value": 30,
+        "displayname": null,
+        "description": null
+      },
+      {
+        "name": "AMMOTYPE_1F",
+        "value": 31,
+        "displayname": null,
+        "description": null
+      },
+      {
+        "name": "AMMOTYPE_ECM_MINE",
+        "value": 32,
+        "displayname": null,
+        "description": null
+      }
+    ]
+  },
+  {
+    "name": "TEAM",
+    "type": "Constant",
+	"size": 8,
+    "constants": [
+      {
+        "name": "TEAM_00",
+        "value": 0,
+        "displayname": null,
+        "description": null
+      },
+      {
+        "name": "TEAM_01",
+        "value": 1,
+        "displayname": null,
+        "description": null
+      },
+      {
+        "name": "TEAM_ENEMY",
+        "value": 2,
+        "displayname": null,
+        "description": null
+      },
+      {
+        "name": "TEAM_04",
+        "value": 4,
+        "displayname": null,
+        "description": null
+      },
+      {
+        "name": "TEAM_ALLY",
+        "value": 16,
+        "displayname": null,
+        "description": null
+      },
+	  {
+        "name": "TEAM_COMBAT",
+        "value": 18,
+        "displayname": null,
+        "description": null
+      },
+      {
+        "name": "TEAM_20",
+        "value": 32,
+        "displayname": null,
+        "description": null
+      },
+      {
+        "name": "TEAM_22",
+        "value": 34,
+        "displayname": null,
+        "description": null
+      },
+      {
+        "name": "TEAM_32",
+        "value": 50,
+        "displayname": null,
+        "description": null
+      },
+      {
+        "name": "TEAM_NONCOMBAT",
+        "value": 128,
+        "displayname": null,
+        "description": null
+      },
+	  {
+        "name": "TEAM_NONALLY",
+        "value": 239,
+        "displayname": null,
+        "description": null
+      }
+    ]
+  },
+  {
+    "name": "SQUADRON",
+    "type": "Constant",
+	"size": 8,
+    "constants": [
+      {
+        "name": "SQUADRON_00",
+        "value": 0,
+        "displayname": null,
+        "description": null
+      },
+      {
+        "name": "SQUADRON_01",
+        "value": 1,
+        "displayname": null,
+        "description": null
+      },
+      {
+        "name": "SQUADRON_02",
+        "value": 2,
+        "displayname": null,
+        "description": null
+      },
+      {
+        "name": "SQUADRON_03",
+        "value": 3,
+        "displayname": null,
+        "description": null
+      },
+      {
+        "name": "SQUADRON_04",
+        "value": 4,
+        "displayname": null,
+        "description": null
+      },
+      {
+        "name": "SQUADRON_05",
+        "value": 5,
+        "displayname": null,
+        "description": null
+      },
+      {
+        "name": "SQUADRON_06",
+        "value": 6,
+        "displayname": null,
+        "description": null
+      },
+      {
+        "name": "SQUADRON_07",
+        "value": 7,
+        "displayname": null,
+        "description": null
+      },
+      {
+        "name": "SQUADRON_08",
+        "value": 8,
+        "displayname": null,
+        "description": null
+      },
+      {
+        "name": "SQUADRON_09",
+        "value": 9,
+        "displayname": null,
+        "description": null
+      },
+      {
+        "name": "SQUADRON_0A",
+        "value": 10,
+        "displayname": null,
+        "description": null
+      },
+      {
+        "name": "SQUADRON_0B",
+        "value": 11,
+        "displayname": null,
+        "description": null
+      },
+      {
+        "name": "SQUADRON_0C",
+        "value": 12,
+        "displayname": null,
+        "description": null
+      },
+      {
+        "name": "SQUADRON_0D",
+        "value": 13,
+        "displayname": null,
+        "description": null
+      },
+      {
+        "name": "SQUADRON_0E",
+        "value": 14,
+        "displayname": null,
+        "description": null
+      },
+      {
+        "name": "SQUADRON_0F",
+        "value": 15,
+        "displayname": null,
+        "description": null
+      }
+    ]
+  },
+  {
+    "name": "PADEFFECT",
+    "type": "Constant",
+	"size": 8,
+    "constants": [
+      {
+        "name": "PADEFFECT_SPARKS",
+        "value": 0,
+        "displayname": null,
+        "description": null
+      },
+      {
+        "name": "PADEFFECT_01",
+        "value": 1,
+        "displayname": null,
+        "description": null
+      },
+      {
+        "name": "PADEFFECT_SPLASH",
+        "value": 2,
+        "displayname": null,
+        "description": null
+      },
+      {
+        "name": "PADEFFECT_SPARKS2",
+        "value": 3,
+        "displayname": null,
+        "description": null
+      },
+      {
+        "name": "PADEFFECT_SMOKE",
+        "value": 4,
+        "displayname": null,
+        "description": null
+      },
+      {
+        "name": "PADEFFECT_OUTROSMOKE",
+        "value": 5,
+        "displayname": null,
+        "description": null
+      }
+    ]
+  },
+  {
+    "name": "OUTFIT",
+    "type": "Constant",
+	"size": 8,
+    "constants": [
+      {
+        "name": "OUTFIT_DEFAULT",
+        "value": 0,
+        "displayname": null,
+        "description": null
+      },
+      {
+        "name": "OUTFIT_ELVIS",
+        "value": 1,
+        "displayname": null,
+        "description": null
+      },
+      {
+        "name": "OUTFIT_TRENT",
+        "value": 2,
+        "displayname": null,
+        "description": null
+      },
+      {
+        "name": "OUTFIT_TRENCH",
+        "value": 3,
+        "displayname": null,
+        "description": null
+      },
+      {
+        "name": "OUTFIT_FROCK_RIPPED",
+        "value": 4,
+        "displayname": null,
+        "description": null
+      },
+      {
+        "name": "OUTFIT_FROCK",
+        "value": 5,
+        "displayname": null,
+        "description": null
+      },
+      {
+        "name": "OUTFIT_LEATHER",
+        "value": 6,
+        "displayname": null,
+        "description": null
+      },
+      {
+        "name": "OUTFIT_DEEPSEA",
+        "value": 7,
+        "displayname": null,
+        "description": null
+      },
+      {
+        "name": "OUTFIT_WETSUIT",
+        "value": 8,
+        "displayname": null,
+        "description": null
+      },
+      {
+        "name": "OUTFIT_SNOW",
+        "value": 9,
+        "displayname": null,
+        "description": null
+      },
+      {
+        "name": "OUTFIT_LAB",
+        "value": 10,
+        "displayname": null,
+        "description": null
+      },
+      {
+        "name": "OUTFIT_STEWARDESS",
+        "value": 11,
+        "displayname": null,
+        "description": null
+      },
+      {
+        "name": "OUTFIT_MRBLONDE",
+        "value": 12,
+        "displayname": null,
+        "description": null
+      },
+      {
+        "name": "OUTFIT_MAIAN",
+        "value": 13,
+        "displayname": null,
+        "description": null
+      },
+      {
+        "name": "OUTFIT_NEGOTIATOR",
+        "value": 14,
+        "displayname": null,
+        "description": null
+      }
+    ]
+  },
+  {
+    "name": "HITPART",
+    "type": "Constant",
+	"size": 8,
+    "constants": [
+      {
+        "name": "HITPART_LFOOT",
+        "value": 1,
+        "displayname": null,
+        "description": null
+      },
+      {
+        "name": "HITPART_LSHIN",
+        "value": 2,
+        "displayname": null,
+        "description": null
+      },
+      {
+        "name": "HITPART_LTHIGH",
+        "value": 3,
+        "displayname": null,
+        "description": null
+      },
+      {
+        "name": "HITPART_RFOOT",
+        "value": 4,
+        "displayname": null,
+        "description": null
+      },
+      {
+        "name": "HITPART_RSHIN",
+        "value": 5,
+        "displayname": null,
+        "description": null
+      },
+      {
+        "name": "HITPART_RTHIGH",
+        "value": 6,
+        "displayname": null,
+        "description": null
+      },
+      {
+        "name": "HITPART_PELVIS",
+        "value": 7,
+        "displayname": null,
+        "description": null
+      },
+      {
+        "name": "HITPART_HEAD",
+        "value": 8,
+        "displayname": null,
+        "description": null
+      },
+      {
+        "name": "HITPART_LHAND",
+        "value": 9,
+        "displayname": null,
+        "description": null
+      },
+      {
+        "name": "HITPART_LFOREARM",
+        "value": 16,
+        "displayname": null,
+        "description": null
+      },
+      {
+        "name": "HITPART_LBICEP",
+        "value": 17,
+        "displayname": null,
+        "description": null
+      },
+      {
+        "name": "HITPART_RHAND",
+        "value": 18,
+        "displayname": null,
+        "description": null
+      },
+      {
+        "name": "HITPART_RFOREARM",
+        "value": 19,
+        "displayname": null,
+        "description": null
+      },
+      {
+        "name": "HITPART_RBICEP",
+        "value": 20,
+        "displayname": null,
+        "description": null
+      },
+      {
+        "name": "HITPART_TORSO",
+        "value": 21,
+        "displayname": null,
+        "description": null
+      },
+      {
+        "name": "HITPART_TAIL",
+        "value": 22,
+        "displayname": null,
+        "description": null
+      },
+      {
+        "name": "HITPART_GUN",
+        "value": 256,
+        "displayname": null,
+        "description": null
+      },
+      {
+        "name": "HITPART_HAT",
+        "value": 272,
+        "displayname": null,
+        "description": null
+      },
+      {
+        "name": "HITPART_GENERAL",
+        "value": 512,
+        "displayname": null,
+        "description": null
+      },
+      {
+        "name": "HITPART_GENERALHALF",
+        "value": 513,
+        "displayname": null,
+        "description": null
+      }
+    ]
+  },
+  {
+    "name": "GOPOSFLAG",
+    "type": "Constant",
+	"size": 8,
+    "constants": [
+      {
+        "name": "GOPOSFLAG_WALK",
+        "value": 0,
+        "displayname": null,
+        "description": null
+      },
+      {
+        "name": "GOPOSFLAG_JOG",
+        "value": 1,
+        "displayname": null,
+        "description": null
+      },
+      {
+        "name": "GOPOSFLAG_RUN",
+        "value": 2,
+        "displayname": null,
+        "description": null
+      },
+      {
+        "name": "GOPOSFLAG_INIT",
+        "value": 4,
+        "displayname": null,
+        "description": null
+      },
+      {
+        "name": "GOPOSFLAG_FORPATHSTART",
+        "value": 8,
+        "displayname": null,
+        "description": null
+      },
+      {
+        "name": "GOPOSFLAG_WAITING",
+        "value": 32,
+        "displayname": null,
+        "description": null
+      },
+      {
+        "name": "GOPOSFLAG_CROUCH",
+        "value": 64,
+        "displayname": null,
+        "description": null
+      },
+      {
+        "name": "GOPOSFLAG_DUCK",
+        "value": 128,
+        "displayname": null,
+        "description": null
+      }
+    ]
+  },
+  {
+    "name": "DOORSTATE",
+    "type": "BitFlag",
+	"size": 8,
+    "constants": [
+      {
+        "name": "DOORSTATE_CLOSED",
+        "value": 1,
+        "displayname": null,
+        "description": null
+      },
+      {
+        "name": "DOORSTATE_OPEN",
+        "value": 2,
+        "displayname": null,
+        "description": null
+      },
+      {
+        "name": "DOORSTATE_CLOSING",
+        "value": 4,
+        "displayname": null,
+        "description": null
+      },
+      {
+        "name": "DOORSTATE_OPENING",
+        "value": 8,
+        "displayname": null,
+        "description": null
+      }
+    ]
+  },
+  {
+    "name": "QUADRANT",
+    "type": "Constant",
+	"size": 8,
+    "constants": [
+      {
+        "name": "QUADRANT_BACK",
+        "value": 1,
+        "displayname": null,
+        "description": null
+      },
+      {
+        "name": "QUADRANT_SIDE1",
+        "value": 2,
+        "displayname": null,
+        "description": null
+      },
+      {
+        "name": "QUADRANT_SIDE2",
+        "value": 4,
+        "displayname": null,
+        "description": null
+      },
+      {
+        "name": "QUADRANT_FRONT",
+        "value": 8,
+        "displayname": null,
+        "description": null
+      },
+      {
+        "name": "QUADRANT_TOWARDSTARGET",
+        "value": 16,
+        "displayname": null,
+        "description": null
+      },
+      {
+        "name": "QUADRANT_AWAYFROMTARGET",
+        "value": 32,
+        "displayname": null,
+        "description": null
+      }
+    ]
+  },
+  {
+    "name": "DIFF",
+    "type": "Constant",
+	"size": 8,
+    "constants": [
+      {
+        "name": "DIFF_A",
+        "value": 0,
+        "displayname": null,
+        "description": null
+      },
+      {
+        "name": "DIFF_SA",
+        "value": 1,
+        "displayname": null,
+        "description": null
+      },
+      {
+        "name": "DIFF_PA",
+        "value": 2,
+        "displayname": null,
+        "description": null
+      },
+      {
+        "name": "DIFF_PD",
+        "value": 3,
+        "displayname": null,
+        "description": null
+      }
+    ]
+  },
+  {
+    "name": "OPERATOR",
+    "type": "Constant",
+	"size": 8,
+    "constants": [
+      {
+        "name": "OPERATOR_LESS_THAN",
+        "value": 0,
+        "displayname": null,
+        "description": null
+      },
+      {
+        "name": "OPERATOR_GREATER_THAN",
+        "value": 1,
+        "displayname": null,
+        "description": null
+      }
+    ]
+  },
+  {
+    "name": "BANK",
+    "type": "Constant",
+	"size": 8,
+    "constants": [
+      {
+        "name": "BANK_0",
+        "value": 0,
+        "displayname": null,
+        "description": null
+      },
+      {
+        "name": "BANK_1",
+        "value": 1,
+        "displayname": null,
+        "description": null
+      }
+    ]
+  },
+  {
+    "name": "COLOR",
+    "type": "Constant",
+	"size": 8,
+    "constants": [
+      {
+        "name": "COLOR_00_GREEN",
+        "value": 0,
+        "displayname": null,
+        "description": null
+      },
+      {
+        "name": "COLOR_02_WHITE",
+        "value": 2,
+        "displayname": null,
+        "description": null
+      },
+      {
+        "name": "COLOR_03_RED",
+        "value": 3,
+        "displayname": null,
+        "description": null
+      },
+      {
+        "name": "COLOR_04_ORANGE",
+        "value": 4,
+        "displayname": null,
+        "description": null
+      },
+      {
+        "name": "COLOR_05_GREEN",
+        "value": 5,
+        "displayname": null,
+        "description": null
+      },
+      {
+        "name": "COLOR_06_WHITE",
+        "value": 6,
+        "displayname": null,
+        "description": null
+      },
+      {
+        "name": "COLOR_07_RED",
+        "value": 7,
+        "displayname": null,
+        "description": null
+      },
+      {
+        "name": "COLOR_08_RED",
+        "value": 8,
+        "displayname": null,
+        "description": null
+      },
+      {
+        "name": "COLOR_09_BLUE",
+        "value": 9,
+        "displayname": null,
+        "description": null
+      }
+    ]
+  },
+  {
+    "name": "CHANNEL",
+    "type": "Constant",
+	"size": 8,
+    "constants": [
+      {
+        "name": "CHANNEL_0",
+        "value": 0,
+        "displayname": null,
+        "description": null
+      },
+      {
+        "name": "CHANNEL_1",
+        "value": 1,
+        "displayname": null,
+        "description": null
+      },
+      {
+        "name": "CHANNEL_2",
+        "value": 2,
+        "displayname": null,
+        "description": null
+      },
+      {
+        "name": "CHANNEL_3",
+        "value": 3,
+        "displayname": null,
+        "description": null
+      },
+      {
+        "name": "CHANNEL_4",
+        "value": 4,
+        "displayname": null,
+        "description": null
+      },
+      {
+        "name": "CHANNEL_5",
+        "value": 5,
+        "displayname": null,
+        "description": null
+      },
+      {
+        "name": "CHANNEL_6",
+        "value": 6,
+        "displayname": null,
+        "description": null
+      },
+      {
+        "name": "CHANNEL_7",
+        "value": 7,
+        "displayname": null,
+        "description": null
+      },
+      {
+        "name": "CHANNEL_8",
+        "value": 8,
+        "displayname": null,
+        "description": null
+      },
+      {
+        "name": "CHANNEL_9",
+        "value": 9,
+        "displayname": null,
+        "description": null
+      },
+	  {
+        "name": "CHANNEL_10",
+        "value": 10,
+        "displayname": null,
+        "description": null
+      },
+      {
+        "name": "CHANNEL_CUTSCENE",
+        "value": 16,
+        "displayname": null,
+        "description": null
+      },
+	  {
+        "name": "CHANNEL_CREATENEW",
+        "value": -1,
+        "displayname": null,
+        "description": null
+      }
+    ]
+  },
+  {
+    "name": "XREASON",
+    "type": "Constant",
+	"size": 8,
+    "constants": [
+      {
+        "name": "XREASON_0",
+        "value": 0,
+        "displayname": null,
+        "description": null
+      },
+      {
+        "name": "XREASON_DEFAULT",
+        "value": 1,
+        "displayname": null,
+        "description": null
+      },
+      {
+        "name": "XREASON_2",
+        "value": 2,
+        "displayname": null,
+        "description": null
+      },
+	  {
+        "name": "XREASON_3",
+        "value": 3,
+        "displayname": null,
+        "description": null
+      },
+      {
+        "name": "XREASON_ANY",
+        "value": -1,
+        "displayname": null,
+        "description": null
+      }
+    ]
+  },
+  {
+    "name": "LIGHTOP",
+    "type": "Constant",
+	"size": 8,
+    "constants": [
+      {
+        "name": "LIGHTOP_NONE",
+        "value": 0,
+        "displayname": null,
+        "description": null
+      },
+      {
+        "name": "LIGHTOP_SET",
+        "value": 1,
+        "displayname": null,
+        "description": null
+      },
+      {
+        "name": "LIGHTOP_SETRANDOM",
+        "value": 2,
+        "displayname": null,
+        "description": null
+      },
+      {
+        "name": "LIGHTOP_TRANSITION",
+        "value": 3,
+        "displayname": null,
+        "description": null
+      },
+      {
+        "name": "LIGHTOP_SINELOOP",
+        "value": 4,
+        "displayname": null,
+        "description": null
+      },
+      {
+        "name": "LIGHTOP_HIGHLIGHT",
+        "value": 5,
+        "displayname": null,
+        "description": null
+      },
+      {
+        "name": "LIGHTOP_TURNON",
+        "value": 6,
+        "displayname": null,
+        "description": null
+      },
+      {
+        "name": "LIGHTOP_TURNOFF",
+        "value": 7,
+        "displayname": null,
+        "description": null
+      }
+    ]
+  },
+  {
+    "name": "QUIP",
+    "type": "Constant",
+	"size": 8,
+    "constants": [
+      {
+        "name": "QUIP_ATTACK1",
+        "value": 0,
+        "displayname": null,
+        "description": null
+      },
+      {
+        "name": "QUIP_ATTACK2",
+        "value": 1,
+        "displayname": null,
+        "description": null
+      },
+      {
+        "name": "QUIP_GOTOCOVER1",
+        "value": 2,
+        "displayname": null,
+        "description": null
+      },
+      {
+        "name": "QUIP_GRENADE1",
+        "value": 3,
+        "displayname": null,
+        "description": null
+      },
+      {
+        "name": "QUIP_RETREAT1",
+        "value": 4,
+        "displayname": null,
+        "description": null
+      },
+      {
+        "name": "QUIP_GRENADE2",
+        "value": 5,
+        "displayname": null,
+        "description": null
+      },
+      {
+        "name": "QUIP_RETREAT2",
+        "value": 6,
+        "displayname": null,
+        "description": null
+      },
+      {
+        "name": "QUIP_FLANK",
+        "value": 7,
+        "displayname": null,
+        "description": null
+      },
+      {
+        "name": "QUIP_SURRENDER",
+        "value": 8,
+        "displayname": null,
+        "description": null
+      },
+      {
+        "name": "QUIP_HEARNOISE",
+        "value": 9,
+        "displayname": null,
+        "description": null
+      },
+      {
+        "name": "QUIP_10",
+        "value": 16,
+        "displayname": null,
+        "description": null
+      },
+      {
+        "name": "QUIP_SEEPLAYER",
+        "value": 17,
+        "displayname": null,
+        "description": null
+      },
+      {
+        "name": "QUIP_SHOTUNALERT",
+        "value": 18,
+        "displayname": null,
+        "description": null
+      },
+      {
+        "name": "QUIP_INJURED1",
+        "value": 19,
+        "displayname": null,
+        "description": null
+      },
+      {
+        "name": "QUIP_INJURED2",
+        "value": 20,
+        "displayname": null,
+        "description": null
+      },
+      {
+        "name": "QUIP_KILLEDPLAYER1",
+        "value": 21,
+        "displayname": null,
+        "description": null
+      },
+      {
+        "name": "QUIP_WARNFRIENDS",
+        "value": 22,
+        "displayname": null,
+        "description": null
+      },
+      {
+        "name": "QUIP_17",
+        "value": 23,
+        "displayname": null,
+        "description": null
+      },
+      {
+        "name": "QUIP_SURPRISED",
+        "value": 24,
+        "displayname": null,
+        "description": null
+      },
+      {
+        "name": "QUIP_INSPECTBODY",
+        "value": 25,
+        "displayname": null,
+        "description": null
+      },
+      {
+        "name": "QUIP_20",
+        "value": 32,
+        "displayname": null,
+        "description": null
+      },
+      {
+        "name": "QUIP_HITPLAYER",
+        "value": 33,
+        "displayname": null,
+        "description": null
+      },
+      {
+        "name": "QUIP_MISSEDPLAYER1",
+        "value": 34,
+        "displayname": null,
+        "description": null
+      },
+      {
+        "name": "QUIP_MISSEDPLAYER2",
+        "value": 35,
+        "displayname": null,
+        "description": null
+      },
+      {
+        "name": "QUIP_GOTOCOVER2",
+        "value": 36,
+        "displayname": null,
+        "description": null
+      },
+      {
+        "name": "QUIP_DIE",
+        "value": 37,
+        "displayname": null,
+        "description": null
+      },
+      {
+        "name": "QUIP_26",
+        "value": 38,
+        "displayname": null,
+        "description": null
+      },
+      {
+        "name": "QUIP_SEARCHSUCCESS",
+        "value": 39,
+        "displayname": null,
+        "description": null
+      },
+      {
+        "name": "QUIP_SEEEYESPY",
+        "value": 40,
+        "displayname": null,
+        "description": null
+      },
+      {
+        "name": "QUIP_GREETING",
+        "value": 41,
+        "displayname": null,
+        "description": null
+      },
+      {
+        "name": "QUIP_ASKWEAPON1",
+        "value": 48,
+        "displayname": null,
+        "description": null
+      },
+      {
+        "name": "QUIP_ASKWEAPON2",
+        "value": 49,
+        "displayname": null,
+        "description": null
+      },
+      {
+        "name": "QUIP_UNCOVERDISGUISE1",
+        "value": 50,
+        "displayname": null,
+        "description": null
+      },
+      {
+        "name": "QUIP_LOSTGUN",
+        "value": 51,
+        "displayname": null,
+        "description": null
+      },
+      {
+        "name": "QUIP_GOFORALARM",
+        "value": 52,
+        "displayname": null,
+        "description": null
+      },
+      {
+        "name": "QUIP_SEARCHFAIL",
+        "value": 53,
+        "displayname": null,
+        "description": null
+      },
+      {
+        "name": "QUIP_ATTACK3",
+        "value": 54,
+        "displayname": null,
+        "description": null
+      },
+      {
+        "name": "QUIP_ATTACK4",
+        "value": 55,
+        "displayname": null,
+        "description": null
+      },
+      {
+        "name": "QUIP_KILLEDPLAYER2",
+        "value": 56,
+        "displayname": null,
+        "description": null
+      },
+      {
+        "name": "QUIP_GUNJAMMED",
+        "value": 57,
+        "displayname": null,
+        "description": null
+      },
+      {
+        "name": "QUIP_UNCOVEREDDISGUISE2",
+        "value": 64,
+        "displayname": null,
+        "description": null
+      }
+    ]
+  },
+  {
+    "name": "MA",
+    "type": "Constant",
+	"size": 8,
+    "constants": [
+      {
+        "name": "MA_NONE",
+        "value": 0,
+        "displayname": null,
+        "description": null
+      },
+      {
+        "name": "MA_NORMAL",
+        "value": 1,
+        "displayname": null,
+        "description": null
+      },
+      {
+        "name": "MA_COVERWAIT",
+        "value": 2,
+        "displayname": null,
+        "description": null
+      },
+      {
+        "name": "MA_GRENADEWAIT",
+        "value": 3,
+        "displayname": null,
+        "description": null
+      },
+      {
+        "name": "MA_WAITING",
+        "value": 4,
+        "displayname": null,
+        "description": null
+      },
+      {
+        "name": "MA_COVERGOTO",
+        "value": 5,
+        "displayname": null,
+        "description": null
+      },
+      {
+        "name": "MA_COVERBREAK",
+        "value": 6,
+        "displayname": null,
+        "description": null
+      },
+      {
+        "name": "MA_COVERSEEN",
+        "value": 7,
+        "displayname": null,
+        "description": null
+      },
+      {
+        "name": "MA_FLANKLEFT",
+        "value": 8,
+        "displayname": null,
+        "description": null
+      },
+      {
+        "name": "MA_FLANKRIGHT",
+        "value": 9,
+        "displayname": null,
+        "description": null
+      },
+      {
+        "name": "MA_DODGE",
+        "value": 10,
+        "displayname": null,
+        "description": null
+      },
+      {
+        "name": "MA_GRENADE",
+        "value": 11,
+        "displayname": null,
+        "description": null
+      },
+      {
+        "name": "MA_WAITSEEN",
+        "value": 12,
+        "displayname": null,
+        "description": null
+      },
+      {
+        "name": "MA_WITHDRAW",
+        "value": 13,
+        "displayname": null,
+        "description": null
+      },
+      {
+        "name": "MA_SHOOTING",
+        "value": 14,
+        "displayname": null,
+        "description": null
+      },
+      {
+        "name": "MA_SYNCSHOOT",
+        "value": 15,
+        "displayname": null,
+        "description": null
+      },
+      {
+        "name": "MA_WAITTIMEOUT",
+        "value": 16,
+        "displayname": null,
+        "description": null
+      },
+      {
+        "name": "MA_COVERTIMEOUT",
+        "value": 17,
+        "displayname": null,
+        "description": null
+      },
+      {
+        "name": "MA_TRACKING",
+        "value": 18,
+        "displayname": null,
+        "description": null
+      },
+      {
+        "name": "MA_RETREAT",
+        "value": 19,
+        "displayname": null,
+        "description": null
+      },
+      {
+        "name": "MA_SURRENDER",
+        "value": 20,
+        "displayname": null,
+        "description": null
+      },
+      {
+        "name": "MA_TALKING",
+        "value": 21,
+        "displayname": null,
+        "description": null
+      },
+      {
+        "name": "MA_LISTENING",
+        "value": 22,
+        "displayname": null,
+        "description": null
+      },
+      {
+        "name": "MA_GOTOALARM",
+        "value": 23,
+        "displayname": null,
+        "description": null
+      },
+      {
+        "name": "MA_BOTFRIENDFOLLOW",
+        "value": 24,
+        "displayname": null,
+        "description": null
+      },
+      {
+        "name": "MA_BOTHIDE",
+        "value": 25,
+        "displayname": null,
+        "description": null
+      },
+      {
+        "name": "MA_BOTPATH",
+        "value": 26,
+        "displayname": null,
+        "description": null
+      },
+      {
+        "name": "MA_BOTINJURED",
+        "value": 27,
+        "displayname": null,
+        "description": null
+      },
+      {
+        "name": "MA_BOTNORMAL",
+        "value": 28,
+        "displayname": null,
+        "description": null
+      },
+      {
+        "name": "MA_BOTSHOOTING",
+        "value": 29,
+        "displayname": null,
+        "description": null
+      },
+      {
+        "name": "MA_DRUGGED",
+        "value": 30,
+        "displayname": null,
+        "description": null
+      },
+      {
+        "name": "MA_PANIC",
+        "value": 31,
+        "displayname": null,
+        "description": null
+      },
+      {
+        "name": "MA_RUNFROMGRENADE",
+        "value": 32,
+        "displayname": null,
+        "description": null
+      },
+      {
+        "name": "MA_UNARMEDATTACK",
+        "value": 33,
+        "displayname": null,
+        "description": null
+      },
+      {
+        "name": "MA_SKJUMP_START",
+        "value": 34,
+        "displayname": null,
+        "description": null
+      },
+      {
+        "name": "MA_SKJUMP_AIR",
+        "value": 35,
+        "displayname": null,
+        "description": null
+      },
+      {
+        "name": "MA_SKJUMP_LAND",
+        "value": 36,
+        "displayname": null,
+        "description": null
+      },
+      {
+        "name": "MA_SKJUMP_LANDLOOP",
+        "value": 37,
+        "displayname": null,
+        "description": null
+      },
+      {
+        "name": "MA_SKJUMP_SHOT",
+        "value": 38,
+        "displayname": null,
+        "description": null
+      },
+      {
+        "name": "MA_AIBOTDEADLIST",
+        "value": 39,
+        "displayname": null,
+        "description": null
+      },
+      {
+        "name": "MA_AIBOTINIT",
+        "value": 40,
+        "displayname": null,
+        "description": null
+      },
+      {
+        "name": "MA_AIBOTMAINLOOP",
+        "value": 41,
+        "displayname": null,
+        "description": null
+      },
+      {
+        "name": "MA_AIBOTGETITEM",
+        "value": 42,
+        "displayname": null,
+        "description": null
+      },
+      {
+        "name": "MA_AIBOTGOTOPOS",
+        "value": 43,
+        "displayname": null,
+        "description": null
+      },
+      {
+        "name": "MA_AIBOTGOTOPROP",
+        "value": 44,
+        "displayname": null,
+        "description": null
+      },
+      {
+        "name": "MA_AIBOTRUNAWAY",
+        "value": 45,
+        "displayname": null,
+        "description": null
+      },
+      {
+        "name": "MA_AIBOTDOWNLOAD",
+        "value": 46,
+        "displayname": null,
+        "description": null
+      },
+      {
+        "name": "MA_AIBOTATTACK",
+        "value": 47,
+        "displayname": null,
+        "description": null
+      },
+      {
+        "name": "MA_UNUSED1",
+        "value": 48,
+        "displayname": null,
+        "description": null
+      },
+      {
+        "name": "MA_UNUSED2",
+        "value": 49,
+        "displayname": null,
+        "description": null
+      },
+      {
+        "name": "MA_AIBOTFOLLOW",
+        "value": 50,
+        "displayname": null,
+        "description": null
+      },
+      {
+        "name": "MA_AIBOTDEFEND",
+        "value": 51,
+        "displayname": null,
+        "description": null
+      },
+      {
+        "name": "MA_FLANKBEST",
+        "value": 52,
+        "displayname": null,
+        "description": null
+      },
+      {
+        "name": "MA_FACING",
+        "value": 53,
+        "displayname": null,
+        "description": null
+      },
+      {
+        "name": "MA_PUNCHING",
+        "value": 54,
+        "displayname": null,
+        "description": null
+      },
+      {
+        "name": "MA_END",
+        "value": 55,
+        "displayname": null,
+        "description": null
+      }
+    ]
+  },
+  {
+    "name": "MODELPART",
+    "type": "Constant",
+	"size": 8,
+    "constants": [
+      {
+        "name": "MODELPART_AR34_0042",
+        "value": 66,
+        "displayname": null,
+        "description": null
+      },
+      {
+        "name": "MODELPART_AR34_0050",
+        "value": 80,
+        "displayname": null,
+        "description": null
+      },
+      {
+        "name": "MODELPART_AR34_0051",
+        "value": 81,
+        "displayname": null,
+        "description": null
+      },
+      {
+        "name": "MODELPART_AR34_MAGAZINE1",
+        "value": 41,
+        "displayname": null,
+        "description": null
+      },
+      {
+        "name": "MODELPART_AR34_MAGAZINE2",
+        "value": 42,
+        "displayname": null,
+        "description": null
+      },
+      {
+        "name": "MODELPART_AUTOGUN_0000",
+        "value": 0,
+        "displayname": null,
+        "description": null
+      },
+      {
+        "name": "MODELPART_AUTOGUN_0001",
+        "value": 1,
+        "displayname": null,
+        "description": null
+      },
+      {
+        "name": "MODELPART_AUTOGUN_0002",
+        "value": 2,
+        "displayname": null,
+        "description": null
+      },
+      {
+        "name": "MODELPART_AUTOGUN_0003",
+        "value": 3,
+        "displayname": null,
+        "description": null
+      },
+      {
+        "name": "MODELPART_AUTOGUN_0004",
+        "value": 4,
+        "displayname": null,
+        "description": null
+      },
+      {
+        "name": "MODELPART_AUTOGUN_0006",
+        "value": 6,
+        "displayname": null,
+        "description": null
+      },
+      {
+        "name": "MODELPART_AUTOGUN_FLASHLEFT",
+        "value": 5,
+        "displayname": null,
+        "description": null
+      },
+      {
+        "name": "MODELPART_AUTOGUN_FLASHRIGHT",
+        "value": 7,
+        "displayname": null,
+        "description": null
+      },
+      {
+        "name": "MODELPART_BASIC_0064",
+        "value": 100,
+        "displayname": null,
+        "description": null
+      },
+      {
+        "name": "MODELPART_BASIC_0065",
+        "value": 101,
+        "displayname": null,
+        "description": null
+      },
+      {
+        "name": "MODELPART_BASIC_0066",
+        "value": 102,
+        "displayname": null,
+        "description": null
+      },
+      {
+        "name": "MODELPART_BASIC_0067",
+        "value": 103,
+        "displayname": null,
+        "description": null
+      },
+      {
+        "name": "MODELPART_BASIC_00C8",
+        "value": 200,
+        "displayname": null,
+        "description": null
+      },
+      {
+        "name": "MODELPART_BASIC_00C9",
+        "value": 201,
+        "displayname": null,
+        "description": null
+      },
+      {
+        "name": "MODELPART_BASIC_00CA",
+        "value": 202,
+        "displayname": null,
+        "description": null
+      },
+      {
+        "name": "MODELPART_BASIC_00CB",
+        "value": 203,
+        "displayname": null,
+        "description": null
+      },
+      {
+        "name": "MODELPART_BASIC_00CC",
+        "value": 204,
+        "displayname": null,
+        "description": null
+      },
+      {
+        "name": "MODELPART_BASIC_00CD",
+        "value": 205,
+        "displayname": null,
+        "description": null
+      },
+      {
+        "name": "MODELPART_BASIC_00CE",
+        "value": 206,
+        "displayname": null,
+        "description": null
+      },
+      {
+        "name": "MODELPART_BASIC_00CF",
+        "value": 207,
+        "displayname": null,
+        "description": null
+      },
+      {
+        "name": "MODELPART_BASIC_00D0",
+        "value": 208,
+        "displayname": null,
+        "description": null
+      },
+      {
+        "name": "MODELPART_BASIC_00D1",
+        "value": 209,
+        "displayname": null,
+        "description": null
+      },
+      {
+        "name": "MODELPART_BASIC_00D2",
+        "value": 210,
+        "displayname": null,
+        "description": null
+      },
+      {
+        "name": "MODELPART_BASIC_00D3",
+        "value": 211,
+        "displayname": null,
+        "description": null
+      },
+      {
+        "name": "MODELPART_CALLISTO_ORB",
+        "value": 40,
+        "displayname": null,
+        "description": null
+      },
+      {
+        "name": "MODELPART_CCTV_0002",
+        "value": 2,
+        "displayname": null,
+        "description": null
+      },
+      {
+        "name": "MODELPART_CCTV_0003",
+        "value": 3,
+        "displayname": null,
+        "description": null
+      },
+      {
+        "name": "MODELPART_CCTV_CASING",
+        "value": 0,
+        "displayname": null,
+        "description": null
+      },
+      {
+        "name": "MODELPART_CCTV_LENS",
+        "value": 1,
+        "displayname": null,
+        "description": null
+      },
+      {
+        "name": "MODELPART_CHOPPER_0000",
+        "value": 0,
+        "displayname": null,
+        "description": null
+      },
+      {
+        "name": "MODELPART_CHOPPER_0001",
+        "value": 1,
+        "displayname": null,
+        "description": null
+      },
+      {
+        "name": "MODELPART_CHOPPER_0002",
+        "value": 2,
+        "displayname": null,
+        "description": null
+      },
+      {
+        "name": "MODELPART_CHOPPER_0005",
+        "value": 5,
+        "displayname": null,
+        "description": null
+      },
+      {
+        "name": "MODELPART_CHOPPER_GUNFLASH",
+        "value": 3,
+        "displayname": null,
+        "description": null
+      },
+      {
+        "name": "MODELPART_CHRGUN_0001",
+        "value": 1,
+        "displayname": null,
+        "description": null
+      },
+      {
+        "name": "MODELPART_CHRGUN_0002",
+        "value": 2,
+        "displayname": null,
+        "description": null
+      },
+      {
+        "name": "MODELPART_CHRGUN_GUNFIRE",
+        "value": 0,
+        "displayname": null,
+        "description": null
+      },
+      {
+        "name": "MODELPART_CHR_0000",
+        "value": 0,
+        "displayname": null,
+        "description": null
+      },
+      {
+        "name": "MODELPART_CHR_0001",
+        "value": 1,
+        "displayname": null,
+        "description": null
+      },
+      {
+        "name": "MODELPART_CHR_0002",
+        "value": 2,
+        "displayname": null,
+        "description": null
+      },
+      {
+        "name": "MODELPART_CHR_0006",
+        "value": 6,
+        "displayname": null,
+        "description": null
+      },
+      {
+        "name": "MODELPART_CHR_HEADSPOT",
+        "value": 4,
+        "displayname": null,
+        "description": null
+      },
+      {
+        "name": "MODELPART_CHR_LEFTHAND",
+        "value": 5,
+        "displayname": null,
+        "description": null
+      },
+      {
+        "name": "MODELPART_CHR_NECKLACE",
+        "value": 7,
+        "displayname": null,
+        "description": null
+      },
+      {
+        "name": "MODELPART_CHR_RIGHTHAND",
+        "value": 3,
+        "displayname": null,
+        "description": null
+      },
+      {
+        "name": "MODELPART_CIHUB_0000",
+        "value": 0,
+        "displayname": null,
+        "description": null
+      },
+      {
+        "name": "MODELPART_CIHUB_0001",
+        "value": 1,
+        "displayname": null,
+        "description": null
+      },
+      {
+        "name": "MODELPART_CIHUB_0002",
+        "value": 2,
+        "displayname": null,
+        "description": null
+      },
+      {
+        "name": "MODELPART_CIHUB_0003",
+        "value": 3,
+        "displayname": null,
+        "description": null
+      },
+      {
+        "name": "MODELPART_CLASSICGUN_0050",
+        "value": 80,
+        "displayname": null,
+        "description": null
+      },
+      {
+        "name": "MODELPART_CMP150_0042",
+        "value": 66,
+        "displayname": null,
+        "description": null
+      },
+      {
+        "name": "MODELPART_CMP150_0050",
+        "value": 80,
+        "displayname": null,
+        "description": null
+      },
+      {
+        "name": "MODELPART_CMP150_0051",
+        "value": 81,
+        "displayname": null,
+        "description": null
+      },
+      {
+        "name": "MODELPART_CMP150_MAGAZINE1",
+        "value": 42,
+        "displayname": null,
+        "description": null
+      },
+      {
+        "name": "MODELPART_CMP150_MAGAZINE2",
+        "value": 43,
+        "displayname": null,
+        "description": null
+      },
+      {
+        "name": "MODELPART_CROSSBOW_0028",
+        "value": 40,
+        "displayname": null,
+        "description": null
+      },
+      {
+        "name": "MODELPART_CROSSBOW_0042",
+        "value": 66,
+        "displayname": null,
+        "description": null
+      },
+      {
+        "name": "MODELPART_CROSSBOW_BOLT",
+        "value": 41,
+        "displayname": null,
+        "description": null
+      },
+      {
+        "name": "MODELPART_CROSSBOW_HANDLE",
+        "value": 42,
+        "displayname": null,
+        "description": null
+      },
+      {
+        "name": "MODELPART_CYCLONE_0050",
+        "value": 80,
+        "displayname": null,
+        "description": null
+      },
+      {
+        "name": "MODELPART_CYCLONE_0051",
+        "value": 81,
+        "displayname": null,
+        "description": null
+      },
+      {
+        "name": "MODELPART_CYCLONE_MAGAZINE",
+        "value": 40,
+        "displayname": null,
+        "description": null
+      },
+      {
+        "name": "MODELPART_DEVASTATOR_0028",
+        "value": 40,
+        "displayname": null,
+        "description": null
+      },
+      {
+        "name": "MODELPART_DEVASTATOR_CART1",
+        "value": 100,
+        "displayname": null,
+        "description": null
+      },
+      {
+        "name": "MODELPART_DEVASTATOR_CART2",
+        "value": 101,
+        "displayname": null,
+        "description": null
+      },
+      {
+        "name": "MODELPART_DEVASTATOR_CART3",
+        "value": 102,
+        "displayname": null,
+        "description": null
+      },
+      {
+        "name": "MODELPART_DEVASTATOR_CART4",
+        "value": 103,
+        "displayname": null,
+        "description": null
+      },
+      {
+        "name": "MODELPART_DEVASTATOR_CART5",
+        "value": 104,
+        "displayname": null,
+        "description": null
+      },
+      {
+        "name": "MODELPART_DEVASTATOR_CART6",
+        "value": 105,
+        "displayname": null,
+        "description": null
+      },
+      {
+        "name": "MODELPART_DEVASTATOR_CART7",
+        "value": 106,
+        "displayname": null,
+        "description": null
+      },
+      {
+        "name": "MODELPART_DEVASTATOR_CART8",
+        "value": 107,
+        "displayname": null,
+        "description": null
+      },
+      {
+        "name": "MODELPART_DEVASTATOR_MAGAZINE1",
+        "value": 41,
+        "displayname": null,
+        "description": null
+      },
+      {
+        "name": "MODELPART_DEVASTATOR_MAGAZINE2",
+        "value": 42,
+        "displayname": null,
+        "description": null
+      },
+      {
+        "name": "MODELPART_DRAGON_0042",
+        "value": 66,
+        "displayname": null,
+        "description": null
+      },
+      {
+        "name": "MODELPART_DRAGON_0050",
+        "value": 80,
+        "displayname": null,
+        "description": null
+      },
+      {
+        "name": "MODELPART_DRAGON_0051",
+        "value": 81,
+        "displayname": null,
+        "description": null
+      },
+      {
+        "name": "MODELPART_DRAGON_0052",
+        "value": 82,
+        "displayname": null,
+        "description": null
+      },
+      {
+        "name": "MODELPART_DRAGON_MAGAZINE1",
+        "value": 40,
+        "displayname": null,
+        "description": null
+      },
+      {
+        "name": "MODELPART_DRAGON_MAGAZINE2",
+        "value": 42,
+        "displayname": null,
+        "description": null
+      },
+      {
+        "name": "MODELPART_DRCAROLL_0000",
+        "value": 0,
+        "displayname": null,
+        "description": null
+      },
+      {
+        "name": "MODELPART_DRCAROLL_0001",
+        "value": 1,
+        "displayname": null,
+        "description": null
+      },
+      {
+        "name": "MODELPART_DRCAROLL_0002",
+        "value": 2,
+        "displayname": null,
+        "description": null
+      },
+      {
+        "name": "MODELPART_DRCAROLL_0003",
+        "value": 3,
+        "displayname": null,
+        "description": null
+      },
+      {
+        "name": "MODELPART_DRCAROLL_0004",
+        "value": 4,
+        "displayname": null,
+        "description": null
+      },
+      {
+        "name": "MODELPART_DRCAROLL_0005",
+        "value": 5,
+        "displayname": null,
+        "description": null
+      },
+      {
+        "name": "MODELPART_DRCAROLL_0006",
+        "value": 6,
+        "displayname": null,
+        "description": null
+      },
+      {
+        "name": "MODELPART_DRCAROLL_0007",
+        "value": 7,
+        "displayname": null,
+        "description": null
+      },
+      {
+        "name": "MODELPART_DRCAROLL_0008",
+        "value": 8,
+        "displayname": null,
+        "description": null
+      },
+      {
+        "name": "MODELPART_DRCAROLL_0009",
+        "value": 9,
+        "displayname": null,
+        "description": null
+      },
+      {
+        "name": "MODELPART_DRCAROLL_000A",
+        "value": 10,
+        "displayname": null,
+        "description": null
+      },
+      {
+        "name": "MODELPART_DRCAROLL_000B",
+        "value": 11,
+        "displayname": null,
+        "description": null
+      },
+      {
+        "name": "MODELPART_DROPSHIP_0064",
+        "value": 100,
+        "displayname": null,
+        "description": null
+      },
+      {
+        "name": "MODELPART_DROPSHIP_INTERIOR",
+        "value": 110,
+        "displayname": null,
+        "description": null
+      },
+      {
+        "name": "MODELPART_FALCON2_002E",
+        "value": 46,
+        "displayname": null,
+        "description": null
+      },
+      {
+        "name": "MODELPART_FALCON2_002F",
+        "value": 47,
+        "displayname": null,
+        "description": null
+      },
+      {
+        "name": "MODELPART_FALCON2_0042",
+        "value": 66,
+        "displayname": null,
+        "description": null
+      },
+      {
+        "name": "MODELPART_FALCON2_0050",
+        "value": 80,
+        "displayname": null,
+        "description": null
+      },
+      {
+        "name": "MODELPART_FALCON2_0051",
+        "value": 81,
+        "displayname": null,
+        "description": null
+      },
+      {
+        "name": "MODELPART_FALCON2_MAGAZINE1",
+        "value": 42,
+        "displayname": null,
+        "description": null
+      },
+      {
+        "name": "MODELPART_FALCON2_MAGAZINE2",
+        "value": 43,
+        "displayname": null,
+        "description": null
+      },
+      {
+        "name": "MODELPART_FALCON2_SCOPE",
+        "value": 44,
+        "displayname": null,
+        "description": null
+      },
+      {
+        "name": "MODELPART_FALCON2_SILENCER",
+        "value": 45,
+        "displayname": null,
+        "description": null
+      },
+      {
+        "name": "MODELPART_FARSIGHT_ORB",
+        "value": 40,
+        "displayname": null,
+        "description": null
+      },
+      {
+        "name": "MODELPART_GRENADE_002B",
+        "value": 43,
+        "displayname": null,
+        "description": null
+      },
+      {
+        "name": "MODELPART_GRENADE_0064",
+        "value": 100,
+        "displayname": null,
+        "description": null
+      },
+      {
+        "name": "MODELPART_GUN_CARTEJECTPOS",
+        "value": 60,
+        "displayname": null,
+        "description": null
+      },
+      {
+        "name": "MODELPART_GUN_CARTFLAPCLOSED",
+        "value": 70,
+        "displayname": null,
+        "description": null
+      },
+      {
+        "name": "MODELPART_GUN_CARTFLAPOPEN",
+        "value": 71,
+        "displayname": null,
+        "description": null
+      },
+      {
+        "name": "MODELPART_GUN_HOLDPOS",
+        "value": 55,
+        "displayname": null,
+        "description": null
+      },
+      {
+        "name": "MODELPART_GUN_LASERLIQUID",
+        "value": 65,
+        "displayname": null,
+        "description": null
+      },
+      {
+        "name": "MODELPART_GUN_LASERSIGHT",
+        "value": 52,
+        "displayname": null,
+        "description": null
+      },
+      {
+        "name": "MODELPART_GUN_MUZZLEFLASH1",
+        "value": 90,
+        "displayname": null,
+        "description": null
+      },
+      {
+        "name": "MODELPART_GUN_MUZZLEFLASH2",
+        "value": 91,
+        "displayname": null,
+        "description": null
+      },
+      {
+        "name": "MODELPART_GUN_MUZZLEFLASH3",
+        "value": 92,
+        "displayname": null,
+        "description": null
+      },
+      {
+        "name": "MODELPART_GUN_MUZZLEPOS",
+        "value": 50,
+        "displayname": null,
+        "description": null
+      },
+      {
+        "name": "MODELPART_GUN_SLIDE",
+        "value": 51,
+        "displayname": null,
+        "description": null
+      },
+      {
+        "name": "MODELPART_HAND_LEFT",
+        "value": 53,
+        "displayname": null,
+        "description": null
+      },
+      {
+        "name": "MODELPART_HAND_RIGHT",
+        "value": 54,
+        "displayname": null,
+        "description": null
+      },
+      {
+        "name": "MODELPART_HEAD_0190",
+        "value": 400,
+        "displayname": null,
+        "description": null
+      },
+      {
+        "name": "MODELPART_HEAD_0191",
+        "value": 401,
+        "displayname": null,
+        "description": null
+      },
+      {
+        "name": "MODELPART_HEAD_0192",
+        "value": 402,
+        "displayname": null,
+        "description": null
+      },
+      {
+        "name": "MODELPART_HEAD_EYESCLOSED",
+        "value": 3,
+        "displayname": null,
+        "description": null
+      },
+      {
+        "name": "MODELPART_HEAD_EYESOPEN",
+        "value": 2,
+        "displayname": null,
+        "description": null
+      },
+      {
+        "name": "MODELPART_HEAD_HAT",
+        "value": 1,
+        "displayname": null,
+        "description": null
+      },
+      {
+        "name": "MODELPART_HEAD_HUDPIECE",
+        "value": 4,
+        "displayname": null,
+        "description": null
+      },
+      {
+        "name": "MODELPART_HEAD_SUNGLASSES",
+        "value": 0,
+        "displayname": null,
+        "description": null
+      },
+      {
+        "name": "MODELPART_HOVERBIKE_0064",
+        "value": 100,
+        "displayname": null,
+        "description": null
+      },
+      {
+        "name": "MODELPART_HUDPIECE_0000",
+        "value": 0,
+        "displayname": null,
+        "description": null
+      },
+      {
+        "name": "MODELPART_HUDPIECE_0001",
+        "value": 1,
+        "displayname": null,
+        "description": null
+      },
+      {
+        "name": "MODELPART_HUDPIECE_0002",
+        "value": 2,
+        "displayname": null,
+        "description": null
+      },
+      {
+        "name": "MODELPART_JOYPAD_0000",
+        "value": 0,
+        "displayname": null,
+        "description": null
+      },
+      {
+        "name": "MODELPART_JOYPAD_0001",
+        "value": 1,
+        "displayname": null,
+        "description": null
+      },
+      {
+        "name": "MODELPART_JOYPAD_0002",
+        "value": 2,
+        "displayname": null,
+        "description": null
+      },
+      {
+        "name": "MODELPART_JOYPAD_0003",
+        "value": 3,
+        "displayname": null,
+        "description": null
+      },
+      {
+        "name": "MODELPART_JOYPAD_0004",
+        "value": 4,
+        "displayname": null,
+        "description": null
+      },
+      {
+        "name": "MODELPART_JOYPAD_0005",
+        "value": 5,
+        "displayname": null,
+        "description": null
+      },
+      {
+        "name": "MODELPART_JOYPAD_0006",
+        "value": 6,
+        "displayname": null,
+        "description": null
+      },
+      {
+        "name": "MODELPART_JOYPAD_0007",
+        "value": 7,
+        "displayname": null,
+        "description": null
+      },
+      {
+        "name": "MODELPART_JOYPAD_0008",
+        "value": 8,
+        "displayname": null,
+        "description": null
+      },
+      {
+        "name": "MODELPART_JOYPAD_0009",
+        "value": 9,
+        "displayname": null,
+        "description": null
+      },
+      {
+        "name": "MODELPART_JOYPAD_000A",
+        "value": 10,
+        "displayname": null,
+        "description": null
+      },
+      {
+        "name": "MODELPART_JOYPAD_000B",
+        "value": 11,
+        "displayname": null,
+        "description": null
+      },
+      {
+        "name": "MODELPART_JOYPAD_000C",
+        "value": 12,
+        "displayname": null,
+        "description": null
+      },
+      {
+        "name": "MODELPART_JOYPAD_000D",
+        "value": 13,
+        "displayname": null,
+        "description": null
+      },
+      {
+        "name": "MODELPART_K7AVENGER_0042",
+        "value": 66,
+        "displayname": null,
+        "description": null
+      },
+      {
+        "name": "MODELPART_K7AVENGER_0050",
+        "value": 80,
+        "displayname": null,
+        "description": null
+      },
+      {
+        "name": "MODELPART_K7AVENGER_0051",
+        "value": 81,
+        "displayname": null,
+        "description": null
+      },
+      {
+        "name": "MODELPART_K7AVENGER_MAGAZINE1",
+        "value": 41,
+        "displayname": null,
+        "description": null
+      },
+      {
+        "name": "MODELPART_K7AVENGER_MAGAZINE2",
+        "value": 42,
+        "displayname": null,
+        "description": null
+      },
+      {
+        "name": "MODELPART_KNIFE_0064",
+        "value": 100,
+        "displayname": null,
+        "description": null
+      },
+      {
+        "name": "MODELPART_LAPTOPGUN_0050",
+        "value": 80,
+        "displayname": null,
+        "description": null
+      },
+      {
+        "name": "MODELPART_LAPTOPGUN_0051",
+        "value": 81,
+        "displayname": null,
+        "description": null
+      },
+      {
+        "name": "MODELPART_LAPTOPGUN_MAGAZINE1",
+        "value": 41,
+        "displayname": null,
+        "description": null
+      },
+      {
+        "name": "MODELPART_LAPTOPGUN_MAGAZINE2",
+        "value": 42,
+        "displayname": null,
+        "description": null
+      },
+      {
+        "name": "MODELPART_LASER_0042",
+        "value": 66,
+        "displayname": null,
+        "description": null
+      },
+      {
+        "name": "MODELPART_LIFT_DOORBLOCK",
+        "value": 4,
+        "displayname": null,
+        "description": null
+      },
+      {
+        "name": "MODELPART_LIFT_FLOORNONRECT1",
+        "value": 5,
+        "displayname": null,
+        "description": null
+      },
+      {
+        "name": "MODELPART_LIFT_FLOORNONRECT2",
+        "value": 6,
+        "displayname": null,
+        "description": null
+      },
+      {
+        "name": "MODELPART_LIFT_FLOORRECT",
+        "value": 0,
+        "displayname": null,
+        "description": null
+      },
+      {
+        "name": "MODELPART_LIFT_WALL1",
+        "value": 1,
+        "displayname": null,
+        "description": null
+      },
+      {
+        "name": "MODELPART_LIFT_WALL2",
+        "value": 2,
+        "displayname": null,
+        "description": null
+      },
+      {
+        "name": "MODELPART_LIFT_WALL3",
+        "value": 3,
+        "displayname": null,
+        "description": null
+      },
+      {
+        "name": "MODELPART_LOGO_0000",
+        "value": 0,
+        "displayname": null,
+        "description": null
+      },
+      {
+        "name": "MODELPART_LOGO_0001",
+        "value": 1,
+        "displayname": null,
+        "description": null
+      },
+      {
+        "name": "MODELPART_LOGO_FRONTSIDE",
+        "value": 2,
+        "displayname": null,
+        "description": null
+      },
+      {
+        "name": "MODELPART_LOGO_0003",
+        "value": 3,
+        "displayname": null,
+        "description": null
+      },
+      {
+        "name": "MODELPART_LOGO_RIGHTSIDE",
+        "value": 4,
+        "displayname": null,
+        "description": null
+      },
+      {
+        "name": "MODELPART_LOGO_0005",
+        "value": 5,
+        "displayname": null,
+        "description": null
+      },
+      {
+        "name": "MODELPART_LOGO_BACKSIDE",
+        "value": 6,
+        "displayname": null,
+        "description": null
+      },
+      {
+        "name": "MODELPART_LOGO_0007",
+        "value": 7,
+        "displayname": null,
+        "description": null
+      },
+      {
+        "name": "MODELPART_LOGO_LEFTSIDE",
+        "value": 8,
+        "displayname": null,
+        "description": null
+      },
+      {
+        "name": "MODELPART_LOGO_0009",
+        "value": 9,
+        "displayname": null,
+        "description": null
+      },
+      {
+        "name": "MODELPART_LOGO_0110",
+        "value": 272,
+        "displayname": null,
+        "description": null
+      },
+      {
+        "name": "MODELPART_LOGO_0500",
+        "value": 1280,
+        "displayname": null,
+        "description": null
+      },
+      {
+        "name": "MODELPART_LOGO_4040",
+        "value": 16448,
+        "displayname": null,
+        "description": null
+      },
+      {
+        "name": "MODELPART_MAGNUM_000A",
+        "value": 10,
+        "displayname": null,
+        "description": null
+      },
+      {
+        "name": "MODELPART_MAGNUM_000B",
+        "value": 11,
+        "displayname": null,
+        "description": null
+      },
+      {
+        "name": "MODELPART_MAGNUM_000C",
+        "value": 12,
+        "displayname": null,
+        "description": null
+      },
+      {
+        "name": "MODELPART_MAGNUM_000D",
+        "value": 13,
+        "displayname": null,
+        "description": null
+      },
+      {
+        "name": "MODELPART_MAGNUM_000E",
+        "value": 14,
+        "displayname": null,
+        "description": null
+      },
+      {
+        "name": "MODELPART_MAGNUM_000F",
+        "value": 15,
+        "displayname": null,
+        "description": null
+      },
+      {
+        "name": "MODELPART_MAGNUM_0042",
+        "value": 66,
+        "displayname": null,
+        "description": null
+      },
+      {
+        "name": "MODELPART_MAGNUM_0050",
+        "value": 80,
+        "displayname": null,
+        "description": null
+      },
+      {
+        "name": "MODELPART_MAGNUM_0051",
+        "value": 81,
+        "displayname": null,
+        "description": null
+      },
+      {
+        "name": "MODELPART_MAGNUM_CART1",
+        "value": 40,
+        "displayname": null,
+        "description": null
+      },
+      {
+        "name": "MODELPART_MAGNUM_CART2",
+        "value": 41,
+        "displayname": null,
+        "description": null
+      },
+      {
+        "name": "MODELPART_MAGNUM_CART3",
+        "value": 42,
+        "displayname": null,
+        "description": null
+      },
+      {
+        "name": "MODELPART_MAGNUM_CART4",
+        "value": 43,
+        "displayname": null,
+        "description": null
+      },
+      {
+        "name": "MODELPART_MAGNUM_CART5",
+        "value": 44,
+        "displayname": null,
+        "description": null
+      },
+      {
+        "name": "MODELPART_MAGNUM_CART6",
+        "value": 45,
+        "displayname": null,
+        "description": null
+      },
+      {
+        "name": "MODELPART_MAIANUFO_0064",
+        "value": 100,
+        "displayname": null,
+        "description": null
+      },
+      {
+        "name": "MODELPART_MAULER_0050",
+        "value": 80,
+        "displayname": null,
+        "description": null
+      },
+      {
+        "name": "MODELPART_MAULER_MAGAZINE1",
+        "value": 42,
+        "displayname": null,
+        "description": null
+      },
+      {
+        "name": "MODELPART_MAULER_MAGAZINE2",
+        "value": 43,
+        "displayname": null,
+        "description": null
+      },
+      {
+        "name": "MODELPART_PHOENIX_0042",
+        "value": 66,
+        "displayname": null,
+        "description": null
+      },
+      {
+        "name": "MODELPART_PHOENIX_ORB",
+        "value": 40,
+        "displayname": null,
+        "description": null
+      },
+      {
+        "name": "MODELPART_PISTOL_0042",
+        "value": 66,
+        "displayname": null,
+        "description": null
+      },
+      {
+        "name": "MODELPART_PISTOL_0050",
+        "value": 80,
+        "displayname": null,
+        "description": null
+      },
+      {
+        "name": "MODELPART_PISTOL_MAGAZINE1",
+        "value": 41,
+        "displayname": null,
+        "description": null
+      },
+      {
+        "name": "MODELPART_PISTOL_MAGAZINE2",
+        "value": 42,
+        "displayname": null,
+        "description": null
+      },
+      {
+        "name": "MODELPART_RARELOGO_000B",
+        "value": 11,
+        "displayname": null,
+        "description": null
+      },
+      {
+        "name": "MODELPART_RARELOGO_000C",
+        "value": 12,
+        "displayname": null,
+        "description": null
+      },
+      {
+        "name": "MODELPART_RARELOGO_000D",
+        "value": 13,
+        "displayname": null,
+        "description": null
+      },
+      {
+        "name": "MODELPART_RCP120_0042",
+        "value": 66,
+        "displayname": null,
+        "description": null
+      },
+      {
+        "name": "MODELPART_RCP120_0050",
+        "value": 80,
+        "displayname": null,
+        "description": null
+      },
+      {
+        "name": "MODELPART_RCP120_0051",
+        "value": 81,
+        "displayname": null,
+        "description": null
+      },
+      {
+        "name": "MODELPART_RCP120_MAGAZINE1",
+        "value": 40,
+        "displayname": null,
+        "description": null
+      },
+      {
+        "name": "MODELPART_RCP120_MAGAZINE2",
+        "value": 41,
+        "displayname": null,
+        "description": null
+      },
+      {
+        "name": "MODELPART_REAPER_001E",
+        "value": 30,
+        "displayname": null,
+        "description": null
+      },
+      {
+        "name": "MODELPART_REAPER_001F",
+        "value": 31,
+        "displayname": null,
+        "description": null
+      },
+      {
+        "name": "MODELPART_REAPER_0020",
+        "value": 32,
+        "displayname": null,
+        "description": null
+      },
+      {
+        "name": "MODELPART_REAPER_002C",
+        "value": 44,
+        "displayname": null,
+        "description": null
+      },
+      {
+        "name": "MODELPART_REAPER_002D",
+        "value": 45,
+        "displayname": null,
+        "description": null
+      },
+      {
+        "name": "MODELPART_REAPER_002E",
+        "value": 46,
+        "displayname": null,
+        "description": null
+      },
+      {
+        "name": "MODELPART_REAPER_002F",
+        "value": 47,
+        "displayname": null,
+        "description": null
+      },
+      {
+        "name": "MODELPART_REAPER_0042",
+        "value": 66,
+        "displayname": null,
+        "description": null
+      },
+      {
+        "name": "MODELPART_REAPER_0050",
+        "value": 80,
+        "displayname": null,
+        "description": null
+      },
+      {
+        "name": "MODELPART_REAPER_0051",
+        "value": 81,
+        "displayname": null,
+        "description": null
+      },
+      {
+        "name": "MODELPART_REAPER_0052",
+        "value": 82,
+        "displayname": null,
+        "description": null
+      },
+      {
+        "name": "MODELPART_REAPER_CARTEJECTPOS1",
+        "value": 48,
+        "displayname": null,
+        "description": null
+      },
+      {
+        "name": "MODELPART_REAPER_CARTEJECTPOS2",
+        "value": 49,
+        "displayname": null,
+        "description": null
+      },
+      {
+        "name": "MODELPART_REAPER_MAGAZINE1",
+        "value": 42,
+        "displayname": null,
+        "description": null
+      },
+      {
+        "name": "MODELPART_REAPER_MAGAZINE2",
+        "value": 43,
+        "displayname": null,
+        "description": null
+      },
+      {
+        "name": "MODELPART_REMOTEMINE_002A",
+        "value": 42,
+        "displayname": null,
+        "description": null
+      },
+      {
+        "name": "MODELPART_REMOTEMINE_DETONATOR",
+        "value": 41,
+        "displayname": null,
+        "description": null
+      },
+      {
+        "name": "MODELPART_REMOTEMINE_MINE",
+        "value": 40,
+        "displayname": null,
+        "description": null
+      },
+      {
+        "name": "MODELPART_ROBOT_0000",
+        "value": 0,
+        "displayname": null,
+        "description": null
+      },
+      {
+        "name": "MODELPART_ROBOT_0001",
+        "value": 1,
+        "displayname": null,
+        "description": null
+      },
+      {
+        "name": "MODELPART_ROBOT_0004",
+        "value": 4,
+        "displayname": null,
+        "description": null
+      },
+      {
+        "name": "MODELPART_ROBOT_LGUNFIRE",
+        "value": 3,
+        "displayname": null,
+        "description": null
+      },
+      {
+        "name": "MODELPART_ROBOT_RGUNFIRE",
+        "value": 2,
+        "displayname": null,
+        "description": null
+      },
+      {
+        "name": "MODELPART_ROCKETLAUNCHER_0042",
+        "value": 66,
+        "displayname": null,
+        "description": null
+      },
+      {
+        "name": "MODELPART_ROCKETLAUNCHER_ROCKET",
+        "value": 40,
+        "displayname": null,
+        "description": null
+      },
+      {
+        "name": "MODELPART_SHOTGUN_0042",
+        "value": 66,
+        "displayname": null,
+        "description": null
+      },
+      {
+        "name": "MODELPART_SHOTGUN_0050",
+        "value": 80,
+        "displayname": null,
+        "description": null
+      },
+      {
+        "name": "MODELPART_SHOTGUN_CART",
+        "value": 43,
+        "displayname": null,
+        "description": null
+      },
+      {
+        "name": "MODELPART_SKEDAR_0000",
+        "value": 0,
+        "displayname": null,
+        "description": null
+      },
+      {
+        "name": "MODELPART_SKEDAR_0001",
+        "value": 1,
+        "displayname": null,
+        "description": null
+      },
+      {
+        "name": "MODELPART_SKEDAR_EYESCLOSED",
+        "value": 5,
+        "displayname": null,
+        "description": null
+      },
+      {
+        "name": "MODELPART_SKEDAR_EYESOPEN",
+        "value": 4,
+        "displayname": null,
+        "description": null
+      },
+      {
+        "name": "MODELPART_SKEDAR_LEFTHAND",
+        "value": 3,
+        "displayname": null,
+        "description": null
+      },
+      {
+        "name": "MODELPART_SKEDAR_RIGHTHAND",
+        "value": 2,
+        "displayname": null,
+        "description": null
+      },
+      {
+        "name": "MODELPART_SKSHUTTLE_GANGWAY",
+        "value": 183,
+        "displayname": null,
+        "description": null
+      },
+      {
+        "name": "MODELPART_SLAYERROCKET_0042",
+        "value": 66,
+        "displayname": null,
+        "description": null
+      },
+      {
+        "name": "MODELPART_SNIPERRIFLE_0042",
+        "value": 66,
+        "displayname": null,
+        "description": null
+      },
+      {
+        "name": "MODELPART_SNIPERRIFLE_MAGAZINE1",
+        "value": 40,
+        "displayname": null,
+        "description": null
+      },
+      {
+        "name": "MODELPART_SNIPERRIFLE_MAGAZINE2",
+        "value": 41,
+        "displayname": null,
+        "description": null
+      },
+      {
+        "name": "MODELPART_SNIPERRIFLE_SCOPE1",
+        "value": 42,
+        "displayname": null,
+        "description": null
+      },
+      {
+        "name": "MODELPART_SNIPERRIFLE_SCOPE2",
+        "value": 43,
+        "displayname": null,
+        "description": null
+      },
+      {
+        "name": "MODELPART_SNIPERRIFLE_SCOPE3",
+        "value": 44,
+        "displayname": null,
+        "description": null
+      },
+      {
+        "name": "MODELPART_SNIPERRIFLE_SCOPE4",
+        "value": 45,
+        "displayname": null,
+        "description": null
+      },
+      {
+        "name": "MODELPART_SUPERDRAGON_0042",
+        "value": 66,
+        "displayname": null,
+        "description": null
+      },
+      {
+        "name": "MODELPART_SUPERDRAGON_0050",
+        "value": 80,
+        "displayname": null,
+        "description": null
+      },
+      {
+        "name": "MODELPART_SUPERDRAGON_0051",
+        "value": 81,
+        "displayname": null,
+        "description": null
+      },
+      {
+        "name": "MODELPART_SUPERDRAGON_0052",
+        "value": 82,
+        "displayname": null,
+        "description": null
+      },
+      {
+        "name": "MODELPART_SUPERDRAGON_MAGAZINE1",
+        "value": 40,
+        "displayname": null,
+        "description": null
+      },
+      {
+        "name": "MODELPART_SUPERDRAGON_MAGAZINE2",
+        "value": 41,
+        "displayname": null,
+        "description": null
+      },
+      {
+        "name": "MODELPART_SUPERDRAGON_MAGAZINE3",
+        "value": 42,
+        "displayname": null,
+        "description": null
+      },
+      {
+        "name": "MODELPART_SUPERDRAGON_MAGAZINE4",
+        "value": 43,
+        "displayname": null,
+        "description": null
+      },
+      {
+        "name": "MODELPART_TERMINAL_0000",
+        "value": 0,
+        "displayname": null,
+        "description": null
+      },
+      {
+        "name": "MODELPART_TRANQUILIZER_002B",
+        "value": 43,
+        "displayname": null,
+        "description": null
+      },
+      {
+        "name": "MODELPART_TRANQUILIZER_0042",
+        "value": 66,
+        "displayname": null,
+        "description": null
+      },
+      {
+        "name": "MODELPART_TRANQUILIZER_MAGAZINE1",
+        "value": 40,
+        "displayname": null,
+        "description": null
+      },
+      {
+        "name": "MODELPART_TRANQUILIZER_MAGAZINE2",
+        "value": 41,
+        "displayname": null,
+        "description": null
+      },
+      {
+        "name": "MODELPART_TRANQUILIZER_MAGAZINE3",
+        "value": 42,
+        "displayname": null,
+        "description": null
+      },
+      {
+        "name": "MODELPART_TRUCK_0005",
+        "value": 5,
+        "displayname": null,
+        "description": null
+      },
+      {
+        "name": "MODELPART_UZI_0050",
+        "value": 80,
+        "displayname": null,
+        "description": null
+      },
+      {
+        "name": "MODELPART_UZI_0051",
+        "value": 81,
+        "displayname": null,
+        "description": null
+      },
+      {
+        "name": "MODELPART_WINDOWEDDOOR_0000",
+        "value": 0,
+        "displayname": null,
+        "description": null
+      },
+      {
+        "name": "MODELPART_WINDOWEDDOOR_0001",
+        "value": 1,
+        "displayname": null,
+        "description": null
+      },
+      {
+        "name": "MODELPART_WINDOWEDDOOR_0002",
+        "value": 2,
+        "displayname": null,
+        "description": null
+      },
+      {
+        "name": "MODELPART_WINDOWEDDOOR_0003",
+        "value": 3,
+        "displayname": null,
+        "description": null
+      },
+      {
+        "name": "MODELPART_0000",
+        "value": 0,
+        "displayname": null,
+        "description": null
+      },
+      {
+        "name": "MODELPART_0001",
+        "value": 1,
+        "displayname": null,
+        "description": null
+      },
+      {
+        "name": "MODELPART_0002",
+        "value": 2,
+        "displayname": null,
+        "description": null
+      },
+      {
+        "name": "MODELPART_0003",
+        "value": 3,
+        "displayname": null,
+        "description": null
+      },
+      {
+        "name": "MODELPART_0010",
+        "value": 16,
+        "displayname": null,
+        "description": null
+      },
+      {
+        "name": "MODELPART_0011",
+        "value": 17,
+        "displayname": null,
+        "description": null
+      },
+      {
+        "name": "MODELPART_0042",
+        "value": 66,
+        "displayname": null,
+        "description": null
+      },
+      {
+        "name": "MODELPART_0065",
+        "value": 101,
+        "displayname": null,
+        "description": null
+      },
+      {
+        "name": "MODELPART_0066",
+        "value": 102,
+        "displayname": null,
+        "description": null
+      },
+      {
+        "name": "MODELPART_0067",
+        "value": 103,
+        "displayname": null,
+        "description": null
+      }
+    ]
+  },
+  {
+    "name": "GAMEFILEFLAG",
+    "type": "Constant",
+	"size": 8,
+    "constants": [
+      {
+        "name": "GAMEFILEFLAG_P1_FORWARDPITCH",
+        "value": 0,
+        "displayname": null,
+        "description": null
+      },
+      {
+        "name": "GAMEFILEFLAG_P1_AUTOAIM",
+        "value": 1,
+        "displayname": null,
+        "description": null
+      },
+      {
+        "name": "GAMEFILEFLAG_P1_AIMCONTROL",
+        "value": 2,
+        "displayname": null,
+        "description": null
+      },
+      {
+        "name": "GAMEFILEFLAG_P1_SIGHTONSCREEN",
+        "value": 3,
+        "displayname": null,
+        "description": null
+      },
+      {
+        "name": "GAMEFILEFLAG_P1_LOOKAHEAD",
+        "value": 4,
+        "displayname": null,
+        "description": null
+      },
+      {
+        "name": "GAMEFILEFLAG_P1_AMMOONSCREEN",
+        "value": 5,
+        "displayname": null,
+        "description": null
+      },
+      {
+        "name": "GAMEFILEFLAG_SCREENSIZE_WIDE",
+        "value": 6,
+        "displayname": null,
+        "description": null
+      },
+      {
+        "name": "GAMEFILEFLAG_SCREENRATIO",
+        "value": 7,
+        "displayname": null,
+        "description": null
+      },
+      {
+        "name": "GAMEFILEFLAG_SCREENSIZE_CINEMA",
+        "value": 8,
+        "displayname": null,
+        "description": null
+      },
+      {
+        "name": "GAMEFILEFLAG_P1_HEADROLL",
+        "value": 9,
+        "displayname": null,
+        "description": null
+      },
+      {
+        "name": "GAMEFILEFLAG_P1_SHOWGUNFUNCTION",
+        "value": 10,
+        "displayname": null,
+        "description": null
+      },
+      {
+        "name": "GAMEFILEFLAG_INGAMESUBTITLES",
+        "value": 11,
+        "displayname": null,
+        "description": null
+      },
+      {
+        "name": "GAMEFILEFLAG_P2_FORWARDPITCH",
+        "value": 12,
+        "displayname": null,
+        "description": null
+      },
+      {
+        "name": "GAMEFILEFLAG_P2_AUTOAIM",
+        "value": 13,
+        "displayname": null,
+        "description": null
+      },
+      {
+        "name": "GAMEFILEFLAG_P2_AIMCONTROL",
+        "value": 14,
+        "displayname": null,
+        "description": null
+      },
+      {
+        "name": "GAMEFILEFLAG_P2_SIGHTONSCREEN",
+        "value": 15,
+        "displayname": null,
+        "description": null
+      },
+      {
+        "name": "GAMEFILEFLAG_P2_LOOKAHEAD",
+        "value": 16,
+        "displayname": null,
+        "description": null
+      },
+      {
+        "name": "GAMEFILEFLAG_P2_AMMOONSCREEN",
+        "value": 17,
+        "displayname": null,
+        "description": null
+      },
+      {
+        "name": "GAMEFILEFLAG_P2_HEADROLL",
+        "value": 18,
+        "displayname": null,
+        "description": null
+      },
+      {
+        "name": "GAMEFILEFLAG_P2_SHOWGUNFUNCTION",
+        "value": 19,
+        "displayname": null,
+        "description": null
+      },
+      {
+        "name": "GAMEFILEFLAG_CUTSCENESUBTITLES",
+        "value": 20,
+        "displayname": null,
+        "description": null
+      },
+      {
+        "name": "GAMEFILEFLAG_P1_ALWAYSSHOWTARGET",
+        "value": 21,
+        "displayname": null,
+        "description": null
+      },
+      {
+        "name": "GAMEFILEFLAG_P2_ALWAYSSHOWTARGET",
+        "value": 22,
+        "displayname": null,
+        "description": null
+      },
+      {
+        "name": "GAMEFILEFLAG_P1_SHOWZOOMRANGE",
+        "value": 23,
+        "displayname": null,
+        "description": null
+      },
+      {
+        "name": "GAMEFILEFLAG_P2_SHOWZOOMRANGE",
+        "value": 24,
+        "displayname": null,
+        "description": null
+      },
+      {
+        "name": "GAMEFILEFLAG_SCREENSPLIT",
+        "value": 25,
+        "displayname": null,
+        "description": null
+      },
+      {
+        "name": "GAMEFILEFLAG_P1_SHOWMISSIONTIME",
+        "value": 26,
+        "displayname": null,
+        "description": null
+      },
+      {
+        "name": "GAMEFILEFLAG_P2_SHOWMISSIONTIME",
+        "value": 27,
+        "displayname": null,
+        "description": null
+      },
+      {
+        "name": "GAMEFILEFLAG_COOPRADARON",
+        "value": 28,
+        "displayname": null,
+        "description": null
+      },
+      {
+        "name": "GAMEFILEFLAG_COOPFRIENDLYFIRE",
+        "value": 29,
+        "displayname": null,
+        "description": null
+      },
+      {
+        "name": "GAMEFILEFLAG_ANTIRADARON",
+        "value": 30,
+        "displayname": null,
+        "description": null
+      },
+      {
+        "name": "GAMEFILEFLAG_ANTIPLAYERNUM",
+        "value": 31,
+        "displayname": null,
+        "description": null
+      },
+      {
+        "name": "GAMEFILEFLAG_P1_PAINTBALL",
+        "value": 32,
+        "displayname": null,
+        "description": null
+      },
+      {
+        "name": "GAMEFILEFLAG_P2_PAINTBALL",
+        "value": 33,
+        "displayname": null,
+        "description": null
+      },
+      {
+        "name": "GAMEFILEFLAG_HIRES",
+        "value": 34,
+        "displayname": null,
+        "description": null
+      },
+      {
+        "name": "GAMEFILEFLAG_USED_TRANSFERPAK",
+        "value": 35,
+        "displayname": null,
+        "description": null
+      },
+      {
+        "name": "GAMEFILEFLAG_CI_TOUR_DONE",
+        "value": 36,
+        "displayname": null,
+        "description": null
+      },
+      {
+        "name": "GAMEFILEFLAG_CI_HOLO7_DONE",
+        "value": 41,
+        "displayname": null,
+        "description": null
+      },
+      {
+        "name": "GAMEFILEFLAG_CI_HOLO6_DONE",
+        "value": 42,
+        "displayname": null,
+        "description": null
+      },
+      {
+        "name": "GAMEFILEFLAG_CI_HOLO5_DONE",
+        "value": 43,
+        "displayname": null,
+        "description": null
+      },
+      {
+        "name": "GAMEFILEFLAG_CI_HOLO4_DONE",
+        "value": 44,
+        "displayname": null,
+        "description": null
+      },
+      {
+        "name": "GAMEFILEFLAG_CI_HOLO3_DONE",
+        "value": 45,
+        "displayname": null,
+        "description": null
+      },
+      {
+        "name": "GAMEFILEFLAG_CI_HOLO2_DONE",
+        "value": 46,
+        "displayname": null,
+        "description": null
+      },
+      {
+        "name": "GAMEFILEFLAG_CI_HOLO1_DONE",
+        "value": 47,
+        "displayname": null,
+        "description": null
+      },
+      {
+        "name": "GAMEFILEFLAG_CI_CLOAK_DONE",
+        "value": 48,
+        "displayname": null,
+        "description": null
+      },
+      {
+        "name": "GAMEFILEFLAG_CI_DISGUISE_DONE",
+        "value": 49,
+        "displayname": null,
+        "description": null
+      },
+      {
+        "name": "GAMEFILEFLAG_CI_XRAY_DONE",
+        "value": 50,
+        "displayname": null,
+        "description": null
+      },
+      {
+        "name": "GAMEFILEFLAG_CI_IR_DONE",
+        "value": 51,
+        "displayname": null,
+        "description": null
+      },
+      {
+        "name": "GAMEFILEFLAG_CI_RTRACKER_DONE",
+        "value": 52,
+        "displayname": null,
+        "description": null
+      },
+      {
+        "name": "GAMEFILEFLAG_CI_DOORDECODER_DONE",
+        "value": 53,
+        "displayname": null,
+        "description": null
+      },
+      {
+        "name": "GAMEFILEFLAG_CI_NIGHTVISION_DONE",
+        "value": 54,
+        "displayname": null,
+        "description": null
+      },
+      {
+        "name": "GAMEFILEFLAG_CI_CAMSPY_DONE",
+        "value": 55,
+        "displayname": null,
+        "description": null
+      },
+      {
+        "name": "GAMEFILEFLAG_CI_ECMMINE_DONE",
+        "value": 56,
+        "displayname": null,
+        "description": null
+      },
+      {
+        "name": "GAMEFILEFLAG_CI_UPLINK_DONE",
+        "value": 57,
+        "displayname": null,
+        "description": null
+      },
+      {
+        "name": "GAMEFILEFLAG_CI_TOUR_STARTED",
+        "value": 58,
+        "displayname": null,
+        "description": null
+      },
+      {
+        "name": "GAMEFILEFLAG_CRASHSITE_BIKE",
+        "value": 59,
+        "displayname": null,
+        "description": null
+      },
+      {
+        "name": "GAMEFILEFLAG_DEFENSE_JON",
+        "value": 60,
+        "displayname": null,
+        "description": null
+      },
+      {
+        "name": "GAMEFILEFLAG_AF1_ENTRY",
+        "value": 61,
+        "displayname": null,
+        "description": null
+      },
+      {
+        "name": "GAMEFILEFLAG_RESCUE_MECHANIC_DEAD",
+        "value": 62,
+        "displayname": null,
+        "description": null
+      },
+      {
+        "name": "GAMEFILEFLAG_G5_MINE",
+        "value": 63,
+        "displayname": null,
+        "description": null
+      },
+      {
+        "name": "GAMEFILEFLAG_LANGFILTERON",
+        "value": 64,
+        "displayname": null,
+        "description": null
+      },
+      {
+        "name": "GAMEFILEFLAG_FOUNDTIMEDMINE",
+        "value": 65,
+        "displayname": null,
+        "description": null
+      },
+      {
+        "name": "GAMEFILEFLAG_FOUNDPROXYMINE",
+        "value": 66,
+        "displayname": null,
+        "description": null
+      },
+      {
+        "name": "GAMEFILEFLAG_FOUNDREMOTEMINE",
+        "value": 67,
+        "displayname": null,
+        "description": null
+      },
+      {
+        "name": "GAMEFILEFLAG_LANGBIT1",
+        "value": 68,
+        "displayname": null,
+        "description": null
+      },
+      {
+        "name": "GAMEFILEFLAG_LANGBIT2",
+        "value": 69,
+        "displayname": null,
+        "description": null
+      },
+      {
+        "name": "GAMEFILEFLAG_LANGBIT3",
+        "value": 70,
+        "displayname": null,
+        "description": null
+      },
+      {
+        "name": "GAMEFILEFLAG_HOWTO_HOVERCRATE",
+        "value": 71,
+        "displayname": null,
+        "description": null
+      },
+      {
+        "name": "GAMEFILEFLAG_HOWTO_HOVERBIKE",
+        "value": 72,
+        "displayname": null,
+        "description": null
+      },
+      {
+        "name": "GAMEFILEFLAG_HOWTO_DOORS",
+        "value": 73,
+        "displayname": null,
+        "description": null
+      },
+      {
+        "name": "GAMEFILEFLAG_HOWTO_ELEVATORS",
+        "value": 74,
+        "displayname": null,
+        "description": null
+      },
+      {
+        "name": "GAMEFILEFLAG_HOWTO_TERMINALS",
+        "value": 75,
+        "displayname": null,
+        "description": null
+      },
+      {
+        "name": "GAMEFILEFLAG_4C",
+        "value": 76,
+        "displayname": null,
+        "description": null
+      },
+      {
+        "name": "GAMEFILEFLAG_4D",
+        "value": 77,
+        "displayname": null,
+        "description": null
+      },
+      {
+        "name": "GAMEFILEFLAG_4E",
+        "value": 78,
+        "displayname": null,
+        "description": null
+      }
+    ]
+  },
+  {
+    "name": "SPECIALDIE",
+    "type": "Constant",
+	"size": 8,
+    "constants": [
+      {
+        "name": "SPECIALDIE_NONE",
+        "value": 0,
+        "displayname": null,
+        "description": null
+      },
+      {
+        "name": "SPECIALDIE_FALLBACK",
+        "value": 1,
+        "displayname": null,
+        "description": null
+      },
+      {
+        "name": "SPECIALDIE_ROLL1",
+        "value": 2,
+        "displayname": null,
+        "description": null
+      },
+      {
+        "name": "SPECIALDIE_ROLL2",
+        "value": 3,
+        "displayname": null,
+        "description": null
+      },
+      {
+        "name": "SPECIALDIE_ROLL3",
+        "value": 4,
+        "displayname": null,
+        "description": null
+      },
+      {
+        "name": "SPECIALDIE_OVERRAILING",
+        "value": 5,
+        "displayname": null,
+        "description": null
+      },
+      {
+        "name": "SPECIALDIE_ONCHAIR",
+        "value": 6,
+        "displayname": null,
+        "description": null
+      }
+    ]
+  },
+  {
+    "name": "CIQUIP",
+    "type": "Constant",
+	"size": 8,
+    "constants": [
+      {
+        "name": "CIQUIP_GREETING",
+        "value": 0,
+        "displayname": null,
+        "description": null
+      },
+      {
+        "name": "CIQUIP_MAIN",
+        "value": 1,
+        "displayname": null,
+        "description": null
+      },
+      {
+        "name": "CIQUIP_ANNOYED",
+        "value": 2,
+        "displayname": null,
+        "description": null
+      },
+      {
+        "name": "CIQUIP_THANKS",
+        "value": 3,
+        "displayname": null,
+        "description": null
+      }
+    ]
+  },
+  {
+    "name": "AIENVCMD",
+    "type": "Constant",
+	"size": 8,
+    "constants": [
+      {
+        "name": "AIENVCMD_00",
+        "value": 0,
+        "displayname": null,
+        "description": null
+      },
+      {
+        "name": "AIENVCMD_01",
+        "value": 1,
+        "displayname": null,
+        "description": null
+      },
+      {
+        "name": "AIENVCMD_02",
+        "value": 2,
+        "displayname": null,
+        "description": null
+      },
+      {
+        "name": "AIENVCMD_03",
+        "value": 3,
+        "displayname": null,
+        "description": null
+      },
+      {
+        "name": "AIENVCMD_04",
+        "value": 4,
+        "displayname": null,
+        "description": null
+      },
+      {
+        "name": "AIENVCMD_ROOM_SETAMBIENT",
+        "value": 5,
+        "displayname": null,
+        "description": null
+      },
+      {
+        "name": "AIENVCMD_ROOM_SETOUTDOORS",
+        "value": 6,
+        "displayname": null,
+        "description": null
+      },
+      {
+        "name": "AIENVCMD_07",
+        "value": 7,
+        "displayname": null,
+        "description": null
+      },
+      {
+        "name": "AIENVCMD_08",
+        "value": 8,
+        "displayname": null,
+        "description": null
+      },
+      {
+        "name": "AIENVCMD_SETAMBIENT",
+        "value": 9,
+        "displayname": null,
+        "description": null
+      },
+      {
+        "name": "AIENVCMD_PLAYNOSEDIVE",
+        "value": 10,
+        "displayname": null,
+        "description": null
+      },
+      {
+        "name": "AIENVCMD_TICKMUSICQUEUE",
+        "value": 11,
+        "displayname": null,
+        "description": null
+      },
+      {
+        "name": "AIENVCMD_ROOM_SETFAULTYLIGHTS",
+        "value": 12,
+        "displayname": null,
+        "description": null
+      },
+      {
+        "name": "AIENVCMD_STOPNOSEDIVE",
+        "value": 13,
+        "displayname": null,
+        "description": null
+      },
+      {
+        "name": "AIENVCMD_PLAYUFOHUM",
+        "value": 14,
+        "displayname": null,
+        "description": null
+      },
+      {
+        "name": "AIENVCMD_STOPUFOHUM",
+        "value": 15,
+        "displayname": null,
+        "description": null
+      }
+    ]
+  },
+  {
+    "name": "IDLEACTION",
+    "type": "Constant",
+	"size": 8,
+    "constants": [
+      {
+        "name": "IDLEACTION_STANDING",
+        "value": 1,
+        "displayname": null,
+        "description": null
+      },
+      {
+        "name": "IDLEACTION_SITTING_TYPING",
+        "value": 2,
+        "displayname": null,
+        "description": null
+      },
+      {
+        "name": "IDLEACTION_SITTING_DORMANT",
+        "value": 3,
+        "displayname": null,
+        "description": null
+      },
+      {
+        "name": "IDLEACTION_OPERATING",
+        "value": 4,
+        "displayname": null,
+        "description": null
+      },
+      {
+        "name": "IDLEACTION_OPERATING_PAD",
+        "value": 5,
+        "displayname": null,
+        "description": null
+      }
+    ]
+  },
+  {
+    "name": "PRESETANIM",
+    "type": "Constant",
+	"size": 8,
+    "constants": [
+      {
+        "name": "PRESETANIM_TALK0",
+        "value": 0,
+        "displayname": null,
+        "description": null
+      },
+      {
+        "name": "PRESETANIM_TALK1",
+        "value": 1,
+        "displayname": null,
+        "description": null
+      },
+      {
+        "name": "PRESETANIM_TALK2",
+        "value": 2,
+        "displayname": null,
+        "description": null
+      },
+      {
+        "name": "PRESETANIM_TALK3",
+        "value": 3,
+        "displayname": null,
+        "description": null
+      },
+      {
+        "name": "PRESETANIM_TALK4",
+        "value": 4,
+        "displayname": null,
+        "description": null
+      },
+	  {
+        "name": "PRESETANIM_TALK5",
+        "value": 5,
+        "displayname": null,
+        "description": null
+      },
+	  {
+        "name": "PRESETANIM_TALK6",
+        "value": 6,
+        "displayname": null,
+        "description": null
+      },
+	  {
+        "name": "PRESETANIM_TALK7",
+        "value": 7,
+        "displayname": null,
+        "description": null
+      },
+	  {
+        "name": "PRESETANIM_GUNJAM",
+        "value": 254,
+        "displayname": null,
+        "description": null
+      },
+	  {
+        "name": "PRESETANIM_TALKRANDOM",
+        "value": 255,
+        "displayname": null,
+        "description": null
+      }
+    ]
+  },
+  {
+    "name": "DRCAROLLIMAGE",
+    "type": "Constant",
+	"size": 8,
+    "constants": [
+      {
+        "name": "DRCAROLLIMAGE_EYESDEFAULT",
+        "value": 0,
+        "displayname": null,
+        "description": null
+      },
+      {
+        "name": "DRCAROLLIMAGE_HEARTRATE",
+        "value": 1,
+        "displayname": null,
+        "description": null
+      },
+      {
+        "name": "DRCAROLLIMAGE_EYESFROWNING",
+        "value": 2,
+        "displayname": null,
+        "description": null
+      },
+      {
+        "name": "DRCAROLLIMAGE_X",
+        "value": 3,
+        "displayname": null,
+        "description": null
+      },
+      {
+        "name": "DRCAROLLIMAGE_STATIC",
+        "value": 4,
+        "displayname": null,
+        "description": null
+      },
+	  {
+        "name": "DRCAROLLIMAGE_BINARY",
+        "value": 5,
+        "displayname": null,
+        "description": null
+      },
+	  {
+        "name": "DRCAROLLIMAGE_EYESSLEEPY",
+        "value": 6,
+        "displayname": null,
+        "description": null
+      },
+	  {
+        "name": "DRCAROLLIMAGE_RANDOM25",
+        "value": 7,
+        "displayname": null,
+        "description": null
+      },
+	  {
+        "name": "DRCAROLLIMAGE_RANDOM",
+        "value": 8,
+        "displayname": null,
+        "description": null
+      }
+    ]
+  },
+  {
+    "name": "WEAPON",
+    "type": "Constant",
+	"size": 8,
+    "constants": [
+      {
+        "name": "WEAPON_NONE",
+        "value": 0,
+        "displayname": null,
+        "description": null
+      },
+	  {
+        "name": "WEAPON_UNARMED",
+        "value": 1,
+        "displayname": null,
+        "description": null
+      },
+	  {
+        "name": "WEAPON_FALCON2",
+        "value": 2,
+        "displayname": null,
+        "description": null
+      },
+	  {
+        "name": "WEAPON_FALCON2_SILENCER",
+        "value": 3,
+        "displayname": null,
+        "description": null
+      },
+	  {
+        "name": "WEAPON_FALCON2_SCOPE",
+        "value": 4,
+        "displayname": null,
+        "description": null
+      },
+	  {
+        "name": "WEAPON_MAGSEC4",
+        "value": 5,
+        "displayname": null,
+        "description": null
+      },
+	  {
+        "name": "WEAPON_MAULER",
+        "value": 6,
+        "displayname": null,
+        "description": null
+      },
+	  {
+        "name": "WEAPON_PHOENIX",
+        "value": 7,
+        "displayname": null,
+        "description": null
+      },
+	  {
+        "name": "WEAPON_DY357MAGNUM",
+        "value": 8,
+        "displayname": null,
+        "description": null
+      },
+	  {
+        "name": "WEAPON_DY357LX",
+        "value": 9,
+        "displayname": null,
+        "description": null
+      },
+	  {
+        "name": "WEAPON_CMP150",
+        "value": 10,
+        "displayname": null,
+        "description": null
+      },
+	  {
+        "name": "WEAPON_CYCLONE",
+        "value": 11,
+        "displayname": null,
+        "description": null
+      },
+	  {
+        "name": "WEAPON_CALLISTO",
+        "value": 12,
+        "displayname": null,
+        "description": null
+      },
+	  {
+        "name": "WEAPON_RCP120",
+        "value": 13,
+        "displayname": null,
+        "description": null
+      },
+	  {
+        "name": "WEAPON_LAPTOPGUN",
+        "value": 14,
+        "displayname": null,
+        "description": null
+      },
+	  {
+        "name": "WEAPON_DRAGON",
+        "value": 15,
+        "displayname": null,
+        "description": null
+      },
+	  {
+        "name": "WEAPON_K7AVENGER",
+        "value": 16,
+        "displayname": null,
+        "description": null
+      },
+	  {
+        "name": "WEAPON_AR34",
+        "value": 17,
+        "displayname": null,
+        "description": null
+      },
+	  {
+        "name": "WEAPON_SUPERDRAGON",
+        "value": 18,
+        "displayname": null,
+        "description": null
+      },
+	  {
+        "name": "WEAPON_SHOTGUN",
+        "value": 19,
+        "displayname": null,
+        "description": null
+      },
+	  {
+        "name": "WEAPON_REAPER",
+        "value": 20,
+        "displayname": null,
+        "description": null
+      },
+	  {
+        "name": "WEAPON_SNIPERRIFLE",
+        "value": 21,
+        "displayname": null,
+        "description": null
+      },
+	  {
+        "name": "WEAPON_FARSIGHT",
+        "value": 22,
+        "displayname": null,
+        "description": null
+      },
+	  {
+        "name": "WEAPON_DEVASTATOR",
+        "value": 23,
+        "displayname": null,
+        "description": null
+      },
+	  {
+        "name": "WEAPON_ROCKETLAUNCHER",
+        "value": 24,
+        "displayname": null,
+        "description": null
+      },
+	  {
+        "name": "WEAPON_SLAYER",
+        "value": 25,
+        "displayname": null,
+        "description": null
+      },
+	  {
+        "name": "WEAPON_COMBATKNIFE",
+        "value": 26,
+        "displayname": null,
+        "description": null
+      },
+	  {
+        "name": "WEAPON_CROSSBOW",
+        "value": 27,
+        "displayname": null,
+        "description": null
+      },
+	  {
+        "name": "WEAPON_TRANQUILIZER",
+        "value": 28,
+        "displayname": null,
+        "description": null
+      },
+	  {
+        "name": "WEAPON_LASER",
+        "value": 29,
+        "displayname": null,
+        "description": null
+      },
+	  {
+        "name": "WEAPON_GRENADE",
+        "value": 30,
+        "displayname": null,
+        "description": null
+      },
+	  {
+        "name": "WEAPON_NBOMB",
+        "value": 31,
+        "displayname": null,
+        "description": null
+      },
+	  {
+        "name": "WEAPON_TIMEDMINE",
+        "value": 32,
+        "displayname": null,
+        "description": null
+      },
+	  {
+        "name": "WEAPON_PROXIMITYMINE",
+        "value": 33,
+        "displayname": null,
+        "description": null
+      },
+	  {
+        "name": "WEAPON_REMOTEMINE",
+        "value": 34,
+        "displayname": null,
+        "description": null
+      },
+	  {
+        "name": "WEAPON_COMBATBOOST",
+        "value": 35,
+        "displayname": null,
+        "description": null
+      },
+	  {
+        "name": "WEAPON_PP9I",
+        "value": 36,
+        "displayname": null,
+        "description": null
+      },
+	  {
+        "name": "WEAPON_CC13",
+        "value": 37,
+        "displayname": null,
+        "description": null
+      },
+	  {
+        "name": "WEAPON_KL01313",
+        "value": 38,
+        "displayname": null,
+        "description": null
+      },
+	  {
+        "name": "WEAPON_KF7SPECIAL",
+        "value": 39,
+        "displayname": null,
+        "description": null
+      },
+	  {
+        "name": "WEAPON_ZZT",
+        "value": 40,
+        "displayname": null,
+        "description": null
+      },
+	  {
+        "name": "WEAPON_DMC",
+        "value": 41,
+        "displayname": null,
+        "description": null
+      },
+	  {
+        "name": "WEAPON_AR53",
+        "value": 42,
+        "displayname": null,
+        "description": null
+      },
+	  {
+        "name": "WEAPON_RCP45",
+        "value": 43,
+        "displayname": null,
+        "description": null
+      },
+	  {
+        "name": "WEAPON_PSYCHOSISGUN",
+        "value": 44,
+        "displayname": null,
+        "description": null
+      },
+	  {
+        "name": "WEAPON_NIGHTVISION",
+        "value": 45,
+        "displayname": null,
+        "description": null
+      },
+	  {
+        "name": "WEAPON_EYESPY",
+        "value": 46,
+        "displayname": null,
+        "description": null
+      },
+	  {
+        "name": "WEAPON_XRAYSCANNER",
+        "value": 47,
+        "displayname": null,
+        "description": null
+      },
+	  {
+        "name": "WEAPON_IRSCANNER",
+        "value": 48,
+        "displayname": null,
+        "description": null
+      },
+	  {
+        "name": "WEAPON_CLOAKINGDEVICE",
+        "value": 49,
+        "displayname": null,
+        "description": null
+      },
+	  {
+        "name": "WEAPON_HORIZONSCANNER",
+        "value": 50,
+        "displayname": null,
+        "description": null
+      },
+	  {
+        "name": "WEAPON_TESTER",
+        "value": 51,
+        "displayname": null,
+        "description": null
+      },
+	  {
+        "name": "WEAPON_ROCKETLAUNCHER_34",
+        "value": 52,
+        "displayname": null,
+        "description": null
+      },
+	  {
+        "name": "WEAPON_ECMMINE",
+        "value": 53,
+        "displayname": null,
+        "description": null
+      },
+	  {
+        "name": "WEAPON_DATAUPLINK",
+        "value": 54,
+        "displayname": null,
+        "description": null
+      },
+	  {
+        "name": "WEAPON_RTRACKER",
+        "value": 55,
+        "displayname": null,
+        "description": null
+      },
+	  {
+        "name": "WEAPON_PRESIDENTSCANNER",
+        "value": 56,
+        "displayname": null,
+        "description": null
+      },
+	  {
+        "name": "WEAPON_DOORDECODER",
+        "value": 57,
+        "displayname": null,
+        "description": null
+      },
+	  {
+        "name": "WEAPON_AUTOSURGEON",
+        "value": 58,
+        "displayname": null,
+        "description": null
+      },
+	  {
+        "name": "WEAPON_EXPLOSIVES",
+        "value": 59,
+        "displayname": null,
+        "description": null
+      },
+	  {
+        "name": "WEAPON_SKEDARBOMB",
+        "value": 60,
+        "displayname": null,
+        "description": null
+      },
+	  {
+        "name": "WEAPON_COMMSRIDER",
+        "value": 61,
+        "displayname": null,
+        "description": null
+      },
+	  {
+        "name": "WEAPON_TRACERBUG",
+        "value": 62,
+        "displayname": null,
+        "description": null
+      },
+	  {
+        "name": "WEAPON_TARGETAMPLIFIER",
+        "value": 63,
+        "displayname": null,
+        "description": null
+      },
+	  {
+        "name": "WEAPON_DISGUISE40",
+        "value": 64,
+        "displayname": null,
+        "description": null
+      },
+	  {
+        "name": "WEAPON_DISGUISE41",
+        "value": 65,
+        "displayname": null,
+        "description": null
+      },
+	  {
+        "name": "WEAPON_FLIGHTPLANS",
+        "value": 66,
+        "displayname": null,
+        "description": null
+      },
+	  {
+        "name": "WEAPON_RESEARCHTAPE",
+        "value": 67,
+        "displayname": null,
+        "description": null
+      },
+	  {
+        "name": "WEAPON_BACKUPDISK",
+        "value": 68,
+        "displayname": null,
+        "description": null
+      },
+	  {
+        "name": "WEAPON_KEYCARD45",
+        "value": 69,
+        "displayname": null,
+        "description": null
+      },
+	  {
+        "name": "WEAPON_KEYCARD46",
+        "value": 70,
+        "displayname": null,
+        "description": null
+      },
+	  {
+        "name": "WEAPON_KEYCARD47",
+        "value": 71,
+        "displayname": null,
+        "description": null
+      },
+	  {
+        "name": "WEAPON_KEYCARD48",
+        "value": 72,
+        "displayname": null,
+        "description": null
+      },
+	  {
+        "name": "WEAPON_KEYCARD49",
+        "value": 73,
+        "displayname": null,
+        "description": null
+      },
+	  {
+        "name": "WEAPON_KEYCARD4A",
+        "value": 74,
+        "displayname": null,
+        "description": null
+      },
+	  {
+        "name": "WEAPON_KEYCARD4B",
+        "value": 75,
+        "displayname": null,
+        "description": null
+      },
+	  {
+        "name": "WEAPON_KEYCARD4C",
+        "value": 76,
+        "displayname": null,
+        "description": null
+      },
+	  {
+        "name": "WEAPON_SUITCASE",
+        "value": 77,
+        "displayname": null,
+        "description": null
+      },
+	  {
+        "name": "WEAPON_BRIEFCASE",
+        "value": 78,
+        "displayname": null,
+        "description": null
+      },
+	  {
+        "name": "WEAPON_SHIELDTECHITEM",
+        "value": 79,
+        "displayname": null,
+        "description": null
+      },
+	  {
+        "name": "WEAPON_NECKLACE",
+        "value": 80,
+        "displayname": null,
+        "description": null
+      },
+	  {
+        "name": "WEAPON_HAMMER",
+        "value": 81,
+        "displayname": null,
+        "description": null
+      },
+	  {
+        "name": "WEAPON_SCREWDRIVER",
+        "value": 82,
+        "displayname": null,
+        "description": null
+      },
+	  {
+        "name": "WEAPON_ROCKET",
+        "value": 83,
+        "displayname": null,
+        "description": null
+      },
+	  {
+        "name": "WEAPON_HOMINGROCKET",
+        "value": 84,
+        "displayname": null,
+        "description": null
+      },
+	  {
+        "name": "WEAPON_GRENADEROUND",
+        "value": 85,
+        "displayname": null,
+        "description": null
+      },
+	  {
+        "name": "WEAPON_BOLT",
+        "value": 86,
+        "displayname": null,
+        "description": null
+      },
+	  {
+        "name": "WEAPON_BRIEFCASE2",
+        "value": 87,
+        "displayname": null,
+        "description": null
+      },
+	  {
+        "name": "WEAPON_SKROCKET",
+        "value": 88,
+        "displayname": null,
+        "description": null
+      },
+	  {
+        "name": "WEAPON_CHOPPERGUN",
+        "value": 89,
+        "displayname": null,
+        "description": null
+      },
+	  {
+        "name": "WEAPON_WATCHLASER",
+        "value": 90,
+        "displayname": null,
+        "description": null
+      },
+	  {
+        "name": "WEAPON_MPSHIELD",
+        "value": 91,
+        "displayname": null,
+        "description": null
+      },
+	  {
+        "name": "WEAPON_DISABLED",
+        "value": 92,
+        "displayname": null,
+        "description": null
+      },
+	  {
+        "name": "WEAPON_SUICIDEPILL",
+        "value": 93,
+        "displayname": null,
+        "description": null
+      },
+	  {
+        "name": "WEAPON_MPLOCATION00",
+        "value": 240,
+        "displayname": null,
+        "description": null
+      },
+      {
+        "name": "WEAPON_MPLOCATION01",
+        "value": 241,
+        "displayname": null,
+        "description": null
+      },
+      {
+        "name": "WEAPON_MPLOCATION02",
+        "value": 242,
+        "displayname": null,
+        "description": null
+      },
+      {
+        "name": "WEAPON_MPLOCATION03",
+        "value": 243,
+        "displayname": null,
+        "description": null
+      },
+      {
+        "name": "WEAPON_MPLOCATION04",
+        "value": 244,
+        "displayname": null,
+        "description": null
+      },
+      {
+        "name": "WEAPON_MPLOCATION05",
+        "value": 245,
+        "displayname": null,
+        "description": null
+      },
+      {
+        "name": "WEAPON_MPLOCATION06",
+        "value": 246,
+        "displayname": null,
+        "description": null
+      },
+      {
+        "name": "WEAPON_MPLOCATION07",
+        "value": 247,
+        "displayname": null,
+        "description": null
+      },
+      {
+        "name": "WEAPON_MPLOCATION08",
+        "value": 248,
+        "displayname": null,
+        "description": null
+      },
+      {
+        "name": "WEAPON_MPLOCATION09",
+        "value": 249,
+        "displayname": null,
+        "description": null
+      },
+      {
+        "name": "WEAPON_MPLOCATION10",
+        "value": 250,
+        "displayname": null,
+        "description": null
+      },
+      {
+        "name": "WEAPON_MPLOCATION11",
+        "value": 251,
+        "displayname": null,
+        "description": null
+      },
+      {
+        "name": "WEAPON_MPLOCATION12",
+        "value": 252,
+        "displayname": null,
+        "description": null
+      },
+      {
+        "name": "WEAPON_MPLOCATION13",
+        "value": 253,
+        "displayname": null,
+        "description": null
+      },
+      {
+        "name": "WEAPON_MPLOCATION14",
+        "value": 254,
+        "displayname": null,
+        "description": null
+      },
+      {
+        "name": "WEAPON_MPLOCATION15",
+        "value": 255,
+        "displayname": null,
+        "description": null
+      },
+	  {
+        "name": "WEAPON_CONTINUESAME",
+        "value": -1,
+        "displayname": null,
+        "description": null
+      }
+    ]
+  },
+  {
+    "name": "HOVTYPE",
+    "type": "Constant",
+	"size": 8,
+    "constants": [
+      {
+        "name": "HOVTYPE_BED",
+        "value": 0,
+        "displayname": null,
+        "description": null
+      },
+      {
+        "name": "HOVTYPE_BIKE",
+        "value": 1,
+        "displayname": null,
+        "description": null
+      },
+      {
+        "name": "HOVTYPE_CRATE",
+        "value": 2,
+        "displayname": null,
+        "description": null
+      },
+      {
+        "name": "HOVTYPE_3",
+        "value": 3,
+        "displayname": null,
+        "description": null
+      },
+      {
+        "name": "HOVTYPE_4",
+        "value": 4,
+        "displayname": null,
+        "description": null
+      }
+    ]
+  },
+  {
+    "name": "TITLEAIMODE",
+    "type": "Constant",
+	"size": 8,
+    "constants": [
+      {
+        "name": "TITLEAIMODE_RAREPRESENTS1",
+        "value": 1,
+        "displayname": null,
+        "description": null
+      },
+      {
+        "name": "TITLEAIMODE_RARELOGO",
+        "value": 2,
+        "displayname": null,
+        "description": null
+      },
+      {
+        "name": "TITLEAIMODE_NINTENDOLOGO",
+        "value": 3,
+        "displayname": null,
+        "description": null
+      },
+      {
+        "name": "TITLEAIMODE_RAREPRESENTS2",
+        "value": 4,
+        "displayname": null,
+        "description": null
+      },
+      {
+        "name": "TITLEAIMODE_PDLOGO",
+        "value": 5,
+        "displayname": null,
+        "description": null
+      }
+    ]
+  },
+    {
+    "name": "TVPROGRAM",
+    "type": "Constant",
+	"size": 8,
+    "constants": [
+      {
+        "name": "TVPROGRAM_DEFAULT",
+        "value": 0,
+        "displayname": null,
+        "description": null
+      },
+      {
+        "name": "TVPROGRAM_SINEWAVE1",
+        "value": 1,
+        "displayname": null,
+        "description": null
+      },
+      {
+        "name": "TVPROGRAM_SINEWAVE2",
+        "value": 2,
+        "displayname": null,
+        "description": null
+      },
+      {
+        "name": "TVPROGRAM_SCROLL_TEXT_GREEN",
+        "value": 3,
+        "displayname": null,
+        "description": null
+      },
+      {
+        "name": "TVPROGRAM_SCROLLUP_TEXT_RED",
+        "value": 4,
+        "displayname": null,
+        "description": null
+      },
+	  {
+        "name": "TVPROGRAM_SCROLLUP_TEXT_GREEN",
+        "value": 5,
+        "displayname": null,
+        "description": null
+      },
+      {
+        "name": "TVPROGRAM_BARS_YELLOW",
+        "value": 6,
+        "displayname": null,
+        "description": null
+      },
+      {
+        "name": "TVPROGRAM_BARS_TEAL",
+        "value": 7,
+        "displayname": null,
+        "description": null
+      },
+      {
+        "name": "TVPROGRAM_BARS_GREEN",
+        "value": 8,
+        "displayname": null,
+        "description": null
+      },
+      {
+        "name": "TVPROGRAM_SCROLL_TEXT_GREEN_09",
+        "value": 9,
+        "displayname": null,
+        "description": null
+      },
+	  {
+        "name": "TVPROGRAM_SCROLL_TEXT_GREEN_0A",
+        "value": 10,
+        "displayname": null,
+        "description": null
+      },
+      {
+        "name": "TVPROGRAM_SCROLL_TEXT_GREEN_0B",
+        "value": 11,
+        "displayname": null,
+        "description": null
+      },
+      {
+        "name": "TVPROGRAM_SCROLL_TEXT_GREEN_0C",
+        "value": 12,
+        "displayname": null,
+        "description": null
+      },
+      {
+        "name": "TVPROGRAM_SCROLL_TEXT_GREEN_0D",
+        "value": 13,
+        "displayname": null,
+        "description": null
+      },
+      {
+        "name": "TVPROGRAM_SCROLL_TEXT_GREEN_0E",
+        "value": 14,
+        "displayname": null,
+        "description": null
+      },
+	  {
+        "name": "TVPROGRAM_PULSE_RED",
+        "value": 15,
+        "displayname": null,
+        "description": null
+      },
+      {
+        "name": "TVPROGRAM_PULSE_GREEN",
+        "value": 16,
+        "displayname": null,
+        "description": null
+      },
+      {
+        "name": "TVPROGRAM_SOLID_GRAY",
+        "value": 17,
+        "displayname": null,
+        "description": null
+      },
+      {
+        "name": "TVPROGRAM_SOLID_RED",
+        "value": 18,
+        "displayname": null,
+        "description": null
+      },
+      {
+        "name": "TVPROGRAM_SOLID_GREEN",
+        "value": 19,
+        "displayname": null,
+        "description": null
+      },
+	  {
+        "name": "TVPROGRAM_SOLID_BLACK",
+        "value": 20,
+        "displayname": null,
+        "description": null
+      },
+      {
+        "name": "TVPROGRAM_TRANSPARENT",
+        "value": 21,
+        "displayname": null,
+        "description": null
+      },
+      {
+        "name": "TVPROGRAM_MAIAN",
+        "value": 22,
+        "displayname": null,
+        "description": null
+      },
+      {
+        "name": "TVPROGRAM_BIO",
+        "value": 23,
+        "displayname": null,
+        "description": null
+      },
+      {
+        "name": "TVPROGRAM_JOHEAD",
+        "value": 24,
+        "displayname": null,
+        "description": null
+      },
+	  {
+        "name": "TVPROGRAM_JOFROCK",
+        "value": 25,
+        "displayname": null,
+        "description": null
+      },
+      {
+        "name": "TVPROGRAM_PLANET1",
+        "value": 26,
+        "displayname": null,
+        "description": null
+      },
+      {
+        "name": "TVPROGRAM_PLANET2",
+        "value": 27,
+        "displayname": null,
+        "description": null
+      },
+      {
+        "name": "TVPROGRAM_PLANET3",
+        "value": 28,
+        "displayname": null,
+        "description": null
+      },
+      {
+        "name": "TVPROGRAM_SKEDAR",
+        "value": 29,
+        "displayname": null,
+        "description": null
+      },
+	  {
+        "name": "TVPROGRAM_BARS_GREEN_1E",
+        "value": 30,
+        "displayname": null,
+        "description": null
+      },
+      {
+        "name": "TVPROGRAM_BARS_GREEN_1F",
+        "value": 31,
+        "displayname": null,
+        "description": null
+      },
+      {
+        "name": "TVPROGRAM_BARS_GREEN_20",
+        "value": 32,
+        "displayname": null,
+        "description": null
+      },
+      {
+        "name": "TVPROGRAM_BARS_GREEN_21",
+        "value": 33,
+        "displayname": null,
+        "description": null
+      },
+      {
+        "name": "TVPROGRAM_BARS_GREEN_22",
+        "value": 34,
+        "displayname": null,
+        "description": null
+      },
+	  {
+        "name": "TVPROGRAM_BARS_GREEN_23",
+        "value": 35,
+        "displayname": null,
+        "description": null
+      },
+      {
+        "name": "TVPROGRAM_CYCLE_PLANETS",
+        "value": 36,
+        "displayname": null,
+        "description": null
+      },
+      {
+        "name": "TVPROGRAM_CASSHEAD",
+        "value": 37,
+        "displayname": null,
+        "description": null
+      },
+      {
+        "name": "TVPROGRAM_DIAGRAM",
+        "value": 38,
+        "displayname": null,
+        "description": null
+      },
+      {
+        "name": "TVPROGRAM_SCROLL_GALAXY1_GREEN",
+        "value": 39,
+        "displayname": null,
+        "description": null
+      },
+	  {
+        "name": "TVPROGRAM_SCROLLUP_GALAXY1_BLUE",
+        "value": 40,
+        "displayname": null,
+        "description": null
+      },
+      {
+        "name": "TVPROGRAM_STAR",
+        "value": 41,
+        "displayname": null,
+        "description": null
+      },
+      {
+        "name": "TVPROGRAM_SCROLL_STAR",
+        "value": 42,
+        "displayname": null,
+        "description": null
+      },
+      {
+        "name": "TVPROGRAM_SCROLL_GALAXY2_GREEN",
+        "value": 43,
+        "displayname": null,
+        "description": null
+      },
+      {
+        "name": "TVPROGRAM_SCROLLUP_GALAXY2_BLUE",
+        "value": 44,
+        "displayname": null,
+        "description": null
+      },
+	  {
+        "name": "TVPROGRAM_NEBULA",
+        "value": 45,
+        "displayname": null,
+        "description": null
+      },
+      {
+        "name": "TVPROGRAM_SCROLL_SYMBOLS_GREEN",
+        "value": 46,
+        "displayname": null,
+        "description": null
+      },
+      {
+        "name": "TVPROGRAM_SCROLLUP_SYMBOLS_ORANGE",
+        "value": 47,
+        "displayname": null,
+        "description": null
+      },
+      {
+        "name": "TVPROGRAM_GREENOBJECT1",
+        "value": 48,
+        "displayname": null,
+        "description": null
+      },
+      {
+        "name": "TVPROGRAM_GREENOBJECT2",
+        "value": 49,
+        "displayname": null,
+        "description": null
+      },
+	  {
+        "name": "TVPROGRAM_GREENOBJECT3",
+        "value": 50,
+        "displayname": null,
+        "description": null
+      },
+	  {
+        "name": "TVPROGRAM_CYCLE_GREENOBJECTS",
+        "value": 51,
+        "displayname": null,
+        "description": null
+      },
+	  {
+        "name": "TVPROGRAM_PCSTAND",
+        "value": 52,
+        "displayname": null,
+        "description": null
+      },
+	  {
+        "name": "TVPROGRAM_EARTH",
+        "value": 53,
+        "displayname": null,
+        "description": null
+      },
+	  {
+        "name": "TVPROGRAM_SHRINE",
+        "value": 54,
+        "displayname": null,
+        "description": null
+      }
+    ]
+  },
+  {
+    "name": "PSTYPE",
+    "type": "Constant",
+	"size": 8,
+    "constants": [
+      {
+        "name": "PSTYPE_NONE",
+        "value": 0,
+        "displayname": null,
+        "description": null
+      },
+      {
+        "name": "PSTYPE_GENERAL",
+        "value": 1,
+        "displayname": null,
+        "description": null
+      },
+      {
+        "name": "PSTYPE_CHOPPERHUM1",
+        "value": 5,
+        "displayname": null,
+        "description": null
+      },
+      {
+        "name": "PSTYPE_CHOPPERHUM2",
+        "value": 6,
+        "displayname": null,
+        "description": null
+      },
+      {
+        "name": "PSTYPE_CHOPPERGUN",
+        "value": 7,
+        "displayname": null,
+        "description": null
+      },
+	  {
+        "name": "PSTYPE_CHRTALK",
+        "value": 9,
+        "displayname": null,
+        "description": null
+      },
+	  {
+        "name": "PSTYPE_MARKER",
+        "value": 11,
+        "displayname": null,
+        "description": null
+      },
+	  {
+        "name": "PSTYPE_DOOR",
+        "value": 12,
+        "displayname": null,
+        "description": null
+      },
+	  {
+        "name": "PSTYPE_CHRCHOKE",
+        "value": 13,
+        "displayname": null,
+        "description": null
+      },
+	  {
+        "name": "PSTYPE_COMMHUB",
+        "value": 15,
+        "displayname": null,
+        "description": null
+      },
+	  {
+        "name": "PSTYPE_FOOTSTEP",
+        "value": 16,
+        "displayname": null,
+        "description": null
+      },
+	  {
+        "name": "PSTYPE_CHRSHOOT",
+        "value": 17,
+        "displayname": null,
+        "description": null
+      }
+    ]
+  }
+]

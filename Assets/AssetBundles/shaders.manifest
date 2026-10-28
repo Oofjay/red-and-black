@@ -1,0 +1,21 @@
+ManifestFileVersion: 0
+CRC: 2932562035
+Hashes:
+  AssetFileHash:
+    serializedVersion: 2
+    Hash: 274679cea6310cc57fc774b1d7762469
+  TypeTreeHash:
+    serializedVersion: 2
+    Hash: 070e64028d0fb02d3485eb0d43485f8b
+HashAppended: 0
+ClassTypes:
+- Class: 48
+  Script: {instanceID: 0}
+SerializeReferenceClassIdentifiers: []
+Assets:
+- Assets/Shaders/Portal.shader
+- Assets/Shaders/NormalGeometry.shader
+- Assets/Shaders/TransparentGeometry.shader
+- Assets/Shaders/CollisionType.shader
+- Assets/Shaders/TopFlagGeometry.shader
+Dependencies: []
